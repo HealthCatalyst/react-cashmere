@@ -1,0 +1,107 @@
+@import "../../theme/cashmere.scss";
+.hc-button {
+  @include hc-button();
+  &.hc-sm {
+    @include hc-button-sm();
+  }
+  &.hc-md {
+    @include hc-button-md();
+  }
+  &.hc-lg {
+    @include hc-button-lg();
+  }
+
+  &.hc-primary-action {
+      @include hc-button-primary();
+  }
+  &.hc-primary-alt-action {
+      @include hc-button-primary-alt();
+  }
+  &.hc-destructive, &.hc-error {
+      @include hc-button-destructive();
+  }
+  &.hc-neutral {
+      @include hc-button-neutral();
+  }
+  &.hc-secondary, &.hc-default {
+    @include hc-color-button($gray-100, 5%);
+    color: $gray-600;
+    border: 1.5px solid $gray-300;
+    &:hover {
+        color: $offblack;
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
+    }
+    &[disabled]:hover {
+        color: $gray-600;
+    }
+  }
+  &.hc-minimal {
+      @include hc-button-minimal();
+  }
+  &.hc-link,
+  &.hc-link-inline {
+      @include hc-button-link();
+  }
+  &.hc-link-inline {
+      @include hc-button-link-inline();
+  }
+  &.hc-blue {
+      @include hc-button-custom( $blue );
+  }
+  &.hc-green, &.hc-success {
+      @include hc-button-custom( $green );
+  }
+  &.hc-purple {
+      @include hc-button-custom( $purple );
+  }
+  &.hc-red {
+      @include hc-button-custom( $red );
+  }
+  &.hc-orange, &.hc-warning {
+      @include hc-button-custom( $orange );
+  }
+  &.hc-ruby-red {
+      @include hc-button-custom( $ruby-red );
+  }
+  &.hc-deep-red {
+      @include hc-button-custom( $deep-red );
+  }
+  &.hc-red-orange {
+      @include hc-button-custom( $red-orange );
+  }
+  &.hc-magenta {
+      @include hc-button-custom( $magenta );
+  }
+  &.hc-pink {
+      @include hc-button-custom( $pink );
+  }
+  &.hc-light-pink {
+      @include hc-button-custom( $light-pink );
+  }
+  &.hc-azure {
+      @include hc-button-custom( $azure );
+  }
+  &.hc-teal {
+      @include hc-button-custom( $teal );
+  }
+  &.hc-dark-green {
+      @include hc-button-custom( $dark-green );
+  }
+  &.hc-brown {
+      @include hc-button-custom( $brown );
+  }
+  &.hc-purple-gray {
+      @include hc-button-custom( $purple-gray );
+  }
+  &.hc-yellow {
+      @include hc-button-custom( $yellow );
+  }
+  &.hc-yellow-orange {
+      @include hc-button-custom( $yellow-orange );
+  }
+  &.hc-tan {
+      @include hc-button-custom( $tan );
+  }
+}

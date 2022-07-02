@@ -1,0 +1,74 @@
+import { Meta } from '@storybook/addon-docs';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import Code from './assets/code-brackets.svg';
+import Colors from './assets/colors.svg';
+import Comments from './assets/comments.svg';
+import Direction from './assets/direction.svg';
+import Flow from './assets/flow.svg';
+import Plugin from './assets/plugin.svg';
+import Repo from './assets/repo.svg';
+import StackAlt from './assets/stackalt.svg';
+import css from './assets/styles.css';
+
+<Meta title="Getting Started" />
+
+# Getting Started with React Cashmere
+
+<div className="subheading">Install</div>
+
+First you will need an existing react app or create a new project using [create react app](https://reactjs.org/docs/create-a-new-react-app.html).
+```
+npx create-react-app my-app
+```
+
+Install the peer dependencies (You will need React `17.x.x|18.x.x` and Material UI `5.x.x`)
+```shell
+npm install --save @emotion/styled @mui/lab @mui/material sass
+```
+
+Now you can install React Cashmere
+```
+npm install --save @healthcatalyst/react-cashmere
+```
+
+
+<div className="subheading">Hello World</div>
+
+Now you are ready to wrap your app with the ThemeProvider higher order component. 
+The ThemeProvider will take care of all the cashmere styling so you can use most of the Material UI component as usual. 
+
+```jsx
+/* src/index.js */
+import React from "react";
+import { ThemeProvider } from "@healthcatalyst/react-cashmere";
+import App from "./App";
+
+export default (props) => {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+```
+
+```jsx
+/* src/App.js */
+import React from "react";
+import Typography from '@mui/material/Typography';
+import { Button } from "@healthcatalyst/react-cashmere";
+
+export default (props) => {
+  return (
+    <>
+      <Typography variant="h1">Hello World</Typography>
+      <Typography variant="subheading1">This is a beautiful app using Material UI and Cashmere</Typography>
+      <Button>Button</Button>
+    </>
+  );
+}
+```
+
+export const Component = () => {
+  return <SyntaxHighlighter/>;
+};

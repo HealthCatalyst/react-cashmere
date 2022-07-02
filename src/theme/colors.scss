@@ -1,0 +1,67 @@
+@import "node_modules/@healthcatalyst/cashmere/scss/_colors";
+:export {
+    // Primary Palette
+    blue: $blue;
+    green: $green;
+    purple: $purple;
+    red: $red;
+    orange: $orange;
+
+    // Neutral Palette
+    white: $white;
+    black: $black;
+    offblack: $offblack;
+    shadow: $shadow;
+    dark-blue: $dark-blue;
+    charcoal-blue: $charcoal-blue;
+    slate-blue: $slate-blue;
+
+    slate-gray-100: $slate-gray-100;
+    slate-gray-200: $slate-gray-200;
+    slate-gray-300: $slate-gray-300;
+    slate-gray-400: $slate-gray-400;
+    slate-gray-500: $slate-gray-500;
+    slate-gray-600: $slate-gray-600;
+
+    gray-100: $gray-100;
+    gray-200: $gray-200;
+    gray-300: $gray-300;
+    gray-400: $gray-400;
+    gray-500: $gray-500;
+    gray-600: $gray-600;
+
+    // Secondary Palette
+    ruby-red: $ruby-red;
+    deep-red: $deep-red;
+    red-orange: $red-orange;
+    pink: $pink;
+    light-pink: $light-pink;
+    brown: $brown;
+    magenta: $magenta;
+    purple-gray: $purple-gray;
+    azure: $azure;
+    teal: $teal;
+    dark-green: $dark-green;
+    light-green: $light-green;
+    tan: $tan;
+    yellow: $yellow;
+    yellow-orange: $yellow-orange;
+
+    // General Color Vars
+    primary-brand: $primary-brand;
+    primary-action: $primary-action;
+    primary-alt-action: $primary-alt-action;
+    destructive-action: $destructive-action;
+    neutral-action: $neutral-action;
+    text: $text;
+    block-text-background: $block-text-background;
+
+    // Material UI Colors
+    primary: $primary-brand;
+    secondary: $gray-500;
+    success: $green;
+    warning: $orange;
+    error: $error;
+    info: $blue;
+    default: $gray-500;
+}

@@ -1,0 +1,11 @@
+{
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "src/stories", "src/setupTests.js"],
+    "compilerOptions": {
+        "allowJs": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "dist"
+    }
+}

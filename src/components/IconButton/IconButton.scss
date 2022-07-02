@@ -1,0 +1,105 @@
+@import "../../theme/cashmere.scss";
+
+.hc-icon-button {
+  @include hc-icon-button();
+  &.hc-sm {
+    height: 26px;
+    width: 26px;
+  }
+  &.hc-md {
+    // height: 35;
+    // width: 35;
+  }
+  &.hc-lg {
+    height: 40px;
+    width: 40px;
+  }
+  &:disabled {
+    opacity: .35;
+  }
+
+  &.hc-primary-action {
+    color: $primary-action;
+  }
+  &.hc-primary-alt-action {
+    color: $primary-alt-action;
+  }
+  &.hc-destructive, &.hc-error {
+    color: $red;
+  }
+  &.hc-secondary {
+    color: $gray-600;
+  }
+  &.hc-neutral,
+  &.hc-minimal,
+  &.hc-default {
+    color: inherit;
+  }
+  &.hc-link,
+  &.hc-link-inline,
+  &.hc-blue {
+      color: $blue;
+  }
+  &.hc-link,
+  &.hc-link-inline {
+      @include hc-button-link();
+  }
+  &.hc-link-inline {
+      @include hc-button-link-inline();
+  }
+  &.hc-green, 
+  &.hc-success {
+      color: $green;
+  }
+  &.hc-purple {
+      color: $purple;
+  }
+  &.hc-red {
+      color: $red;
+  }
+  &.hc-orange, &.hc-warning {
+      color: $orange;
+  }
+  &.hc-ruby-red {
+      color: $ruby-red;
+  }
+  &.hc-deep-red {
+      color: $deep-red;
+  }
+  &.hc-red-orange {
+      color: $red-orange;
+  }
+  &.hc-magenta {
+      color: $magenta;
+  }
+  &.hc-pink {
+      color: $pink;
+  }
+  &.hc-light-pink {
+      color: $light-pink;
+  }
+  &.hc-azure {
+      color: $azure;
+  }
+  &.hc-teal {
+      color: $teal;
+  }
+  &.hc-dark-green {
+      color: $dark-green;
+  }
+  &.hc-brown {
+      color: $brown;
+  }
+  &.hc-purple-gray {
+      color: $purple-gray;
+  }
+  &.hc-yellow {
+      color: $yellow;
+  }
+  &.hc-yellow-orange {
+      color: $yellow-orange;
+  }
+  &.hc-tan {
+      color: $tan;
+  }
+}
