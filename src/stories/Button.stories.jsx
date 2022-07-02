@@ -1,6 +1,7 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import MuiButton from '@mui/material/Button';
 import Button, { buttonColors } from '../components/Button/Button';
 import IconButton from '../components/IconButton/IconButton';
 import Icon from '../components/Icon/Icon';
@@ -115,4 +116,17 @@ IconButtons.args = {
   size: "medium",
   icon: "fa-trash",
   color: "default"
+};
+
+
+
+export const MaterialButton = (args) => (
+  <>
+    <MuiButton {...args}>Button</MuiButton>
+  </>
+);
+MaterialButton.args = {
+  disabled: false,
+  size: "medium",
+  color: "primary"
 };

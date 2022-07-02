@@ -120,6 +120,19 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cas
                     },
                 },
             },
+            MuiButton: {
+                defaultProps: {
+                    variant: "contained",
+                    className: "hc-button",
+                    disableElevation: true,
+                    disableRipple: true,
+                    disableFocusRipple: true
+                },
+                styleOverrides: {
+                    root: {
+                    },
+                },
+            },
         },
     });
 };
@@ -129,8 +142,6 @@ const lightTheme = createCashmereTheme();
 const darkTheme = createCashmereTheme('Dark', 'dark', {...cashmereColors, background: {default: "#333", paper: "#000"}, text: "#fff"});
 
 export default lightTheme;
-
-console.log(darkTheme);
 
 export const themes = {
     lightTheme,
