@@ -1,6 +1,9 @@
 {
   "name": "react-cashmere",
   "version": "0.1.0",
+  "main": "index.js",
+  "source": "src/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "peerDependencies": {
     "@emotion/styled": "^11.9.3",
