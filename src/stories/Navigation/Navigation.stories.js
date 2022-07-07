@@ -1,6 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
-import Icon from '../components/Icon/Icon';
+import Navbar from '../../components/Navbar/Navbar';
+import Icon from '../../components/Icon/Icon';
+import {Menu, MenuItem, TextField} from '@mui/material'
 
 export default {
   title: 'Navigation/Navbar',
@@ -24,28 +25,24 @@ const defaultArgs = {
   cobrandColor: 'light',
   homeUri: 'http://example.com/',
   linkContent: [
-    <div className="hc-navbar-link">
-      <a class="navbar-link force-active" title="Home"> 
+      <a key="home" className="navbar-link force-active" title="Home"> 
         Home
-      </a>
-      <a class="navbar-link" title="Home"> 
+      </a>,
+      <a key="reports" className="navbar-link" title="Reports"> 
         Reports
       </a>
-    </div>
   ],
   rightContent: [
-    <div class="hc-navbar-right-container">
-      <Icon icon="fa-question-circle-o" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" size="medium"/>
-      <span class="hc-navbar-vertical-separator"></span>
-      <div tabIndex="0" class="hc-navbar-username ng-star-inserted">
+      <Icon key="?" icon="fa-question-circle-o" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" size="medium"/>,
+      <span key="seperator" className="hc-navbar-vertical-separator"></span>,
+      <div key="user" tabIndex="0" className="hc-navbar-username ng-star-inserted">
         <span>
           <span>Christine K.</span>
           <br/>
-          <span class="hc-navbar-username-subtext">Millrock Hospital</span>
+          <span className="hc-navbar-username-subtext">Millrock Hospital</span>
         </span>
         &nbsp;<Icon icon="fa-angle-down" aria-hidden="true"/>
       </div>
-    </div>
   ]
 };
 
@@ -66,8 +63,10 @@ Cobrand.args = {
   linkContent: [
   ],
   rightContent: [
-    <div tabIndex="0" class="hc-navbar-username">
-      <span class="hc-text-ellipsis">
+    <Icon key="search" icon="fa-search" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" size="medium"/>,
+    <span key="seperator" className="hc-navbar-vertical-separator"></span>,
+    <div key="user" tabIndex="0" className="hc-navbar-username">
+      <span className="hc-text-ellipsis">
         Christine K.
       </span>
       &nbsp;<Icon icon="fa-angle-down" />

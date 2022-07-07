@@ -1,22 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import './Navbar.scss';
-import Icon from '../Icon/Icon';
 
 const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, cobrandColor, linkContent, rightContent, ...props}) => {
+    const linkContentMenu = linkContent.slice(0,1);
+    const linkContentMenuMore = linkContent.slice(1);
     return (
         <>
-        <Box sx={{ flexGrow: 1 }}>
             <div className={`hc-navbar ${position === 'fixed' ? 'fixed-top' : ''}`}>
                 <nav className="hc-navbar" >
-                    {false && <div className="hc-navbar-mobile-menu">
-                        <Icon icon="_mobileMenuIcon" size="medium" />
-                    </div>}
                     <div className="navbar-brand">
                         {brandIcon && <a href={homeUri} className="brand" tabIndex="-1">
                             {typeof brandIcon === 'string' ? <img src={brandIcon} /> : brandIcon}
@@ -28,7 +20,8 @@ const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, c
                         </a>}
                     </div>
                     <div className="hc-navbar-link-container">
-                        {linkContent}
+                        {linkContentMenu}
+                        {linkContentMenuMore}
                     </div>
                     {children}
                     <div className="hc-navbar-right-container">
@@ -39,7 +32,6 @@ const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, c
                     </div>}
                 </nav>
             </div>
-            </Box>
         </>
     );
 };

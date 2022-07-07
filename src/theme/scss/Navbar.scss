@@ -1,5 +1,4 @@
-@import "../../theme/cashmere.scss";
-
+@import "~@healthcatalyst/cashmere/scss/cashmere";
 .hc-navbar {
     @include hc-navbar();
     width: 100%;
@@ -96,5 +95,8 @@
     }
     .hc-navbar-cobrand-dark {
         @include hc-navbar-cobrand('dark');
+        img {
+            filter: brightness(1.5) grayscale(1);
+        }
     }
 }

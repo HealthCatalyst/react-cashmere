@@ -1,0 +1,113 @@
+@import "~@healthcatalyst/cashmere/scss/cashmere";
+.hc-button, .MuiButton-root {
+  @include hc-button();
+  &.hc-sm, &.MuiButton-sizeSmall {
+    @include hc-button-sm();
+  }
+  &.hc-md, &.MuiButton-sizeMedium {
+    @include hc-button-md();
+  }
+  &.hc-lg, &.MuiButton-sizeLarge {
+    @include hc-button-lg();
+  }
+
+  &.hc-primary, &.MuiButton-containedPrimary {
+      @include hc-button-primary();
+  }
+  &.hc-primary-alt, &.MuiButton-containedPrimary-alt {
+      @include hc-button-primary-alt();
+  }
+  &.hc-destructive, &.hc-error, &.MuiButton-containedError, &.MuiButton-containedDestructive {
+      @include hc-button-destructive();
+  }
+  &.hc-neutral, &.MuiButton-containedNeutral {
+      @include hc-button-neutral();
+  }
+  &.hc-secondary, &.hc-default &.MuiButton-containedDefault, &.MuiButton-containedSecondary {
+    @include hc-color-button($gray-100, 5%);
+    color: $gray-600;
+    border: 1.5px solid $gray-300;
+    &:hover {
+        color: $offblack;
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
+    }
+    &[disabled]:hover {
+        color: $gray-600;
+    }
+  }
+  &.hc-minimal, &.MuiButton-containedMinimal {
+      @include hc-button-minimal();
+  }
+  &.MuiButton-containedLink,
+  &.MuiButton-containedLink-inline,
+  &.hc-link,
+  &.hc-link-inline {
+      @include hc-button-link();
+  }
+  &.MuiButton-containedLink-inline,
+  &.hc-link-inline {
+      @include hc-button-link-inline();
+  }
+  &.hc-blue, &.MuiButton-containedBlue, &.MuiButton-containedInfo {
+      @include hc-button-custom( $blue );
+  }
+  &.hc-green, &.MuiButton-containedGreen, &.hc-success, &.MuiButton-containedSuccess {
+      @include hc-button-custom( $green );
+  }
+  &.hc-purple, &.MuiButton-containedPurple {
+      @include hc-button-custom( $purple );
+  }
+  &.hc-red, &.MuiButton-containedRed {
+      @include hc-button-custom( $red );
+  }
+  &.hc-orange, &.hc-warning, &.MuiButton-containedWarning {
+      @include hc-button-custom( $orange );
+  }
+  &.hc-ruby-red, &.MuiButton-containedRuby-red {
+      @include hc-button-custom( $ruby-red );
+  }
+  &.hc-deep-red, &.MuiButton-containedDeep-red {
+      @include hc-button-custom( $deep-red );
+  }
+  &.hc-red-orange, &.MuiButton-containedRed-orange {
+      @include hc-button-custom( $red-orange );
+  }
+  &.hc-magenta, &.MuiButton-containedMagenta {
+      @include hc-button-custom( $magenta );
+  }
+  &.hc-pink, &.MuiButton-containedPink {
+      @include hc-button-custom( $pink );
+  }
+  &.hc-light-pink, &.MuiButton-containedLight-pink {
+      @include hc-button-custom( $light-pink );
+  }
+  &.hc-azure, &.MuiButton-containedAzure {
+      @include hc-button-custom( $azure );
+  }
+  &.hc-teal, &.MuiButton-containedTeal {
+      @include hc-button-custom( $teal );
+  }
+  &.hc-dark-green, &.MuiButton-containedDark-green {
+      @include hc-button-custom( $dark-green );
+  }
+  &.hc-dark-green, &.MuiButton-containedLight-green {
+      @include hc-button-custom( $light-green );
+  }
+  &.hc-brown, &.MuiButton-containedBrown {
+      @include hc-button-custom( $brown );
+  }
+  &.hc-purple-gray, &.MuiButton-containedPurple-gray {
+      @include hc-button-custom( $purple-gray );
+  }
+  &.hc-yellow, &.MuiButton-containedYellow {
+      @include hc-button-custom( $yellow );
+  }
+  &.hc-yellow-orange, &.MuiButton-containedYellow-orange {
+      @include hc-button-custom( $yellow-orange );
+  }
+  &.hc-tan, &.MuiButton-containedTan {
+      @include hc-button-custom( $tan );
+  }
+}

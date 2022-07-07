@@ -9,6 +9,12 @@ $hc-icons-font-path: '~@healthcatalyst/cashmere/hcicons';
 
 @import "~@healthcatalyst/cashmere/scss/cashmere";
 
+// MUI Style Overrides
+@import "./Button.scss";
+@import "./IconButton.scss";
+@import "./Icon.scss";
+@import "./Navbar.scss";
+
 :export {
     font-family: $default-font-family;
     font-size: $default-font-size;

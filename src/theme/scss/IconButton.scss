@@ -1,0 +1,110 @@
+@import "~@healthcatalyst/cashmere/scss/cashmere";
+
+.hc-icon-button, .MuiIconButton-root {
+  @include hc-icon-button();
+  &.hc-sm, &.MuiIconButton-sizeSmall {
+    height: 26px;
+    width: 26px;
+  }
+  &.hc-md, &.MuiIconButton-sizeMedium {
+    height: 35px;
+    width: 35px;
+  }
+  &.hc-lg, &.MuiIconButton-sizeLarge {
+    height: 40px;
+    width: 40px;
+  }
+  &:disabled {
+    opacity: .35;
+  }
+
+  &.hc-primary, &.MuiIconButton-colorPrimary {
+    color: $primary-action;
+  }
+  &.hc-primary-alt, &.MuiIconButton-colorPrimary-alt {
+    color: $primary-alt-action;
+  }
+  &.hc-destructive, &.hc-error, &.MuiIconButton-colorError {
+    color: $red;
+  }
+  &.hc-secondary, &.MuiIconButton-colorSecondary {
+    color: $gray-600;
+  }
+  &.MuiIconButton-colorDefault,
+  &.hc-neutral,
+  &.hc-minimal,
+  &.hc-default {
+    color: inherit;
+  }
+  &.hc-link,
+  &.hc-link-inline,
+  &.MuiIconButton-colorInfo,
+  &.hc-blue {
+      color: $blue;
+  }
+  &.hc-link,
+  &.hc-link-inline {
+      @include hc-button-link();
+  }
+  &.hc-link-inline {
+      @include hc-button-link-inline();
+  }
+  &.hc-green, &.MuiIconButton-colorGreen, 
+  &.hc-success, &.MuiIconButton-colorSuccess {
+      color: $green;
+  }
+  &.hc-purple, &.MuiIconButton-colorPurple {
+      color: $purple;
+  }
+  &.hc-red, &.MuiIconButton-colorRed {
+      color: $red;
+  }
+  &.hc-orange, &.hc-warning, &.MuiIconButton-colorWarning {
+      color: $orange;
+  }
+  &.hc-ruby-red, &.MuiIconButton-colorRuby-red {
+      color: $ruby-red;
+  }
+  &.hc-deep-red, &.MuiIconButton-colorDeep-red {
+      color: $deep-red;
+  }
+  &.hc-red-orange, &.MuiIconButton-colorRed-orange {
+      color: $red-orange;
+  }
+  &.hc-magenta, &.MuiIconButton-colorMagenta {
+      color: $magenta;
+  }
+  &.hc-pink, &.MuiIconButton-colorPink {
+      color: $pink;
+  }
+  &.hc-light-pink, &.MuiIconButton-colorLight-pink {
+      color: $light-pink;
+  }
+  &.hc-azure, &.MuiIconButton-colorAzure {
+      color: $azure;
+  }
+  &.hc-teal, &.MuiIconButton-colorTeal {
+      color: $teal;
+  }
+  &.hc-dark-green, &.MuiIconButton-colorDark-green {
+      color: $dark-green;
+  }
+  &.hc-dark-green, &.MuiIconButton-colorLight-green {
+      color: $light-green;
+  }
+  &.hc-brown, &.MuiIconButton-colorBrown {
+      color: $brown;
+  }
+  &.hc-purple-gray, &.MuiIconButton-colorPurple-gray {
+      color: $purple-gray;
+  }
+  &.hc-yellow, &.MuiIconButton-colorYellow {
+      color: $yellow;
+  }
+  &.hc-yellow-orange, &.MuiIconButton-colorYellowOrange {
+      color: $yellow-orange;
+  }
+  &.hc-tan, &.MuiIconButton-colorTan {
+      color: $tan;
+  }
+}

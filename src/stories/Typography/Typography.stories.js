@@ -1,6 +1,8 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
+import { sizeControl, colorControl, colorNames, extraColorNames } from '../config';
 
 export default {
   title: 'Typography/Typography',
@@ -81,4 +83,22 @@ export const Variants = (args) => (
 );
 Variants.args = {
   ...defaultArgs,
+};
+
+export const Colors = (args) => (
+  <>
+    <Typography variant='h4'>Colors</Typography>
+    <Stack direction="row" spacing={.5} alignItems="center">
+      {['primary', 'secondary', 'error', 'default', 'inherit'].map(color => {
+        return <Typography key={color} {...{...args, color}} >{color}</Typography>
+      })}
+    </Stack>
+  </>
+);
+Colors.args = {
+  ...defaultArgs,
+  size: "small"
+};
+Colors.parameters = {
+  layout: 'padded',
 };

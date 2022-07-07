@@ -1,0 +1,106 @@
+.hc-icon, .MuiIcon-root {
+    height: auto;
+    width: auto;
+    &.hc-icon-inherit, &.MuiIcon-fontSizeInherit {
+        font-size: inherit;
+    }
+    &.hc-icon-sm, &.MuiIcon-fontSizeSmall {
+        font-size: 14px;
+    }
+    &.hc-icon-md, &.MuiIcon-fontSizeMedium {
+        font-size: 20px;
+    }
+    &.hc-icon-lg, &.MuiIcon-fontSizeLarge {
+        font-size: 36px;
+    }
+
+    &.hc-primary, &.MuiIcon-colorPrimary {
+        color: $primary-action;
+      }
+      &.hc-primary-alt, &.MuiIcon-colorPrimary-alt {
+        color: $primary-alt-action;
+      }
+      &.hc-destructive, &.hc-error, &.MuiIcon-colorError {
+        color: $red;
+      }
+      &.hc-secondary, &.MuiIcon-colorSecondary {
+        color: $gray-600;
+      }
+      &.MuiIcon-colorDefault,
+      &.hc-neutral,
+      &.hc-minimal,
+      &.hc-default {
+        color: inherit;
+      }
+      &.hc-link,
+      &.hc-link-inline,
+      &.MuiIcon-colorInfo,
+      &.hc-blue {
+          color: $blue;
+      }
+      &.hc-link,
+      &.hc-link-inline {
+          @include hc-button-link();
+      }
+      &.hc-link-inline {
+          @include hc-button-link-inline();
+      }
+      &.hc-green, &.MuiIcon-colorGreen, 
+      &.hc-success, &.MuiIcon-colorSuccess {
+          color: $green;
+      }
+      &.hc-purple, &.MuiIcon-colorPurple {
+          color: $purple;
+      }
+      &.hc-red, &.MuiIcon-colorRed {
+          color: $red;
+      }
+      &.hc-orange, &.hc-warning, &.MuiIcon-colorWarning {
+          color: $orange;
+      }
+      &.hc-ruby-red, &.MuiIcon-colorRuby-red {
+          color: $ruby-red;
+      }
+      &.hc-deep-red, &.MuiIcon-colorDeep-red {
+          color: $deep-red;
+      }
+      &.hc-red-orange, &.MuiIcon-colorRed-orange {
+          color: $red-orange;
+      }
+      &.hc-magenta, &.MuiIcon-colorMagenta {
+          color: $magenta;
+      }
+      &.hc-pink, &.MuiIcon-colorPink {
+          color: $pink;
+      }
+      &.hc-light-pink, &.MuiIcon-colorLight-pink {
+          color: $light-pink;
+      }
+      &.hc-azure, &.MuiIcon-colorAzure {
+          color: $azure;
+      }
+      &.hc-teal, &.MuiIcon-colorTeal {
+          color: $teal;
+      }
+      &.hc-dark-green, &.MuiIcon-colorDark-green {
+          color: $dark-green;
+      }
+      &.hc-dark-green, &.MuiIcon-colorLight-green {
+          color: $light-green;
+      }
+      &.hc-brown, &.MuiIcon-colorBrown {
+          color: $brown;
+      }
+      &.hc-purple-gray, &.MuiIcon-colorPurple-gray {
+          color: $purple-gray;
+      }
+      &.hc-yellow, &.MuiIcon-colorYellow {
+          color: $yellow;
+      }
+      &.hc-yellow-orange, &.MuiIcon-colorYellowOrange {
+          color: $yellow-orange;
+      }
+      &.hc-tan, &.MuiIcon-colorTan {
+          color: $tan;
+      }
+}

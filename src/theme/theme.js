@@ -1,7 +1,8 @@
 import { colors } from '@mui/material';
-import { createTheme, darken, lighten } from '@mui/material/styles';
-import cashmere from './cashmere.scss';
-import cashmereColors from './colors.scss';
+import { red } from '@mui/material/colors';
+import { createTheme, darken, lighten, alpha } from '@mui/material/styles';
+import cashmere from './scss/cashmere.scss';
+import cashmereColors from './scss/colors.scss';
 
 const themePalette = (colors) => {
     const palette = {};
@@ -15,7 +16,7 @@ const themePalette = (colors) => {
                 main: colors[key],
                 light: lighten(colors[key], 0.2),
                 dark: darken(colors[key], 0.2),
-                contrastText: colors['white']
+                contrastText: key !== 'white' ? colors['white'] : 'black'
             }
         }
         
@@ -28,40 +29,45 @@ const themeTypography = (theme = {}) => ({
     fontSize: parseInt(cashmere['font-size'], 10),
     color: "inherit",
     h6: {
-        fontSize: 14,
-        fontWeight: 600,
-        lineHeight: 1.5,
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     h5: {
-        fontSize: 14,
-        fontWeight: 600,
-        lineHeight: 1.5,
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     h4: {
-        fontSize: 14,
-        fontWeight: 600,
-        lineHeight: 1.5,
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     h3: {
-        fontSize: 18,
-        fontWeight: 600,
-        lineHeight: 1.5,
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     h2: {
-        fontSize: 22,
-        fontWeight: 600,
-        lineHeight: 1.5,
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     h1: {
-        fontSize: 36,
-        fontWeight: 300,
-        lineHeight: 1.2,
-        textRendering: 'optimizeLegibility',
+        fontSize: undefined,
+        fontWeight: undefined,
+        lineHeight: undefined,
+        textRendering: undefined,
         color: "inherit"
     },
     subtitle1: {
@@ -123,13 +129,38 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cas
             MuiButton: {
                 defaultProps: {
                     variant: "contained",
-                    className: "hc-button",
                     disableElevation: true,
                     disableRipple: true,
                     disableFocusRipple: true
+                }
+            },
+            MuiIconButton: {
+                defaultProps: {
+                    disableRipple: true,
+                    disableFocusRipple: true
+                }
+            },
+            MuiTextField: {
+                defaultProps: {
+                    variant: "outlined",
+                    className: "hc-input",
+                    size: "small",
                 },
                 styleOverrides: {
                     root: {
+                        "& .MuiOutlinedInput-input.Mui-disabled": {
+                            backgroundColor: "#88888818"
+                        },
+                        "& .MuiOutlinedInput-root": {
+                            borderRadius: 0,
+                            "& .MuiOutlinedInput-notchedOutline": {
+                                borderWidth: "1px !important",
+                            },
+                            '& input:focus': {
+                                borderColor: colors.primary,
+                                boxShadow: `${alpha(colors.primary, 0.25)} 0 0 0 0.2rem`,
+                            },
+                        }
                     },
                 },
             },
@@ -139,11 +170,11 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cas
 
 
 const lightTheme = createCashmereTheme();
-const darkTheme = createCashmereTheme('Dark', 'dark', {...cashmereColors, background: {default: "#333", paper: "#000"}, text: "#fff"});
+const darkTheme = createCashmereTheme('Dark', 'dark', {...cashmereColors, background: {default: "#333", paper: "#121212"}, text: "#fff"});
 
 export default lightTheme;
 
-export const themes = {
+export const themes = [
     lightTheme,
     darkTheme
-};
+];

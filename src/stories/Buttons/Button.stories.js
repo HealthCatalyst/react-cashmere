@@ -1,29 +1,32 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import MuiButton from '@mui/material/Button';
-import Button, { buttonColors } from '../components/Button/Button';
-import IconButton from '../components/IconButton/IconButton';
-import Icon from '../components/Icon/Icon';
+import Button from '@mui/material/Button';
+import Icon from '../../components/Icon/Icon';
+import { sizeControl, colorControl, colorNames, extraColorNames } from '../config';
 
 export default {
-  title: 'Buttons & Indicators/Buttons',
+  title: 'Buttons & Indicators/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
+    size: sizeControl(),
+    color: colorControl()
   },
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Button component with [Cashemere Styling](https://cashmere.healthcatalyst.net/web/components/button/examples) backed by [MaterialUI Component API](https://mui.com/material-ui/react-button/)',
+        component: `Button component with [Cashemere Styling](https://cashmere.healthcatalyst.net/web/components/button/examples) backed by [MaterialUI Component API](https://mui.com/api/button/) 
+        \n\n \`import Button from '@mui/core/Button';\`
+        `,
       },
     },
   },
 };
 
 const defaultArgs = {
-  color: "primary-action",
+  color: "primary",
   size: 'medium',
   children: 'Button',
   disabled: false
@@ -51,18 +54,18 @@ export const Colors = (args) => (
   <>
     <Typography variant='h4'>HealthCatalyst Colors</Typography>
     <Stack direction="row" spacing={.5} alignItems="center">
-      {buttonColors.slice(0, 8).map(color => {
+      {colorNames.map(color => {
         return <Button key={color} {...{...args, color}} >{color}</Button>
       })}
     </Stack>
-    <Typography variant='h4' mt={2}>Material UI Colors</Typography>
+    <Typography variant='h4' mt={2}>Extra Colors</Typography>
     <Stack direction="row" spacing={.5} alignItems="center">
-      {['primary','secondary','success','warning','error'].map(color => {
+      {['minimal', 'link', 'link-inline'].map(color => {
         return <Button key={color} {...{...args, color}} >{color}</Button>
       })}
     </Stack>
     <Typography variant='h4' mt={2}>Misc Colors</Typography>
-      {buttonColors.slice(-19).map(color => {
+      {extraColorNames.map(color => {
         return <Button key={color} {...{...args, color}} sx={{margin: .5, marginLeft: 0}}>{color}</Button>
       })}
   </>
@@ -81,7 +84,7 @@ export const IconButtons = (args) => (
     <Stack spacing={1} alignItems="center">
       <Stack direction="row" spacing={1} alignItems="center">
         <Button 
-          color="primary-action" 
+          color="primary" 
           size={args.size}
           disabled={args.disabled}
         >
@@ -90,7 +93,7 @@ export const IconButtons = (args) => (
           <Icon icon="fa-chevron-down" />
         </Button>
         <Button 
-          color="primary-alt-action"
+          color="primary-alt"
           size={args.size}
           disabled={args.disabled}
         >
@@ -105,8 +108,6 @@ export const IconButtons = (args) => (
             <Icon icon={args.icon} />
             &nbsp;Trash
         </Button>
-
-        <IconButton {...args} />
       </Stack>
     </Stack>
   </>
@@ -115,18 +116,5 @@ IconButtons.args = {
   disabled: false,
   size: "medium",
   icon: "fa-trash",
-  color: "default"
-};
-
-
-
-export const MaterialButton = (args) => (
-  <>
-    <MuiButton {...args}>Button</MuiButton>
-  </>
-);
-MaterialButton.args = {
-  disabled: false,
-  size: "medium",
-  color: "primary"
+  color: "secondary"
 };

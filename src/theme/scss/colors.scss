@@ -58,10 +58,18 @@
 
     // Material UI Colors
     primary: $primary-brand;
+    primary-alt: $primary-alt-action;
     secondary: $gray-500;
     success: $green;
     warning: $orange;
     error: $error;
     info: $blue;
     default: $gray-500;
+
+    // button colors
+    link: $primary-brand;
+    link-inline: $primary-brand;
+    minimal: $gray-500;
+    neutral: $neutral-action;
+    destructive: $destructive-action;
 }
