@@ -44,10 +44,6 @@ Icon.propTypes = {
      * How large should the icon be?
      */
     size: PropTypes.oneOf(['small', 'medium', 'large', 'inherit']),
-    /**
-     * What color to use
-     */
-    color: PropTypes.oneOf(['primary', 'secondary', 'success', 'warning', 'error', 'info', 'default', 'inherit']),
 };
   
 Icon.defaultProps = {

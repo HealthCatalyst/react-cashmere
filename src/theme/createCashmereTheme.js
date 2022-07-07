@@ -1,7 +1,7 @@
 import { colors } from '@mui/material';
 import { red } from '@mui/material/colors';
 import { createTheme, darken, lighten, alpha } from '@mui/material/styles';
-import cashmere from './scss/cashmere.scss';
+import cashmereVars from './scss/cashmere.scss';
 import cashmereColors from './scss/colors.scss';
 
 const themePalette = (colors) => {
@@ -25,8 +25,8 @@ const themePalette = (colors) => {
 };
 
 const themeTypography = (theme = {}) => ({
-    fontFamily: cashmere['font-family'],
-    fontSize: parseInt(cashmere['font-size'], 10),
+    fontFamily: cashmereVars['font-family'],
+    fontSize: parseInt(cashmereVars['font-size'], 10),
     color: "inherit",
     h6: {
         fontSize: undefined,
@@ -96,12 +96,13 @@ const themeTypography = (theme = {}) => ({
     },
 });
 
-export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cashmereColors) => {
+export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrides = {}) => {
+    const palette = themePalette({...cashmereColors, ...colorOverrides});
     return createTheme({
         name: name,
         palette: {
             mode: mode,
-            ...themePalette(colors),
+            ...palette,
         },
         typography: themeTypography(),
         shape: {
@@ -157,8 +158,8 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cas
                                 borderWidth: "1px !important",
                             },
                             '& input:focus': {
-                                borderColor: colors.primary,
-                                boxShadow: `${alpha(colors.primary, 0.25)} 0 0 0 0.2rem`,
+                                borderColor: palette.primary.main,
+                                boxShadow: `${alpha(palette.primary.main, 0.25)} 0 0 0 0.2rem`,
                             },
                         }
                     },
@@ -167,14 +168,4 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colors = cas
         },
     });
 };
-
-
-const lightTheme = createCashmereTheme();
-const darkTheme = createCashmereTheme('Dark', 'dark', {...cashmereColors, background: {default: "#333", paper: "#121212"}, text: "#fff"});
-
-export default lightTheme;
-
-export const themes = [
-    lightTheme,
-    darkTheme
-];
+export default createCashmereTheme;

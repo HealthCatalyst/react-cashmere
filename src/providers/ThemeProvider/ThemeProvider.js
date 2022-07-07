@@ -1,8 +1,14 @@
 import * as React from 'react';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { themes as cashmereThemes } from '../../theme/theme';
+import createCashmereTheme from '../../theme/createCashmereTheme';
 
-export const themes = cashmereThemes;
+const lightTheme = createCashmereTheme();
+const darkTheme = createCashmereTheme('Dark', 'dark', {background: {default: "#333", paper: "#121212"}, text: "#fff"});
+
+export const themes = [
+  lightTheme,
+  darkTheme
+];
 
 export default function GlobalCssPriority({theme = themes[0], children}) {
   return (
