@@ -31,7 +31,6 @@ Now you can install React Cashmere
 npm install --save @healthcatalyst/react-cashmere
 ```
 
-
 <div className="subheading">Hello World</div>
 
 Now you are ready to wrap your app with the ThemeProvider higher order component. 
@@ -40,12 +39,12 @@ The ThemeProvider will take care of all the cashmere styling so you can use most
 ```jsx
 /* src/index.js */
 import React from "react";
-import { ThemeProvider } from "@healthcatalyst/react-cashmere";
+import { ThemeProvider, themes } from "@healthcatalyst/react-cashmere";
 import App from "./App";
 
 export default (props) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={themes[0]}>
       <App />
     </ThemeProvider>
   );
@@ -56,14 +55,39 @@ export default (props) => {
 /* src/App.js */
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { Button } from "@healthcatalyst/react-cashmere";
+import Button from '@mui/material/Button';
+import { Navbar } from "@healthcatalyst/react-cashmere";
 
 export default (props) => {
   return (
     <>
+      <Navbar
+        appIcon="logo.svg"
+        brandIcon="brand.svg"
+        cobrandIcon="cobrand.png"
+        homeUri="http://example.com/"
+        linkContent={[
+            <a key="home" class="navbar-link force-active" title="Home">Home</a>,
+            <a key="Reports" class="navbar-link" title="Home">Reports</a>
+        ]}
+        rightContent={[
+            <span key="seperator" class="hc-navbar-vertical-separator" />,
+            <div key="user" class="hc-navbar-username ng-star-inserted" tabIndex="0">
+              <span>
+                <span>Christine K.</span>
+                <br />
+                <span class="hc-navbar-username-subtext">HealthCatalyst</span>
+              </span>
+              &nbsp;<Icon aria-hidden="true" icon="fa-angle-down"/>
+            </div>
+
+        ]}
+      />
       <Typography variant="h1">Hello World</Typography>
       <Typography variant="subheading1">This is a beautiful app using Material UI and Cashmere</Typography>
-      <Button>Button</Button>
+      <Button color="primary">Button</Button>
+      <Button color="primary-alt">Button</Button>
+      <Button color="secondary">Button</Button>
     </>
   );
 }

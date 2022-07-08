@@ -6,7 +6,7 @@ First you will need an existing react app or create a new project using [create 
 npx create-react-app my-app
 ```
 
-Install the peer dependencies (You will need React `17.x.x|18.x.x` and Material UI `5.x.x`)
+Install the peer dependencies (You will need React `17.x.x|18.x.x` and Material UI `5.8.x`)
 ```shell
 npm install --save @emotion/styled @mui/lab @mui/material sass
 ```
@@ -41,7 +41,8 @@ export default (props) => {
 /* src/App.js */
 import React from "react";
 import Typography from '@mui/material/Typography';
-import { Navbar, Button } from "@healthcatalyst/react-cashmere";
+import Button from '@mui/material/Button';
+import { Navbar } from "@healthcatalyst/react-cashmere";
 
 export default (props) => {
   return (
@@ -52,26 +53,26 @@ export default (props) => {
         cobrandIcon="cobrand.png"
         homeUri="http://example.com/"
         linkContent={[
-          <div className="hc-navbar-link">
-            <a class="navbar-link force-active" title="Home">Home</a>
-            <a class="navbar-link" title="Home">Reports</a>
-          </div>
+            <a key="home" class="navbar-link force-active" title="Home">Home</a>,
+            <a key="Reports" class="navbar-link" title="Home">Reports</a>
         ]}
         rightContent={[
-          <div class="hc-navbar-right-container">
-            <span class="hc-navbar-vertical-separator" />
-            <div class="hc-navbar-username ng-star-inserted" tabIndex="0">
-            <span>
-            <span>Christine K.</span>
-            <br />
-            <span class="hc-navbar-username-subtext">HealthCatalyst</span>
-            </span> <Icon aria-hidden="true" icon="fa-angle-down"/></div></div>
+            <span key="seperator" class="hc-navbar-vertical-separator" />,
+            <div key="user" class="hc-navbar-username ng-star-inserted" tabIndex="0">
+              <span>
+                <span>Christine K.</span>
+                <br />
+                <span class="hc-navbar-username-subtext">HealthCatalyst</span>
+              </span>
+              &nbsp;<Icon aria-hidden="true" icon="fa-angle-down"/>
+            </div>
+
         ]}
       />
       <Typography variant="h1">Hello World</Typography>
       <Typography variant="subheading1">This is a beautiful app using Material UI and Cashmere</Typography>
-      <Button color="primary-action">Button</Button>
-      <Button color="primary-alt-action">Button</Button>
+      <Button color="primary">Button</Button>
+      <Button color="primary-alt">Button</Button>
       <Button color="secondary">Button</Button>
     </>
   );
@@ -92,11 +93,21 @@ You can navigate to the component you want to modify and the page will reload wh
 ```
 cd react-cashmere
 npm install
+```
+******************************************
+Until the next version of cashmere is released you will need to tweak 
+`node_modules/@healthcatalyst/cashmere/package.json` to export more files by adding
+to the `exports` list `"./*": "./*",`.
+******************************************
+
+```
 npm start
 ```
 
-If you are creating a new component you will need to add a new story in `./src/components/<Component Name>`\
-You will also need to create a new story to document your your component in `./src/stories/<Component Name>.story.js`
+If you are creating a new component you will need to add a new story in \
+`./src/components/<Component Name>`\
+You will also need to create a new story to document your your component in \
+`./src/stories/<Component Name>.story.js`
 
 
 ## Run Tests
