@@ -25,12 +25,13 @@ The ThemeProvider will take care of all the cashmere styling and apply it so mos
 ```jsx
 /* src/index.js */
 import React from "react";
-import { ThemeProvider } from "@healthcatalyst/react-cashmere";
+import { ThemeProvider, themes } from "@healthcatalyst/react-cashmere";
 import App from "./App";
+const [lightTheme, darkTheme] = themes;
 
 export default (props) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={lightTheme}>
       <App />
     </ThemeProvider>
   );
@@ -54,7 +55,7 @@ export default (props) => {
         homeUri="http://example.com/"
         linkContent={[
             <a key="home" class="navbar-link force-active" title="Home">Home</a>,
-            <a key="Reports" class="navbar-link" title="Home">Reports</a>
+            <a key="reports" class="navbar-link" title="Home">Reports</a>
         ]}
         rightContent={[
             <span key="seperator" class="hc-navbar-vertical-separator" />,

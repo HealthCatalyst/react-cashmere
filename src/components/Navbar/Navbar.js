@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 
 const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, cobrandColor, linkContent, rightContent, ...props}) => {
-    const linkContentMenu = linkContent.slice(0,1);
-    const linkContentMenuMore = linkContent.slice(1);
+    // TODO: add mobile menu and "more" rollup button
     return (
         <>
             <div className={`hc-navbar ${position === 'fixed' ? 'fixed-top' : ''}`}>
@@ -20,8 +19,7 @@ const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, c
                         </a>}
                     </div>
                     <div className="hc-navbar-link-container">
-                        {linkContentMenu}
-                        {linkContentMenuMore}
+                        {linkContent}
                     </div>
                     {children}
                     <div className="hc-navbar-right-container">

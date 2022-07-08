@@ -33,7 +33,7 @@ const defaultArgs = {
       </a>
   ],
   rightContent: [
-      <Icon key="?" icon="fa-question-circle-o" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" size="medium"/>,
+      <Icon key="?" icon="fa-question-circle-o" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" />,
       <span key="seperator" className="hc-navbar-vertical-separator"></span>,
       <div key="user" tabIndex="0" className="hc-navbar-username ng-star-inserted">
         <span>
@@ -63,7 +63,7 @@ Cobrand.args = {
   linkContent: [
   ],
   rightContent: [
-    <Icon key="search" icon="fa-search" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" size="medium"/>,
+    <Icon key="search" icon="fa-search" className="hc-navbar-icon" tabIndex="0" aria-hidden="true" />,
     <span key="seperator" className="hc-navbar-vertical-separator"></span>,
     <div key="user" tabIndex="0" className="hc-navbar-username">
       <span className="hc-text-ellipsis">

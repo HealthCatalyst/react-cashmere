@@ -42,9 +42,11 @@ import React from "react";
 import { ThemeProvider, themes } from "@healthcatalyst/react-cashmere";
 import App from "./App";
 
+const [lightTheme, darkTheme] = themes;
+
 export default (props) => {
   return (
-    <ThemeProvider theme={themes[0]}>
+    <ThemeProvider theme={lightTheme}>
       <App />
     </ThemeProvider>
   );
@@ -68,7 +70,7 @@ export default (props) => {
         homeUri="http://example.com/"
         linkContent={[
             <a key="home" class="navbar-link force-active" title="Home">Home</a>,
-            <a key="Reports" class="navbar-link" title="Home">Reports</a>
+            <a key="reports" class="navbar-link" title="Home">Reports</a>
         ]}
         rightContent={[
             <span key="seperator" class="hc-navbar-vertical-separator" />,

@@ -1,17 +1,15 @@
 .hc-icon, .MuiIcon-root {
-    height: auto;
-    width: auto;
     &.hc-icon-inherit, &.MuiIcon-fontSizeInherit {
         font-size: inherit;
     }
     &.hc-icon-sm, &.MuiIcon-fontSizeSmall {
-        font-size: 14px;
+        @include hc-icon-height(14px);
     }
     &.hc-icon-md, &.MuiIcon-fontSizeMedium {
-        font-size: 20px;
+        @include hc-icon-height($default-icon-size);
     }
     &.hc-icon-lg, &.MuiIcon-fontSizeLarge {
-        font-size: 36px;
+        @include hc-icon-height(36px);
     }
 
     &.hc-primary, &.MuiIcon-colorPrimary {

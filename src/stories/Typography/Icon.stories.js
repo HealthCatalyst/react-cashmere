@@ -8,7 +8,7 @@ export default {
   title: 'Typography/Icons',
   component: Icon,
   argTypes: {
-    size: sizeControl(),
+    size: sizeControl({}, ['default','inherit']),
     color: colorControl({defaultValue: 'inherit'},['inherit'])
   },
   parameters: {
@@ -39,7 +39,9 @@ export const Sizing = (args) => (
     <Icon {...args} size="small" /> Small Icon<br/><br/>
     <Icon {...args} size="medium" /> Medium Icon<br/><br/>
     <Icon {...args} size="large" /> Large Icon<br/><br/>
-    <span style={{fontSize: 12, color: "grey"}}><Icon {...args} size="inherit" /> Inherit Icon</span><br/>
+    <span style={{fontSize: 12, color: "grey"}}>
+      <Icon {...args} size="inherit" /> Inherit Icon<br/>
+    </span>
   </>
 );
 Sizing.args = {

@@ -49,6 +49,7 @@
 
     .hc-navbar-icon {
         @include hc-navbar-icon();
+        font-size: $default-icon-size;
     }
 
     .hc-navbar-icon-home-uri {
