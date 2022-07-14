@@ -10,12 +10,36 @@ export const themes = [
   darkTheme
 ];
 
-export default function GlobalCssPriority({theme = themes[0], children}) {
-  return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        {children}
-      </ThemeProvider>
-    </StyledEngineProvider>
+const ThemeContext = React.createContext();
+
+export default function GlobalCssPriority({theme = themes[0], onChange, children}) {
+  const [state, setState] = React.useState(theme);
+  React.useEffect(() => {
+    setState(theme);
+  }, [theme]);
+  const getThemeProviderValue = React.useCallback(
+    () => [
+      state, 
+      (nextState) => {
+        setState(nextState); 
+        onChange && onChange(nextState)
+      }
+    ], 
+    [state, setState, onChange]
   );
+  return (
+    <ThemeContext.Provider value={getThemeProviderValue()}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={state}>
+            {children}
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </ThemeContext.Provider>
+  );
+}
+
+
+
+export const useTheme = () => {
+  return React.useContext(ThemeContext);
 }

@@ -1,5 +1,3 @@
-import { colors } from '@mui/material';
-import { red } from '@mui/material/colors';
 import { createTheme, darken, lighten, alpha } from '@mui/material/styles';
 import cashmereVars from './scss/cashmere.scss';
 import cashmereColors from './scss/colors.scss';
@@ -16,7 +14,7 @@ const themePalette = (colors) => {
                 main: colors[key],
                 light: lighten(colors[key], 0.2),
                 dark: darken(colors[key], 0.2),
-                contrastText: key !== 'white' ? colors['white'] : 'black'
+                contrastText: key !== 'white' ? colors['white'] : colors['black']
             }
         }
         
