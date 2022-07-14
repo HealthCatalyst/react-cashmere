@@ -1,4 +1,3 @@
-@import "~@healthcatalyst/cashmere/scss/cashmere";
 .hc-button, .MuiButton-root {
   @include hc-button();
   &.hc-sm, &.MuiButton-sizeSmall {
