@@ -94,14 +94,6 @@ You can navigate to the component you want to modify and the page will reload wh
 ```
 cd react-cashmere
 npm install
-```
-******************************************
-Until the next version of cashmere is released you will need to tweak 
-`node_modules/@healthcatalyst/cashmere/package.json` to export more files by adding
-to the `exports` list `"./*": "./*",`.
-******************************************
-
-```
 npm start
 ```
 
