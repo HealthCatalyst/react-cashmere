@@ -27,11 +27,13 @@ export default function GlobalCssPriority({theme = themes[0], onChange, children
     ], 
     [state, setState, onChange]
   );
+  document.body.style.backgroundColor = state.palette.background.default;
+  document.body.style.color = state.palette.text.primary;
   return (
     <ThemeContext.Provider value={getThemeProviderValue()}>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={state}>
-            {children}
+          {children}
         </ThemeProvider>
       </StyledEngineProvider>
     </ThemeContext.Provider>
