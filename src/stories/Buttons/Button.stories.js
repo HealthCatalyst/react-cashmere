@@ -65,9 +65,9 @@ export const Colors = (args) => (
       })}
     </Stack>
     <Typography variant='h4' mt={2}>Misc Colors</Typography>
-      {extraColorNames.map(color => {
-        return <Button key={color} {...{...args, color}} sx={{margin: .5, marginLeft: 0}}>{color}</Button>
-      })}
+    {extraColorNames.map(color => {
+      return <Button key={color} {...{...args, color}} sx={{margin: .5, marginLeft: 0}}>{color}</Button>
+    })}
   </>
 );
 Colors.args = {

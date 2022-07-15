@@ -1,5 +1,24 @@
 @import "@healthcatalyst/cashmere/scss/_colors";
 :export {
+    // Material UI Colors
+    primary: $primary-brand;
+    secondary: $gray-500;
+    success: $green;
+    warning: $orange;
+    error: $destructive-action;
+    info: $blue;
+    default: $gray-500;
+
+    // General Color Vars
+    primary-brand: $primary-brand;
+    primary-action: $primary-action;
+    primary-alt: $primary-alt-action;
+    primary-alt-action: $primary-alt-action;
+    destructive-action: $destructive-action;
+    neutral-action: $neutral-action;
+    text: $text;
+    block-text-background: $block-text-background;
+
     // Primary Palette
     blue: $blue;
     green: $green;
@@ -47,24 +66,8 @@
     yellow: $yellow;
     yellow-orange: $yellow-orange;
 
-    // General Color Vars
-    primary-brand: $primary-brand;
-    primary-action: $primary-action;
-    primary-alt-action: $primary-alt-action;
-    destructive-action: $destructive-action;
-    neutral-action: $neutral-action;
-    text: $text;
-    block-text-background: $block-text-background;
 
-    // Material UI Colors
-    primary: $primary-brand;
-    primary-alt: $primary-alt-action;
-    secondary: $gray-500;
-    success: $green;
-    warning: $orange;
-    error: $error;
-    info: $blue;
-    default: $gray-500;
+
 
     // button colors
     link: $primary-brand;

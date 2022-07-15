@@ -47,34 +47,54 @@ Advanced.args = {
   ...defaultArgs,
 };
 
+
+const ColorCard = ({name, palette}) => {
+  return (
+    <Paper>
+      <Box borderRadius={1} overflow="hidden">
+        <Grid container>
+          <Grid item xs={6}>
+            <Box p={1} color={palette.contrastText} height={100} style={{background: palette.main}} >main</Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box p={1} color={palette.contrastText} height={50}  style={{background: palette.light}} >light</Box>
+            <Box p={1} color={palette.contrastText} height={50} style={{background: palette.dark}} >dark</Box>
+          </Grid>
+        </Grid>
+        <Box p={1}>
+          <strong>{name}</strong><br />
+          <Typography variant="caption" color="secondary">{palette.main}</Typography>
+        </Box>
+      </Box>
+    </Paper>
+  );
+}
+
 export const Colors = (args) => {
   const [theme] = useTheme();
-  const colors = Object.keys(theme.palette).filter(key => theme.palette[key].main);
+  const materialColors = ['primary', 'secondary', 'success', 'warning', 'error', 'info', 'default'];
+  const miscColors = Object.keys(theme.palette).filter(key => theme.palette[key].main).filter(c => !materialColors.includes(c));
   return (
     <>
       <code>theme.palette[key][main, light, dark, contrastText];</code><br/><br/>
+
+      <Typography variant='h2' mt={2} mb={2}>Material Colors</Typography>
       <Grid container spacing={4}>
-        {colors.map((key, index) => { 
-          const palette = theme.palette[key];
+        {materialColors.map((key, index) => {
           return (
             <Grid item key={key+index} xs={6} sm={3} md={2}>
-              <Paper>
-                <Box borderRadius={1} overflow="hidden">
-                  <Grid container>
-                    <Grid item xs={6}>
-                      <Box p={1} color={palette.contrastText} height={100} style={{background: palette.main}} >main</Box>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Box p={1} color={palette.contrastText} height={50}  style={{background: palette.light}} >light</Box>
-                      <Box p={1} color={palette.contrastText} height={50} style={{background: palette.dark}} >dark</Box>
-                    </Grid>
-                  </Grid>
-                  <Box p={1}>
-                    {key}<br />
-                    <small>{palette.main}</small>
-                  </Box>
-                </Box>
-              </Paper>
+              <ColorCard name={key} palette={theme.palette[key]} />
+            </Grid>
+          );
+        })}
+      </Grid>
+
+      <Typography variant='h2' mt={2} mb={2}>Misc Colors</Typography>
+      <Grid container spacing={4}>
+        {miscColors.map((key, index) => {
+          return (
+            <Grid item key={key+index} xs={6} sm={3} md={2}>
+              <ColorCard name={key} palette={theme.palette[key]} />
             </Grid>
           );
         })}
@@ -83,8 +103,7 @@ export const Colors = (args) => {
   );
 };
 Colors.args = {
-  ...defaultArgs,
-  size: "small"
+  ...defaultArgs
 };
 Colors.parameters = {
   layout: 'padded',
