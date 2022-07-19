@@ -142,6 +142,13 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     disableFocusRipple: true
                 }
             },
+            MuiToggleButton: {
+                defaultProps: {
+                    disableElevation: true,
+                    disableRipple: true,
+                    disableFocusRipple: true
+                }
+            },
             MuiFab: {
                 defaultProps: {
                     variant: "contained",
@@ -155,6 +162,11 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                 defaultProps: {
                     disableRipple: true,
                     disableFocusRipple: true
+                }
+            },
+            MuiAppBar: {
+                defaultProps: {
+                    color: "default"
                 }
             },
         },

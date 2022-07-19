@@ -4,6 +4,7 @@ import AppBarExample from "./AppBar";
 import AvatarExample from "./Avatar";
 import BadgeExample from "./Badge";
 import ButtonExample from "./Button";
+import ButtonGroupExample from "./ButtonGroup";
 import CardExample from "./Card";
 import CheckboxesExample from "./Checkboxes";
 import ChipExample from "./Chip";
@@ -23,6 +24,7 @@ import StepperExample from "./Stepper";
 import SwitchExample from "./Switch";
 import TextFieldExample from "./TextField";
 import TableExample from "./Table";
+import ToggleButtonGroupExample from "./ToggleButtonGroup";
 import TooltipExample from "./Tooltip";
 import TypographyExample from "./Typography";
 
@@ -64,10 +66,22 @@ const components =  [
     docs: "https://mui.com/material-ui/react-bottom-navigation/",
   },
   {
-    id: "Buttons",
-    title: "Buttons",
+    id: "Button",
+    title: "Button",
     component: ButtonExample,
-    docs: "https://mui.com/material-ui/react-buttons/",
+    docs: "https://mui.com/material-ui/react-button/",
+  },
+  {
+    id: "ButtonGroup",
+    title: "Button Group",
+    component: ButtonGroupExample,
+    docs: "https://mui.com/material-ui/react-button-group/",
+  },
+  {
+    id: "ToggleButtonGroup",
+    title: "Toggle Button Group",
+    component: ToggleButtonGroupExample,
+    docs: "https://mui.com/material-ui/react-toggle-button/",
   },
   {
     id: "Card",

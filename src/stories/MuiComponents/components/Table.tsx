@@ -189,11 +189,11 @@ const useToolbarStyles = makeStyles((theme: Theme) =>
       theme.palette.type === "light"
         ? {
             color: theme.palette.secondary.main,
-            backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+            backgroundColor: lighten(theme.palette.primary.dark, 0.85),
           }
         : {
             color: theme.palette.text.primary,
-            backgroundColor: theme.palette.secondary.dark,
+            backgroundColor: theme.palette.primary.light,
           },
     title: {
       flex: "1 1 100%",

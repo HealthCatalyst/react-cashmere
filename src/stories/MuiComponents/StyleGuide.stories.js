@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import componentSamples from "./components";
 import Link from '@mui/material/Link';
 
-const stories = storiesOf('Mui Base Components/Style Guide', () => <></>);
+const stories = storiesOf('Mui Components/Style Guide', () => <></>);
 
 componentSamples.forEach(({ id, title, component, docs }) => {
   const Component = component;

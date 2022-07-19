@@ -58,7 +58,7 @@ export default function TypographyExample() {
 
       <Typography variant='h4' marginTop={2}>Colors</Typography>
       {['primary', 'secondary', 'error', 'default', 'inherit'].map(color => {
-        return <Typography color={color} >{color}{' '}</Typography>
+        return <Typography key={color} color={color} >{color}{' '}</Typography>
       })}
     </>
   )

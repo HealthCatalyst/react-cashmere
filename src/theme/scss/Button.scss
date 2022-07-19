@@ -1,5 +1,24 @@
+@mixin mui-button-outline($color) {
+    color: $color;
+    border-color: $color;
+    &:focus {
+        box-shadow: 0 0 0 3px transparentize($color, 0.6);
+        background-color: transparentize($color, 0.85);
+    }
+    &:hover {
+        border-color: $color;
+        background-color: transparentize($color, 0.9);
+    }
+    &[disabled] {
+        border-color: transparentize($color, .6);
+        color: transparentize($color, .6);
+    }
+}
+
 .hc-button, .MuiButton-root {
-  @include hc-button();
+  &.MuiButton-contained {
+    @include hc-button();
+  }
   &.hc-sm, &.MuiButton-sizeSmall {
     @include hc-button-sm();
   }
@@ -108,5 +127,35 @@
   }
   &.hc-tan, &.MuiButton-containedTan {
       @include hc-button-custom( $tan );
+  }
+
+  &.MuiButton-outlined {
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
+    }
+    &[disabled] {
+        border: 1px solid transparentize($gray-500, .6);
+        color: transparentize($gray-500, .6);
+    }
+  }
+
+  &.MuiButton-outlinedMinimal {
+    border: none;
+    &:hover {
+        border: 1px solid $gray-500;
+    }
+  }
+
+  &.MuiButton-outlinedPrimary {
+    @include mui-button-outline($primary-action);
+  }
+  &.MuiButton-outlinedPrimary-alt {
+    @include mui-button-outline($primary-alt-action);
+  }
+  &.MuiButton-outlinedDestructive, &.MuiButton-outlinedError, &.MuiButton-outlinedRed  {
+    @include mui-button-outline($destructive-action);
+  }
+  &.MuiButton-outlinedNeutral {
+    @include mui-button-outline($neutral-action);
   }
 }

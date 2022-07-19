@@ -21,36 +21,17 @@ export default function ButtonsExample() {
 
   return (
     <div>
-      <Typography variant="h6" id="contained-buttons">
-        Contained Buttons
-      </Typography>
-      <div className={classes.group}>
-        <Button variant="contained">Default</Button>
-        <Button variant="contained" color="primary">
-          Primary
-        </Button>
-        <Button variant="contained" color="primary-alt">
-          Primary Alt
-        </Button>
-        <Button variant="contained" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="contained" disabled>
-          Disabled
-        </Button>
-        <Button variant="contained" color="primary" href="#contained-buttons">
-          Link
-        </Button>
-      </div>
-
       <Typography variant="h6" id="text-buttons">
-        Text Buttons
+        Default Contained Buttons
       </Typography>
       <div className={classes.group}>
         <Button>Default</Button>
         <Button color="primary">Primary</Button>
         <Button color="primary-alt">Primary Alt</Button>
+        <Button color="error">Destructive</Button>
+        <Button color="default">Neutral</Button>
         <Button color="secondary">Secondary</Button>
+        <Button color="minimal">Minimal</Button>
         <Button disabled>Disabled</Button>
         <Button color="primary" href="#text-buttons">
           Link
@@ -68,8 +49,17 @@ export default function ButtonsExample() {
         <Button variant="outlined" color="primary-alt">
           Primary Alt
         </Button>
+        <Button variant="outlined" color="error">
+          Destructive
+        </Button>
+        <Button variant="outlined" color="default">
+          Neutral
+        </Button>
         <Button variant="outlined" color="secondary">
           Secondary
+        </Button>
+        <Button variant="outlined" color="minimal">
+          Minimal
         </Button>
         <Button variant="outlined" disabled>
           Disabled
