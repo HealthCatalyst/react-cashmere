@@ -4,7 +4,7 @@ import Icon from '../../components/Icon/Icon';
 import {Menu, MenuItem, TextField} from '@mui/material'
 
 export default {
-  title: 'Navigation/Navbar',
+  title: 'Cashmere Components/Navbar',
   component: Navbar,
   argTypes: {
   },

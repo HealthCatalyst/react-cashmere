@@ -133,35 +133,29 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     disableFocusRipple: true
                 }
             },
+            MuiButtonGroup: {
+                defaultProps: {
+                    variant: "contained",
+                    size: "small",
+                    disableElevation: true,
+                    disableRipple: true,
+                    disableFocusRipple: true
+                }
+            },
+            MuiFab: {
+                defaultProps: {
+                    variant: "contained",
+                    size: "small",
+                    disableElevation: true,
+                    disableRipple: true,
+                    disableFocusRipple: true
+                }
+            },
             MuiIconButton: {
                 defaultProps: {
                     disableRipple: true,
                     disableFocusRipple: true
                 }
-            },
-            MuiTextField: {
-                defaultProps: {
-                    variant: "outlined",
-                    className: "hc-input",
-                    size: "small",
-                },
-                styleOverrides: {
-                    root: {
-                        "& .MuiOutlinedInput-input.Mui-disabled": {
-                            backgroundColor: "#88888818"
-                        },
-                        "& .MuiOutlinedInput-root": {
-                            borderRadius: 0,
-                            "& .MuiOutlinedInput-notchedOutline": {
-                                borderWidth: "1px !important",
-                            },
-                            '& input:focus': {
-                                borderColor: palette.primary.main,
-                                boxShadow: `${alpha(palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-                            },
-                        }
-                    },
-                },
             },
         },
     });
