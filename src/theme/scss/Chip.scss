@@ -1,8 +1,9 @@
 .hc-chip, .MuiChip-root {
     @include hc-chip();
+    line-height: 18px;
 }
 
-.hc-chip-content-neutral, .MuiChip-filledSecondary  {
+.hc-chip-content-neutral, .MuiChip-filledSecondary {
     @include hc-chip-content();
 }
 
@@ -22,7 +23,7 @@
     &:hover {
         background-color: tint($text, 87%);
     }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $text;
     }
 }
@@ -32,7 +33,7 @@
     &:hover {
         background-color: tint($ruby-red, 85%);
     }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $ruby-red;
     }
 }
@@ -42,7 +43,7 @@
     &:hover {
         background-color: tint($yellow-orange, 80%);
     }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: shade($yellow-orange, 25%);
     }
 }
@@ -52,7 +53,7 @@
     &:hover {
         background-color: tint($light-green, 60%);
     }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $green;
     }
 }
@@ -62,7 +63,7 @@
     &:hover {
         background-color: desaturate(lighten($blue, 40%), 50%);
     }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $dark-blue;
     }
 }
