@@ -35,9 +35,11 @@ export default function ToggleButtonGroupExample() {
     };
   const handleColor = (
       event,
-      newColors,
+      newColor,
     ) => {
-      setColor(newColors);
+      if (newColor !== null) {
+        setColor(newColor);
+      }
     };
   return (
     <>

@@ -3,6 +3,8 @@ import { createStyles, makeStyles } from "@mui/styles"
 import Avatar from "@mui/material/Avatar"
 import Chip from "@mui/material/Chip"
 import FaceIcon from "@mui/icons-material/Face"
+import WarnIcon from "@mui/icons-material/EscalatorWarningOutlined"
+import ErrorIcon from "@mui/icons-material/Cancel"
 import DoneIcon from "@mui/icons-material/Done"
 import { Typography } from "@mui/material"
 
@@ -32,6 +34,15 @@ export default function ChipExample() {
 
   return (
     <>
+      <Typography variant="h6">Color</Typography>
+      <div className={classes.root}>
+        <Chip label="Primary" color="primary" onClick={handleClick} />
+        <Chip label="Secondary" color="secondary" onClick={handleClick} />
+        <Chip label="Success" color="success" icon={<DoneIcon />} onClick={handleClick} />
+        <Chip label="Warning" color="warning" icon={<WarnIcon />} onDelete={handleDelete} onClick={handleClick} />
+        <Chip label="Error" color="error" icon={<ErrorIcon />} onDelete={handleDelete} onClick={handleClick} />
+        <Chip label="Default" color="default" onClick={handleClick} />
+      </div>
       <Typography variant="h6">Default</Typography>
       <div className={classes.root}>
         <Chip label="Basic" />

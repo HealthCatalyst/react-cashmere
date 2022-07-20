@@ -15,6 +15,9 @@
             &:hover {
                 background-color: transparentize($primary-action, .9);
             }
+            &[disabled] {
+                color: transparentize($primary-action, .6)
+            }
         }
         &.hc-secondary, &.MuiButton-containedSecondary {
             border-bottom: 1px solid;

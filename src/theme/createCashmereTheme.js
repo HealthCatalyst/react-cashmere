@@ -1,4 +1,6 @@
-import { createTheme, darken, lighten, alpha } from '@mui/material/styles';
+import React from 'react';
+import Icon from '../components/Icon';
+import { createTheme, darken, lighten } from '@mui/material/styles';
 import cashmereVars from './scss/cashmere.scss';
 import cashmereColors from './scss/colors.scss';
 
@@ -158,6 +160,11 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     disableFocusRipple: true
                 }
             },
+            MuiButtonBase: {
+                defaultProps: {
+                    disableRipple: true
+                }
+            },
             MuiIconButton: {
                 defaultProps: {
                     disableRipple: true,
@@ -167,6 +174,11 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
             MuiAppBar: {
                 defaultProps: {
                     color: "default"
+                }
+            },
+            MuiChip: {
+                defaultProps: {
+                    deleteIcon: <Icon icon="fa-close" />
                 }
             },
         },

@@ -1,0 +1,68 @@
+.hc-chip, .MuiChip-root {
+    @include hc-chip();
+}
+
+.hc-chip-content-neutral, .MuiChip-filledSecondary  {
+    @include hc-chip-content();
+}
+
+.hc-chip-content-red, .MuiChip-filledError,
+.hc-chip-content-yellow, .MuiChip-filledWarning,
+.hc-chip-content-green, .MuiChip-filledSuccess,
+.hc-chip-content-blue, .MuiChip-filledPrimary, .MuiChip-filledSecondary {
+    @include hc-chip-content-color();
+}
+
+.hc-chip-close {
+    @include hc-chip-close();
+}
+
+.hc-chip-neutral, .MuiChip-filledDefault, .MuiChip-filledSecondary {
+    @include hc-chip-neutral();
+    &:hover {
+        background-color: tint($text, 87%);
+    }
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+        color: $text;
+    }
+}
+
+.hc-chip-red, .MuiChip-filledError {
+    @include hc-chip-red();
+    &:hover {
+        background-color: tint($ruby-red, 85%);
+    }
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+        color: $ruby-red;
+    }
+}
+
+.hc-chip-yellow, .MuiChip-filledWarning {
+    @include hc-chip-yellow();
+    &:hover {
+        background-color: tint($yellow-orange, 80%);
+    }
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+        color: shade($yellow-orange, 25%);
+    }
+}
+
+.hc-chip-green, .MuiChip-filledSuccess {
+    @include hc-chip-green();
+    &:hover {
+        background-color: tint($light-green, 60%);
+    }
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+        color: $green;
+    }
+}
+
+.hc-chip-blue, .MuiChip-filledPrimary, .MuiChip-filledInfo {
+    @include hc-chip-blue();
+    &:hover {
+        background-color: desaturate(lighten($blue, 40%), 50%);
+    }
+    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover {
+        color: $dark-blue;
+    }
+}
