@@ -49,6 +49,12 @@ export default function SliderExample() {
     setValue(newValue as number)
   }
 
+  const [range, setRange] = React.useState<number[]>([20, 37]);
+
+  const handleRangeChange = (event: Event, newValue: number | number[]) => {
+    setRange(newValue as number[]);
+  };
+
   return (
     <div className={classes.root}>
       <Typography id="continuous-slider" gutterBottom>
@@ -85,6 +91,17 @@ export default function SliderExample() {
         step={10}
         marks={marks}
         valueLabelDisplay="on"
+      />
+
+      <Typography id="slider-range" gutterBottom>
+        Range
+      </Typography>
+      <Slider
+        getAriaLabel={() => 'Temperature range'}
+        value={range}
+        onChange={handleRangeChange}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
       />
     </div>
   )

@@ -20,8 +20,11 @@
 
 .hc-chip-neutral, .MuiChip-filledDefault, .MuiChip-filledSecondary {
     @include hc-chip-neutral();
-    &:hover {
+    &:hover, &:focus {
         background-color: tint($text, 87%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
     }
     .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $text;
@@ -30,8 +33,11 @@
 
 .hc-chip-red, .MuiChip-filledError {
     @include hc-chip-red();
-    &:hover {
+    &:hover, &:focus {
         background-color: tint($ruby-red, 85%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
     }
     .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $ruby-red;
@@ -40,8 +46,11 @@
 
 .hc-chip-yellow, .MuiChip-filledWarning {
     @include hc-chip-yellow();
-    &:hover {
+    &:hover, &:focus {
         background-color: tint($yellow-orange, 80%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
     }
     .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: shade($yellow-orange, 25%);
@@ -50,8 +59,11 @@
 
 .hc-chip-green, .MuiChip-filledSuccess {
     @include hc-chip-green();
-    &:hover {
+    &:hover, &:focus {
         background-color: tint($light-green, 60%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
     }
     .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $green;
@@ -60,8 +72,11 @@
 
 .hc-chip-blue, .MuiChip-filledPrimary, .MuiChip-filledInfo {
     @include hc-chip-blue();
-    &:hover {
+    &:hover, &:focus {
         background-color: desaturate(lighten($blue, 40%), 50%);
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
     }
     .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
         color: $dark-blue;

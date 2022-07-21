@@ -113,7 +113,7 @@ export default function StepperExample() {
             <Typography className={classes.instructions}>
               All steps completed - you&apos;re finished
             </Typography>
-            <Button onClick={handleReset} className={classes.button}>
+            <Button color="secondary" onClick={handleReset} className={classes.button}>
               Reset
             </Button>
           </div>
@@ -124,22 +124,13 @@ export default function StepperExample() {
             </Typography>
             <div>
               <Button
+                color="secondary"
                 disabled={activeStep === 0}
                 onClick={handleBack}
                 className={classes.button}
               >
                 Back
               </Button>
-              {isStepOptional(activeStep) && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleSkip}
-                  className={classes.button}
-                >
-                  Skip
-                </Button>
-              )}
               <Button
                 variant="contained"
                 color="primary"
@@ -148,6 +139,16 @@ export default function StepperExample() {
               >
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </Button>
+              {isStepOptional(activeStep) && (
+                <Button
+                  variant="contained"
+                  color="primary-alt"
+                  onClick={handleSkip}
+                  className={classes.button}
+                >
+                  Skip
+                </Button>
+              )}
             </div>
           </div>
         )}

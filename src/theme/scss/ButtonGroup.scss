@@ -2,10 +2,19 @@
     .MuiButton-root, .MuiButton-contained {
         outline: none;
         &:focus {
-            box-shadow: none;
+            //box-shadow: none;
         }
     }
     .hc-button, .MuiButton-root {
+        &.MuiButton-sizeSmall {
+            min-width: auto;
+        }
+        &.MuiButton-sizeMedium {
+            min-width: auto;
+        }
+        &.MuiButton-sizeLarge {
+            min-width: auto;
+        }
         &.MuiButton-containedPrimary {
             border-right-color: shade($primary-action, 15%);
         }

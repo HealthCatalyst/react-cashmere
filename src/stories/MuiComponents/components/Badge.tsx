@@ -38,7 +38,7 @@ export default function BadgeVisibility() {
           </Badge>
         )}
         
-        <ButtonGroup variant="contained" size="small" color="default" disableElevation>
+        <ButtonGroup variant="contained" size="small" color="secondary" disableElevation>
           <Button
             aria-label="reduce"
             onClick={() => {

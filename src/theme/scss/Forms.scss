@@ -1,0 +1,285 @@
+/* Input/Select */
+.MuiFormControl-root {
+    &:hover {
+        .MuiOutlinedInput-root {
+            background-color: transparentize($primary-brand, .95);
+            .MuiOutlinedInput-notchedOutline {
+                border-width: 1px;
+                border-color: $primary-brand;
+            }
+        }
+        .MuiInputLabel-root {
+            color: $primary-brand;
+        }
+        .Mui-error {
+            &.MuiOutlinedInput-root {
+                //background-color: transparentize($red, .95);
+                .MuiOutlinedInput-notchedOutline {
+                    border-width: 1px;
+                    border-color: $red;
+                }
+            }
+            &.MuiInputLabel-root {
+                color: $red !important;
+            }
+        }
+        .Mui-disabled {
+            &.MuiOutlinedInput-root {
+                background-color: transparent;
+                .MuiOutlinedInput-notchedOutline {
+                    border-width: 1px;
+                    border-color: $gray-300;
+                }
+            }
+            &.MuiInputLabel-root {
+                color: $gray-400 !important;
+            }
+        }
+    }
+    
+    .MuiOutlinedInput-notchedOutline {
+        border-radius: 0;
+    }
+
+    .Mui-focused {
+        .MuiOutlinedInput-notchedOutline {
+            border-width: 1px !important;
+        }
+    }
+    .MuiSelect-icon {
+        color: $primary-brand;
+    }
+}
+
+/* Autocomplete */
+.MuiOutlinedInput-root {
+    .MuiAutocomplete-endAdornment {
+        top: 0px;
+        right: 0px;
+    }
+    .MuiAutocomplete-popupIndicator {
+        color: $primary-brand;
+    }
+    .MuiChip-root {
+        margin: 1px;
+        height: 22px;
+    }
+}
+
+/* Checkbox */
+.MuiFormControlLabel-root {
+    .MuiCheckbox-root {
+        padding: 4px 9px 4px 9px;
+        .hc-checkbox-overlay {
+            @include hc-checkbox-overlay();
+        }
+        &:hover { 
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-hover();
+            }
+        }
+        &.Mui-checked {
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-checked();
+            }
+        }
+        &.Mui-focusVisible {
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-focus();
+            }
+        }
+
+        &.Mui-disabled, &.Mui-checked.Mui-disabled {
+            cursor: not-allowed;
+            .hc-checkbox-overlay  {
+                @include hc-checkbox-overlay-disabled();
+                cursor: not-allowed;
+            }
+        }
+        &.MuiCheckbox-indeterminate {
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-indeterminate();
+            }
+        }
+    }
+    &.Mui-error {
+        color: $red;
+        .hc-checkbox-overlay {
+            @include hc-checkbox-invalid();
+        }
+        .Mui-checked {
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-checked-invalid();
+            }
+        }
+        .Mui-focusVisible {
+            .hc-checkbox-overlay {
+                @include hc-checkbox-overlay-focus-invalid();
+            }
+        }
+    }
+}
+
+
+/* Radio */
+.MuiFormControlLabel-root {
+    .MuiRadio-root {
+        padding: 4px 9px 4px 9px;
+        .hc-radio-overlay {
+            @include hc-radio-overlay();
+            position: relative;
+        }
+        &:hover { 
+            background-color: transparent;
+            .hc-radio-overlay {
+                @include hc-radio-overlay-hover();
+            }
+        }
+        &.Mui-checked {
+            .hc-radio-overlay {
+                @include hc-radio-overlay-checked();
+            }
+        }
+        &.Mui-focusVisible {
+            .hc-radio-overlay {
+                @include hc-radio-input-focus();
+            }
+        }
+        &.Mui-disabled, &.Mui-checked.Mui-disabled {
+            cursor: not-allowed;
+            .hc-radio-overlay  {
+                @include hc-radio-overlay-disabled();
+                cursor: not-allowed;
+            }
+        }
+    }
+    &.Mui-error {
+        color: $red;
+        .hc-radio-overlay {
+            border: 1px solid $red;
+        }
+        .Mui-checked {
+            .hc-radio-overlay {
+                background-color: $red;
+                border-color: $red;
+            }
+        }
+        .Mui-focusVisible {
+            .hc-radio-overlay {
+                @include hc-checkbox-overlay-focus-invalid();
+            }
+        }
+    }
+}
+
+
+/* Switch */
+.MuiSwitch-root {
+    width: 54px;
+    padding: 0px;
+    margin: 12px;
+    height: auto;
+    overflow: visible;
+    font-size: .8571428571rem;
+    & .MuiSwitch-track {
+        height: 25px;
+        border-radius: 12.5px;
+        background-color: $gray-400;
+        opacity: 1;
+        &:before, &:after {
+            content: "";
+            font-size: inherit;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        };
+        &:before {
+            content: "";
+            color: $white;
+            left: 7px;
+        }
+        &:after {
+            content: "OFF";
+            color: $white;
+            right: 5px;
+        }
+    }
+    & .MuiSwitch-switchBase {
+        padding: 0px;
+        &:hover {
+            background-color: transparent;
+        }
+        &.Mui-checked {
+            -webkit-transform: translateX(29px);
+            -moz-transform: translateX(29px);
+            -ms-transform: translateX(29px);
+            transform: translateX(29px);
+        }
+        &.Mui-checked + .MuiSwitch-track {
+            background-color: $primary-brand;
+            opacity: 1;
+            &:before {
+                content: "ON";
+            }
+            &:after {
+                content: "";
+            }
+        }
+        
+        &.Mui-focusVisible + .MuiSwitch-track {
+            @include hc-radio-input-focus();
+        }
+
+        & .MuiSwitch-thumb {
+            box-shadow: none;
+            width: 23px;
+            height: 23px;
+            margin: 1px;
+            color: $white;
+        }
+    }
+
+    .Mui-disabled + .MuiSwitch-track, .Mui-disabled.Mui-checked + .MuiSwitch-track {
+        opacity: .25;
+    }
+}
+
+/* Slider */
+.MuiSlider-root {
+    @include hc-slider();
+    .MuiSlider-rail{ 
+        background-color: #d8e0f3;
+        opacity: 1;
+    }
+    .MuiSlider-thumb {
+        background-color: $primary-brand;
+        box-shadow: 0 0 0 $primary-brand;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        &::before {
+            content: none !important;
+        }
+        &::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            border-radius: 4px;
+            background: #fff;
+        }
+        &.Mui-focusVisible {
+            background-color: shade($primary-brand, -50%);
+            @include hc-radio-input-focus();
+        }
+    }
+    &.Mui-disabled {
+        .MuiSlider-thumb {
+            background-color: $gray-300;
+        }
+        .MuiSlider-rail{ 
+            background-color: $gray-200;
+            opacity: .5;
+        }
+    }
+}

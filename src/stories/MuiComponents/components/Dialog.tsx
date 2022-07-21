@@ -71,7 +71,7 @@ export default function SimpleDialogDemo() {
         Selected: {selectedValue}
       </Typography>
       <br />
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button color="secondary" onClick={handleClickOpen}>
         Open simple dialog
       </Button>
       <SimpleDialog

@@ -113,10 +113,10 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                 complex: 375,
                 enteringScreen: 225,
                 leavingScreen: 195,
-                short: 0,
-                shorter: 0,
-                shortest: 0,
-                standard: 0
+                standard: 125,
+                short: 100,
+                shorter: 75,
+                shortest: 50
             }
         },
         components: {
@@ -181,6 +181,57 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     deleteIcon: <Icon icon="fa-close" />
                 }
             },
+            MuiAccordion: {
+                defaultProps: {
+                    disableGutters: true,
+                    square: true,
+                }
+            },
+            MuiSelect: {
+                defaultProps: {
+                    size: "small",
+                    variant: "outlined",
+                }
+            },
+            MuiInputLabel: {
+                defaultProps: {
+                    size: "small",
+                    variant: "outlined"
+                }
+            },
+            MuiInput: {
+                defaultProps: {
+                    size: "small",
+                    variant: "outlined"
+                }
+            },
+            MuiNativeSelect: {
+                defaultProps: {
+                    size: "small",
+                    variant: "outlined"
+                }
+            },
+            MuiTextField: {
+                defaultProps: {
+                    size: "small",
+                    variant: "outlined"
+                }
+            },
+            MuiCheckbox: {
+                defaultProps: {
+                    disableRipple: true,
+                    checkedIcon: <span className="hc-checkbox-overlay" />,
+                    indeterminateIcon: <span className="hc-checkbox-overlay hc-checkbox-indeterminate" />,
+                    icon: <span className="hc-checkbox-overlay" />,
+                }
+            },
+            MuiRadio: {
+                defaultProps: {
+                    disableRipple: true,
+                    checkedIcon: <span className="hc-radio-overlay" />,
+                    icon: <span className="hc-radio-overlay" />,
+                }
+            }
         },
     });
 };

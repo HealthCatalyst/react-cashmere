@@ -1,52 +1,31 @@
-import React from "react"
-import { createStyles, makeStyles, Theme } from "@mui/styles"
-import InputLabel from "@mui/material/InputLabel"
-import MenuItem from "@mui/material/MenuItem"
-import FormHelperText from "@mui/material/FormHelperText"
-import FormControl from "@mui/material/FormControl"
-import Select from "@mui/material/Select"
+import * as React from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-    },
-    selectEmpty: {
-      marginTop: theme.spacing(2),
-    },
-  })
-)
+export default function SelectOtherProps() {
+  const [multi, setMulti] = React.useState([]);
+  const [age, setAge] = React.useState('');
 
-export default function SelectExample() {
-  const classes = useStyles()
-  const [age, setAge] = React.useState("")
+  const handleMultiChange = (event) => {
+    setMulti(event.target.value);
+  };
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as string)
-  }
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   return (
     <div>
-      <FormControl className={classes.formControl}>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          id="demo-simple-select-disabled"
           value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={age}
+          label="Age"
           onChange={handleChange}
         >
           <MenuItem value="">
@@ -56,52 +35,14 @@ export default function SelectExample() {
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
-        <FormHelperText>Some important helper text</FormHelperText>
       </FormControl>
-      <FormControl className={classes.formControl}>
-        <Select
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          className={classes.selectEmpty}
-          inputProps={{ "aria-label": "Without label" }}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Without label</FormHelperText>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel shrink id="demo-simple-select-placeholder-label-label">
-          Age
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-placeholder-label-label"
-          id="demo-simple-select-placeholder-label"
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Label + placeholder</FormHelperText>
-      </FormControl>
-      <FormControl className={classes.formControl} disabled>
-        <InputLabel id="demo-simple-select-disabled-label">Name</InputLabel>
+      <FormControl sx={{ m: 1, minWidth: 120 }} disabled>
+        <InputLabel id="demo-simple-select-disabled-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-disabled-label"
           id="demo-simple-select-disabled"
           value={age}
+          label="Age"
           onChange={handleChange}
         >
           <MenuItem value="">
@@ -113,14 +54,15 @@ export default function SelectExample() {
         </Select>
         <FormHelperText>Disabled</FormHelperText>
       </FormControl>
-      <FormControl className={classes.formControl} error>
-        <InputLabel id="demo-simple-select-error-label">Name</InputLabel>
+      <FormControl sx={{ m: 1, minWidth: 120 }} error>
+        <InputLabel id="demo-simple-select-error-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-error-label"
           id="demo-simple-select-error"
           value={age}
+          label="Age"
           onChange={handleChange}
-          renderValue={value => `⚠️  - ${value}`}
+          renderValue={(value) => `⚠️  - ${value}`}
         >
           <MenuItem value="">
             <em>None</em>
@@ -131,12 +73,13 @@ export default function SelectExample() {
         </Select>
         <FormHelperText>Error</FormHelperText>
       </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-readonly-label">Name</InputLabel>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-readonly-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-readonly-label"
           id="demo-simple-select-readonly"
           value={age}
+          label="Age"
           onChange={handleChange}
           inputProps={{ readOnly: true }}
         >
@@ -149,49 +92,14 @@ export default function SelectExample() {
         </Select>
         <FormHelperText>Read only</FormHelperText>
       </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
-          value={age}
-          onChange={handleChange}
-          autoWidth
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Auto width</FormHelperText>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <Select
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          className={classes.selectEmpty}
-          inputProps={{ "aria-label": "Without label" }}
-        >
-          <MenuItem value="" disabled>
-            Placeholder
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Placeholder</FormHelperText>
-      </FormControl>
-      <FormControl required className={classes.formControl}>
+      <FormControl required sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-required-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-required-label"
           id="demo-simple-select-required"
           value={age}
+          label="Age *"
           onChange={handleChange}
-          className={classes.selectEmpty}
         >
           <MenuItem value="">
             <em>None</em>
@@ -202,30 +110,17 @@ export default function SelectExample() {
         </Select>
         <FormHelperText>Required</FormHelperText>
       </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+      <br/><br/>
+      Multiselect<br/>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={age}
-          onChange={handleChange}
+          labelId="demo-simple-select-label"
+          id="demo-simple-select-disabled"
+          value={multi}
           label="Age"
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
+          multiple
+          onChange={handleMultiChange}
         >
           <MenuItem value="">
             <em>None</em>
@@ -236,5 +131,5 @@ export default function SelectExample() {
         </Select>
       </FormControl>
     </div>
-  )
+  );
 }

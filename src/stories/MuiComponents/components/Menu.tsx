@@ -19,6 +19,7 @@ export default function MenuExample() {
       <Button
         aria-controls="simple-menu"
         aria-haspopup="true"
+        color="secondary"
         onClick={handleClick}
       >
         Open Menu

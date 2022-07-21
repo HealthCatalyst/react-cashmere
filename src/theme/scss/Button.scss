@@ -44,7 +44,7 @@
   &.hc-secondary, &.hc-default &.MuiButton-containedDefault, &.MuiButton-containedSecondary {
     @include hc-color-button($gray-100, 5%);
     color: $gray-600;
-    border: 1.5px solid $gray-300;
+    border: 1.5px solid $gray-300 !important;
     &:hover {
         color: $offblack;
     }

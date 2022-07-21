@@ -5,7 +5,7 @@ import Icon from '../../components/Icon/Icon';
 import { sizeControl, colorControl, colorNames, extraColorNames } from '../config';
 
 export default {
-  title: 'Cashmere Components/Icons',
+  title: 'Cashmere Components/Data Display/Icons',
   component: Icon,
   argTypes: {
     size: sizeControl({}, ['default','inherit']),
