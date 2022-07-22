@@ -1,4 +1,3 @@
-import React from "react";
 import AccordionExample from "./Accordion";
 import AppBarExample from "./AppBar";
 import AutocompleteExamples from "./Autocomplete";

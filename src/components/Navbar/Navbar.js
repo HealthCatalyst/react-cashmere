@@ -10,12 +10,12 @@ const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, c
                 <nav className="hc-navbar" >
                     <div className="navbar-brand">
                         {brandIcon && <a href={homeUri} className="brand" tabIndex="-1">
-                            {typeof brandIcon === 'string' ? <img src={brandIcon} /> : brandIcon}
+                            {typeof brandIcon === 'string' ? <img src={brandIcon} alt="Brand Icon" /> : brandIcon}
                         </a>}
                     </div>
                     <div className="navbar-app">
                         {appIcon && <a href={homeUri} className="app">
-                            {typeof appIcon === 'string' ? <img src={appIcon} /> : appIcon }
+                            {typeof appIcon === 'string' ? <img src={appIcon} alt="App Icon" /> : appIcon }
                         </a>}
                     </div>
                     <div className="hc-navbar-link-container">
@@ -26,7 +26,7 @@ const Navbar = ({appIcon, brandIcon, homeUri, cobrandIcon, position, children, c
                         {rightContent}
                     </div>
                     {cobrandIcon && <div className={`hc-navbar-cobrand ${'hc-navbar-cobrand-'+cobrandColor}`}>
-                        {typeof cobrandIcon === 'string' ? <img src={cobrandIcon} /> : cobrandIcon}
+                        {typeof cobrandIcon === 'string' ? <img alt="Cobrand Icon" src={cobrandIcon} /> : cobrandIcon}
                     </div>}
                 </nav>
             </div>

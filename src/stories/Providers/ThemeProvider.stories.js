@@ -1,10 +1,9 @@
 import React from 'react';
-import { ThemeProvider, themes, useTheme } from '../../providers/ThemeProvider/ThemeProvider';
+import { themes, useTheme } from '../../providers/ThemeProvider/ThemeProvider';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { sizeControl, colorControl, colorNames, extraColorNames } from '../config';
 import { Button, Paper } from '@mui/material';
 
 export default {

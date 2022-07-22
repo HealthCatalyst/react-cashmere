@@ -1,5 +1,3 @@
-import cashmereColors from '../theme/scss/colors.scss';
-
 export const colorNames = ['primary', 'primary-alt', 'secondary', 'info', 'success', 'warning', 'error', 'default'];
 export const extraColorNames = [
     // Primary Palette
@@ -26,7 +24,3 @@ export const sizeControl = (overrides = {}, exrtaOptions = []) => ({
     },
     ...overrides
 });
-
-export default {
-
-}

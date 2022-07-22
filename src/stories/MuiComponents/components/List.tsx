@@ -1,5 +1,5 @@
 import React from "react"
-import { makeStyles, Theme, createStyles } from "@mui/styles"
+import { makeStyles, createStyles } from "@mui/styles"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemAvatar from "@mui/material/ListItemAvatar"

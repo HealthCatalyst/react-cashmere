@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Icon from '../../components/Icon/Icon';
-import {Menu, MenuItem, TextField} from '@mui/material'
 
 export default {
   title: 'Cashmere Components/Navigation/Navbar',
@@ -25,10 +24,10 @@ const defaultArgs = {
   cobrandColor: 'light',
   homeUri: 'http://example.com/',
   linkContent: [
-      <a key="home" className="navbar-link force-active" title="Home"> 
+      <a key="home" className="navbar-link force-active" title="Home" href="/"> 
         Home
       </a>,
-      <a key="reports" className="navbar-link" title="Reports"> 
+      <a key="reports" className="navbar-link" title="Reports" href="/"> 
         Reports
       </a>
   ],

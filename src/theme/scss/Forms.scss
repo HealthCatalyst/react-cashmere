@@ -269,7 +269,7 @@
             background: #fff;
         }
         &.Mui-focusVisible {
-            background-color: shade($primary-brand, -50%);
+            background-color: shade($primary-brand, 50%);
             @include hc-radio-input-focus();
         }
     }
