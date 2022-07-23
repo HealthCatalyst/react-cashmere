@@ -127,12 +127,23 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     },
                 },
             },
+            MuiMenu: {
+                defaultProps: {
+                    elevation: 1,
+                    disablePortal: true,
+                },
+            },
             MuiButton: {
                 defaultProps: {
                     variant: "contained",
                     disableElevation: true,
                     disableRipple: true,
                     disableFocusRipple: true
+                }
+            },
+            MuiCard: {
+                defaultProps: {
+                    variant: "outlined"
                 }
             },
             MuiButtonGroup: {
@@ -173,6 +184,7 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
             },
             MuiAppBar: {
                 defaultProps: {
+                    elevation: false,
                     color: "default"
                 }
             },
@@ -230,6 +242,12 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     disableRipple: true,
                     checkedIcon: <span className="hc-radio-overlay" />,
                     icon: <span className="hc-radio-overlay" />,
+                }
+            },
+            MuiTabs: {
+                defaultProps: {
+                    disableRipple: true,
+                    disableTouchRipple: true,
                 }
             }
         },

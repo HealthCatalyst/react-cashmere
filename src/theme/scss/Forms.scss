@@ -252,6 +252,7 @@
         opacity: 1;
     }
     .MuiSlider-thumb {
+        transition: .1s;
         background-color: $primary-brand;
         box-shadow: 0 0 0 $primary-brand;
         cursor: pointer;
@@ -268,7 +269,7 @@
             border-radius: 4px;
             background: #fff;
         }
-        &.Mui-focusVisible {
+        &.Mui-focusVisible, &.Mui-active {
             background-color: shade($primary-brand, 50%);
             @include hc-radio-input-focus();
         }

@@ -42,15 +42,9 @@ function a11yProps(index: any) {
   }
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}))
+
 
 export default function TabsExample() {
-  const classes = useStyles()
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -58,48 +52,98 @@ export default function TabsExample() {
   }
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
+    <div>
+      <Box m={4}>
+        <Box
         >
-          <Tab label="Recents" {...a11yProps(0)} />
-          <Tab label="Favourites" {...a11yProps(1)} />
-          <Tab label="Nearby" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
+            sx={{ borderBottom: 1, borderColor: 'divider' }}
+          >
+            <Tab label="Recents" {...a11yProps(0)} />
+            <Tab label="Favourites" {...a11yProps(1)} />
+            <Tab label="Nearby" {...a11yProps(2)} />
+            <Box p={2} sx={{bgcolor: 'divider'}}>You can place additional content after the tabs</Box>
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          Item One
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Item Two
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          Item Three
+        </TabPanel>
+      </Box>
+      <Box m={4}>
+        <Box>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
+            sx={{ borderBottom: 1, borderColor: 'divider' }}
+          >
+            <Tab icon={null} label={<><PhoneIcon /> Recents</>} {...a11yProps(0)} />
+            <Tab icon={<FavoriteIcon />} label="Favourites" {...a11yProps(1)} />
+            <Tab icon={<PersonPinIcon />} label="Nearby" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          Item One
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Item Two
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          Item Three
+        </TabPanel>
+      </Box>
+      <Box m={4}>
+        <Box
+          sx={{ flexGrow: 1, display: 'flex', height: 224 }}
         >
-          <Tab icon={<PhoneIcon />} label="Recents" {...a11yProps(0)} />
-          <Tab icon={<FavoriteIcon />} label="Favourites" {...a11yProps(1)} />
-          <Tab icon={<PersonPinIcon />} label="Nearby" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            sx={{ borderRight: 1, borderColor: 'divider' }}
+          >
+            <Tab label="Item One" {...a11yProps(0)} />
+            <Tab label="Item Two" {...a11yProps(1)} />
+            <Tab label="Item Three" {...a11yProps(2)} />
+            <Tab label="Item Four" {...a11yProps(3)} />
+            <Tab label="Item Five" {...a11yProps(4)} />
+            <Tab label="Item Six" {...a11yProps(5)} />
+            <Tab label="Item Seven" {...a11yProps(6)} />
+          </Tabs>
+          <TabPanel value={value} index={0}>
+            Item One
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            Item Two
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            Item Three
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            Item Four
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            Item Five
+          </TabPanel>
+          <TabPanel value={value} index={5}>
+            Item Six
+          </TabPanel>
+          <TabPanel value={value} index={6}>
+            Item Seven
+          </TabPanel>
+        </Box>
+      </Box>
     </div>
   )
 }

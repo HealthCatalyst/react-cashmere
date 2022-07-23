@@ -20,6 +20,7 @@ $hc-icons-font-path: '~@healthcatalyst/cashmere/hcicons';
 @import "./Icon.scss";
 @import "./Navbar.scss";
 @import "./Forms.scss";
+@import "./Tabs.scss";
 
 :export {
     font-family: $default-font-family;

@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Button, Paper } from '@mui/material';
+import Icon from "../../components/Icon";
 
 export default {
   title: 'Providers/ThemeProvider',
@@ -61,8 +62,8 @@ const ColorCard = ({name, palette}) => {
           </Grid>
         </Grid>
         <Box p={1}>
-          <strong>{name}</strong><br />
-          <Typography variant="caption" color="secondary">{palette.main}</Typography>
+          <Icon icon="fa-key" /> <strong>{name}</strong><br />
+          <Typography variant="caption" color="secondary"><Icon icon="fas fa-eyedropper" /> {palette.main}</Typography>
         </Box>
       </Box>
     </Paper>
@@ -75,7 +76,7 @@ export const Colors = (args) => {
   const miscColors = Object.keys(theme.palette).filter(key => theme.palette[key].main).filter(c => !materialColors.includes(c));
   return (
     <>
-      <code>theme.palette[key][main, light, dark, contrastText];</code><br/><br/>
+      <code>theme.palette[<Icon icon="fa-key" />key]['main', 'light', 'dark', 'contrastText'];</code><br/><br/>
 
       <Typography variant='h2' mt={2} mb={2}>Material Colors</Typography>
       <Grid container spacing={4}>
