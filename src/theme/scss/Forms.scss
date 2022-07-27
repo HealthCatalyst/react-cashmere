@@ -175,6 +175,7 @@
       .hc-radio-overlay {
         background-color: $red;
         border-color: $red;
+        border-width: 2px;
       }
     }
     .Mui-focusVisible {
@@ -296,6 +297,63 @@
     .MuiSlider-rail {
       background-color: $gray-200;
       opacity: 0.5;
+    }
+  }
+}
+
+/* Date Pickers */
+.MuiClockPicker-root {
+  .MuiPickersArrowSwitcher-root {
+    .MuiIconButton-root {
+      color: $primary-brand;
+    }
+  }
+}
+.MuiCalendarPicker-root {
+  .MuiPickersDay-root {
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 12px;
+    &:hover {
+      border-color: shade($primary-brand, 20%);
+      background-color: transparent;
+    }
+    &.Mui-selected {
+      font-weight: bold;
+      background-color: shade($primary-brand, 20%);
+      &:hover {
+        background-color: shade($primary-brand, 20%);
+      }
+    }
+  }
+  .MuiPickersArrowSwitcher-root {
+    .MuiIconButton-root {
+      color: $primary-brand;
+    }
+  }
+
+  div > div > div:first-child span {
+    border-bottom: 2px solid rgba(127, 127, 127, 0.5);
+    margin: 0;
+    width: 40px;
+  }
+  div > div:last-child > div:last-child {
+    min-height: 245px;
+  }
+  div[role="presentation"] {
+    color: $primary-brand;
+    overflow: visible;
+    .MuiIconButton-root {
+      color: $primary-brand;
+    }
+  }
+  div[role="cell"] {
+    border-bottom: 1px solid rgba(127, 127, 127, 0.5);
+    padding-bottom: 2px;
+  }
+  div[role="row"]:last-child {
+    div[role="cell"] {
+      border-bottom: none;
     }
   }
 }

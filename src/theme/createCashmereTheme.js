@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "../components/Icon";
+import TextField from "@mui/material/TextField";
 import { createTheme, darken, lighten } from "@mui/material/styles";
 import cashmereVars from "./scss/cashmere.scss";
 import cashmereColors from "./scss/colors.scss";
@@ -26,7 +27,7 @@ const themeTypography = (theme = {}) => ({
   fontFamily: cashmereVars["font-family"],
   fontSize: parseInt(cashmereVars["font-size"], 10),
   color: "inherit",
-  h6: {ß
+  h6: {
     fontSize: undefined,
     fontWeight: undefined,
     lineHeight: undefined,
@@ -243,6 +244,22 @@ export const createCashmereTheme = (
         defaultProps: {
           disableRipple: true,
           disableTouchRipple: true,
+        },
+      },
+      MuiDatePicker: {
+        defaultProps: {
+          PaperProps: {
+            elevation: 1,
+          },
+          renderInput: (params) => <TextField {...params} />,
+        },
+      },
+      MuiDateTimePicker: {
+        defaultProps: {
+          PaperProps: {
+            elevation: 1,
+          },
+          renderInput: (params) => <TextField {...params} />,
         },
       },
     },

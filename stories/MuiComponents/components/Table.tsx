@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { createStyles, lighten, makeStyles, Theme } from "@mui/styles";
+import { createStyles, makeStyles, Theme } from "@mui/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -178,6 +178,7 @@ const useToolbarStyles = makeStyles((theme: Theme) =>
     root: {
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(1),
+      backgroundColor: "rgba(127,127,127,.1)",
     },
     highlight:
       theme.palette.mode === "light"

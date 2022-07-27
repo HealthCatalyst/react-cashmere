@@ -42,7 +42,7 @@
   &.MuiButton-containedNeutral {
     @include hc-button-neutral();
   }
-  &.hc-default &.MuiButton-containedDefault,
+  &.MuiButton-containedDefault,
   &.MuiButton-containedSecondary {
     @include hc-color-button($gray-100, 5%);
     color: $gray-600;
@@ -64,8 +64,7 @@
   &.MuiButton-containedLink-inline {
     @include hc-button-link();
   }
-  &.MuiButton-containedLink-inline,
-  &.hc-link-inline {
+  &.MuiButton-containedLink-inline {
     @include hc-button-link-inline();
   }
   &.MuiButton-containedBlue,
@@ -73,7 +72,6 @@
     @include hc-button-custom($blue);
   }
   &.MuiButton-containedGreen,
-  &.hc-success,
   &.MuiButton-containedSuccess {
     @include hc-button-custom($green);
   }
@@ -83,7 +81,6 @@
   &.MuiButton-containedRed {
     @include hc-button-custom($red);
   }
-  &.hc-warning,
   &.MuiButton-containedWarning {
     @include hc-button-custom($orange);
   }

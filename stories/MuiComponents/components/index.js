@@ -8,6 +8,7 @@ import ButtonGroupExample from "./ButtonGroup";
 import CardExample from "./Card";
 import CheckboxesExample from "./Checkboxes";
 import ChipExample from "./Chip";
+import DatePickerExample from "./DatePicker";
 import DialogExample from "./Dialog";
 import FabExample from "./FAB";
 import IconExample from "./Icon";
@@ -128,6 +129,13 @@ const components = [
     type: "Indicators",
     component: ChipExample,
     docs: "https://mui.com/material-ui/react-chip/",
+  },
+  {
+    id: "DatePicker",
+    title: "DatePickers",
+    type: "Form",
+    component: DatePickerExample,
+    docs: "https://mui.com/x/react-date-pickers/date-picker/",
   },
   {
     id: "Dialog",
