@@ -49,13 +49,19 @@
     .MuiSelect-icon {
         color: $primary-brand;
     }
+
+    .MuiIconButton-root {
+        height: auto;
+        width: auto;
+    }
 }
 
 /* Autocomplete */
 .MuiOutlinedInput-root {
     .MuiAutocomplete-endAdornment {
-        top: 0px;
-        right: 0px;
+        //top: 0px;
+        //right: 0px;
+        top: auto;
     }
     .MuiAutocomplete-popupIndicator {
         color: $primary-brand;
@@ -67,41 +73,44 @@
 }
 
 /* Checkbox */
-.MuiFormControlLabel-root {
-    .MuiCheckbox-root {
-        padding: 4px 9px 4px 9px;
+.MuiCheckbox-root {
+    padding: 4px 9px 4px 9px;
+    .hc-checkbox-overlay {
+        @include hc-checkbox-overlay();
+        background-color: transparent;
+    }
+    &:hover { 
         .hc-checkbox-overlay {
-            @include hc-checkbox-overlay();
-        }
-        &:hover { 
-            .hc-checkbox-overlay {
-                @include hc-checkbox-overlay-hover();
-            }
-        }
-        &.Mui-checked {
-            .hc-checkbox-overlay {
-                @include hc-checkbox-overlay-checked();
-            }
-        }
-        &.Mui-focusVisible {
-            .hc-checkbox-overlay {
-                @include hc-checkbox-overlay-focus();
-            }
-        }
-
-        &.Mui-disabled, &.Mui-checked.Mui-disabled {
-            cursor: not-allowed;
-            .hc-checkbox-overlay  {
-                @include hc-checkbox-overlay-disabled();
-                cursor: not-allowed;
-            }
-        }
-        &.MuiCheckbox-indeterminate {
-            .hc-checkbox-overlay {
-                @include hc-checkbox-overlay-indeterminate();
-            }
+            @include hc-checkbox-overlay-hover();
+            background-color: transparentize($primary-brand, .95);
         }
     }
+    &.Mui-checked {
+        .hc-checkbox-overlay {
+            @include hc-checkbox-overlay-checked();
+        }
+    }
+    &.Mui-focusVisible {
+        .hc-checkbox-overlay {
+            @include hc-checkbox-overlay-focus();
+        }
+    }
+
+    &.Mui-disabled, &.Mui-checked.Mui-disabled {
+        cursor: not-allowed;
+        .hc-checkbox-overlay  {
+            @include hc-checkbox-overlay-disabled();
+            background-color: transparentize($gray-300, .5);
+            cursor: not-allowed;
+        }
+    }
+    &.MuiCheckbox-indeterminate {
+        .hc-checkbox-overlay {
+            @include hc-checkbox-overlay-indeterminate();
+        }
+    }
+}
+.MuiFormControlLabel-root {
     &.Mui-error {
         color: $red;
         .hc-checkbox-overlay {
@@ -122,37 +131,40 @@
 
 
 /* Radio */
-.MuiFormControlLabel-root {
-    .MuiRadio-root {
-        padding: 4px 9px 4px 9px;
+.MuiRadio-root {
+    padding: 4px 9px 4px 9px;
+    .hc-radio-overlay {
+        @include hc-radio-overlay();
+        background-color: transparent;
+        position: relative;
+    }
+    &:hover { 
+        background-color: transparent;
         .hc-radio-overlay {
-            @include hc-radio-overlay();
-            position: relative;
-        }
-        &:hover { 
-            background-color: transparent;
-            .hc-radio-overlay {
-                @include hc-radio-overlay-hover();
-            }
-        }
-        &.Mui-checked {
-            .hc-radio-overlay {
-                @include hc-radio-overlay-checked();
-            }
-        }
-        &.Mui-focusVisible {
-            .hc-radio-overlay {
-                @include hc-radio-input-focus();
-            }
-        }
-        &.Mui-disabled, &.Mui-checked.Mui-disabled {
-            cursor: not-allowed;
-            .hc-radio-overlay  {
-                @include hc-radio-overlay-disabled();
-                cursor: not-allowed;
-            }
+            @include hc-radio-overlay-hover();
+            background-color: transparentize($primary-brand, .95);
         }
     }
+    &.Mui-checked {
+        .hc-radio-overlay {
+            @include hc-radio-overlay-checked();
+        }
+    }
+    &.Mui-focusVisible {
+        .hc-radio-overlay {
+            @include hc-radio-input-focus();
+        }
+    }
+    &.Mui-disabled, &.Mui-checked.Mui-disabled {
+        cursor: not-allowed;
+        .hc-radio-overlay  {
+            @include hc-radio-overlay-disabled();
+            background-color: transparentize($gray-300, .5);
+            cursor: not-allowed;
+        }
+    }
+}
+.MuiFormControlLabel-root {
     &.Mui-error {
         color: $red;
         .hc-radio-overlay {

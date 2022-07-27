@@ -199,34 +199,30 @@ export const createCashmereTheme = (name = 'Light', mode = 'light', colorOverrid
                     square: true,
                 }
             },
-            MuiSelect: {
+            MuiFormControl: {
                 defaultProps: {
                     size: "small",
                     variant: "outlined",
                 }
             },
-            MuiInputLabel: {
-                defaultProps: {
-                    size: "small",
-                    variant: "outlined"
-                }
-            },
-            MuiInput: {
-                defaultProps: {
-                    size: "small",
-                    variant: "outlined"
-                }
-            },
             MuiNativeSelect: {
                 defaultProps: {
-                    size: "small",
-                    variant: "outlined"
                 }
             },
             MuiTextField: {
                 defaultProps: {
-                    size: "small",
-                    variant: "outlined"
+                }
+            },
+            MuiSelect: {
+                defaultProps: {
+                }
+            },
+            MuiInputLabel: {
+                defaultProps: {
+                }
+            },
+            MuiInput: {
+                defaultProps: {
                 }
             },
             MuiCheckbox: {

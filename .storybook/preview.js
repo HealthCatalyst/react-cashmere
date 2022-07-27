@@ -1,6 +1,6 @@
 import React from 'react';
 import { addDecorator } from '@storybook/react';
-import ThemeProvider, { themes } from '../src/providers/ThemeProvider/ThemeProvider';
+import {ThemeProvider, themes } from 'react-cashmere';
 
 addDecorator((Story, context, ...extra) => {
   const [theme, setTheme] = React.useState(themes.find(t => t.name === context.globals.theme));

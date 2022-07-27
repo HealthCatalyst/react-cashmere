@@ -9,7 +9,7 @@ export default function ComboBox() {
         Singleselect
         <Box pb={2} pt={1.5}>
             <Autocomplete
-            id="combo-box-demo"
+            id="singleselect"
             options={top100Films}
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Movie" />}
@@ -21,7 +21,7 @@ export default function ComboBox() {
             <Autocomplete
             multiple
             disableCloseOnSelect
-            id="combo-box-demo"
+            id="multiselect"
             options={top100Films}
             renderInput={(params) => <TextField {...params} label="Movie" />}
             />

@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import Icon from '../../components/Icon/Icon';
+import { Navbar, Icon } from 'react-cashmere';
 
 export default {
   title: 'Cashmere Components/Navigation/Navbar',

@@ -186,14 +186,14 @@ const useToolbarStyles = makeStyles((theme: Theme) =>
       paddingRight: theme.spacing(1),
     },
     highlight:
-      theme.palette.type === "light"
+      theme.palette.mode === "light"
         ? {
-            color: theme.palette.secondary.main,
-            backgroundColor: lighten(theme.palette.primary.dark, 0.85),
+            color: theme.palette.primary.contrastText,
+            backgroundColor: theme.palette.primary.main,
           }
         : {
-            color: theme.palette.text.primary,
-            backgroundColor: theme.palette.primary.light,
+            color: theme.palette.primary.contrastText,
+            backgroundColor: theme.palette.primary.dark,
           },
     title: {
       flex: "1 1 100%",
@@ -283,7 +283,7 @@ export default function TableExample() {
   const [orderBy, setOrderBy] = React.useState<keyof Data>("calories")
   const [selected, setSelected] = React.useState<string[]>([])
   const [page, setPage] = React.useState(0)
-  const [dense, setDense] = React.useState(false)
+  const [dense, setDense] = React.useState(true)
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
 
   const handleRequestSort = (

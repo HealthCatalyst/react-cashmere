@@ -1,11 +1,12 @@
-.hc-button-group, .MuiButtonGroup-root {
+.MuiButtonGroup-root {
     .MuiButton-root, .MuiButton-contained {
         outline: none;
         &:focus {
             //box-shadow: none;
+            z-index: 1;
         }
     }
-    .hc-button, .MuiButton-root {
+    .MuiButton-root {
         &.MuiButton-sizeSmall {
             min-width: auto;
         }
@@ -28,7 +29,7 @@
                 color: transparentize($primary-action, .6)
             }
         }
-        &.hc-secondary, &.MuiButton-containedSecondary {
+        &.MuiButton-containedSecondary {
             border-bottom: 1px solid;
             border-color: $gray-200;
         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Icon from '../../components/Icon/Icon';
+import { Icon } from 'react-cashmere';
 import { sizeControl, colorControl, colorNames, extraColorNames } from '../config';
 
 export default {

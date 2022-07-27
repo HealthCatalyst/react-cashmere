@@ -1,11 +1,11 @@
 import React from 'react';
-import { themes, useTheme } from '../../providers/ThemeProvider/ThemeProvider';
+import { themes, useTheme } from 'react-cashmere';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Button, Paper } from '@mui/material';
-import Icon from "../../components/Icon";
+import { Icon } from "react-cashmere";
 
 export default {
   title: 'Providers/ThemeProvider',
