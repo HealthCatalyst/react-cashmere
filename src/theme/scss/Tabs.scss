@@ -1,34 +1,34 @@
 .MuiTabs-root {
-    .MuiTab-root {
-        font-size: 14px;
-        min-width: 120px;
-        &.Mui-selected {
-            font-weight: 700;
-            color: inherit;
-            &:hover {
-                color: inherit;
-            }
-        }
-        &:hover {
-            color: $primary-brand;
-        }
+  .MuiTab-root {
+    font-size: 14px;
+    min-width: 120px;
+    &.Mui-selected {
+      font-weight: 700;
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
     }
+    &:hover {
+      color: $primary-brand;
+    }
+  }
 
+  .MuiTabs-indicator {
+    height: 4px;
+  }
+
+  &.MuiTabs-vertical {
     .MuiTabs-indicator {
-        height: 4px;
+      width: 6px;
+      left: 0;
+      right: auto;
     }
+  }
 
-    &.MuiTabs-vertical {
-        .MuiTabs-indicator {
-            width: 6px;
-            left: 0;
-            right: auto;
-        }
+  .MuiTabScrollButton-root {
+    &.Mui-disabled {
+      opacity: 0.2;
     }
-
-    .MuiTabScrollButton-root {
-        &.Mui-disabled {
-            opacity: .2;
-        }
-    }
+  }
 }

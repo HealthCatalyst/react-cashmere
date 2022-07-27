@@ -1,4 +1,4 @@
-import ThemeProvider from './ThemeProvider';
+import ThemeProvider from "./ThemeProvider";
 
 export default ThemeProvider;
-export { themes, useTheme } from './ThemeProvider';
+export { themes, useTheme } from "./ThemeProvider";

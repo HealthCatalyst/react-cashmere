@@ -1,10 +1,10 @@
-import React from "react"
-import { makeStyles, createStyles } from "@mui/styles"
-import AddIcon from "@mui/icons-material/Add"
-import Fab from "@mui/material/Fab"
-import DeleteIcon from "@mui/icons-material/Delete"
-import IconButton from "@mui/material/IconButton"
-import Tooltip from "@mui/material/Tooltip"
+import React from "react";
+import { makeStyles, createStyles } from "@mui/styles";
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -12,10 +12,10 @@ const useStyles = makeStyles((theme) =>
       margin: theme.spacing(2),
     },
   })
-)
+);
 
 export default function TooltipExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div>
@@ -35,5 +35,5 @@ export default function TooltipExample() {
         </Fab>
       </Tooltip>
     </div>
-  )
+  );
 }

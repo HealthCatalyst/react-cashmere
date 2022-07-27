@@ -1,18 +1,18 @@
 @mixin mui-button-outline($color) {
-    color: $color;
+  color: $color;
+  border-color: $color;
+  &:focus {
+    box-shadow: 0 0 0 3px transparentize($color, 0.6);
+    background-color: transparentize($color, 0.85);
+  }
+  &:hover {
     border-color: $color;
-    &:focus {
-        box-shadow: 0 0 0 3px transparentize($color, 0.6);
-        background-color: transparentize($color, 0.85);
-    }
-    &:hover {
-        border-color: $color;
-        background-color: transparentize($color, 0.9);
-    }
-    &[disabled] {
-        border-color: transparentize($color, .6);
-        color: transparentize($color, .6);
-    }
+    background-color: transparentize($color, 0.9);
+  }
+  &[disabled] {
+    border-color: transparentize($color, 0.6);
+    color: transparentize($color, 0.6);
+  }
 }
 
 .MuiButton-root {
@@ -30,117 +30,123 @@
   }
 
   &.MuiButton-containedPrimary {
-      @include hc-button-primary();
+    @include hc-button-primary();
   }
   &.MuiButton-containedPrimary-alt {
-      @include hc-button-primary-alt();
+    @include hc-button-primary-alt();
   }
-  &.MuiButton-containedError, &.MuiButton-containedDestructive {
-      @include hc-button-destructive();
+  &.MuiButton-containedError,
+  &.MuiButton-containedDestructive {
+    @include hc-button-destructive();
   }
   &.MuiButton-containedNeutral {
-      @include hc-button-neutral();
+    @include hc-button-neutral();
   }
-  &.hc-default &.MuiButton-containedDefault, &.MuiButton-containedSecondary {
+  &.hc-default &.MuiButton-containedDefault,
+  &.MuiButton-containedSecondary {
     @include hc-color-button($gray-100, 5%);
     color: $gray-600;
     border: 1.5px solid $gray-300 !important;
     &:hover {
-        color: $offblack;
+      color: $offblack;
     }
     &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
+      box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
     }
     &[disabled]:hover {
-        color: $gray-600;
+      color: $gray-600;
     }
   }
   &.MuiButton-containedMinimal {
-      @include hc-button-minimal();
+    @include hc-button-minimal();
   }
   &.MuiButton-containedLink,
   &.MuiButton-containedLink-inline {
-      @include hc-button-link();
+    @include hc-button-link();
   }
   &.MuiButton-containedLink-inline,
   &.hc-link-inline {
-      @include hc-button-link-inline();
+    @include hc-button-link-inline();
   }
-  &.MuiButton-containedBlue, &.MuiButton-containedInfo {
-      @include hc-button-custom( $blue );
+  &.MuiButton-containedBlue,
+  &.MuiButton-containedInfo {
+    @include hc-button-custom($blue);
   }
-  &.MuiButton-containedGreen, &.hc-success, &.MuiButton-containedSuccess {
-      @include hc-button-custom( $green );
+  &.MuiButton-containedGreen,
+  &.hc-success,
+  &.MuiButton-containedSuccess {
+    @include hc-button-custom($green);
   }
   &.MuiButton-containedPurple {
-      @include hc-button-custom( $purple );
+    @include hc-button-custom($purple);
   }
   &.MuiButton-containedRed {
-      @include hc-button-custom( $red );
+    @include hc-button-custom($red);
   }
-  &.hc-warning, &.MuiButton-containedWarning {
-      @include hc-button-custom( $orange );
+  &.hc-warning,
+  &.MuiButton-containedWarning {
+    @include hc-button-custom($orange);
   }
   &.MuiButton-containedRuby-red {
-      @include hc-button-custom( $ruby-red );
+    @include hc-button-custom($ruby-red);
   }
   &.MuiButton-containedDeep-red {
-      @include hc-button-custom( $deep-red );
+    @include hc-button-custom($deep-red);
   }
   &.MuiButton-containedRed-orange {
-      @include hc-button-custom( $red-orange );
+    @include hc-button-custom($red-orange);
   }
   &.MuiButton-containedMagenta {
-      @include hc-button-custom( $magenta );
+    @include hc-button-custom($magenta);
   }
   &.MuiButton-containedPink {
-      @include hc-button-custom( $pink );
+    @include hc-button-custom($pink);
   }
   &.MuiButton-containedLight-pink {
-      @include hc-button-custom( $light-pink );
+    @include hc-button-custom($light-pink);
   }
   &.MuiButton-containedAzure {
-      @include hc-button-custom( $azure );
+    @include hc-button-custom($azure);
   }
   &.MuiButton-containedTeal {
-      @include hc-button-custom( $teal );
+    @include hc-button-custom($teal);
   }
   &.MuiButton-containedDark-green {
-      @include hc-button-custom( $dark-green );
+    @include hc-button-custom($dark-green);
   }
   &.MuiButton-containedLight-green {
-      @include hc-button-custom( $light-green );
+    @include hc-button-custom($light-green);
   }
   &.MuiButton-containedBrown {
-      @include hc-button-custom( $brown );
+    @include hc-button-custom($brown);
   }
   &.MuiButton-containedPurple-gray {
-      @include hc-button-custom( $purple-gray );
+    @include hc-button-custom($purple-gray);
   }
   &.MuiButton-containedYellow {
-      @include hc-button-custom( $yellow );
+    @include hc-button-custom($yellow);
   }
   &.MuiButton-containedYellow-orange {
-      @include hc-button-custom( $yellow-orange );
+    @include hc-button-custom($yellow-orange);
   }
   &.MuiButton-containedTan {
-      @include hc-button-custom( $tan );
+    @include hc-button-custom($tan);
   }
 
   &.MuiButton-outlined {
     &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
+      box-shadow: 0 0 0 2px transparentize($primary-brand, 0.6);
     }
     &[disabled] {
-        border: 1px solid transparentize($gray-500, .6);
-        color: transparentize($gray-500, .6);
+      border: 1px solid transparentize($gray-500, 0.6);
+      color: transparentize($gray-500, 0.6);
     }
   }
 
   &.MuiButton-outlinedMinimal {
     border: none;
     &:hover {
-        border: 1px solid $gray-500;
+      border: 1px solid $gray-500;
     }
   }
 
@@ -150,7 +156,9 @@
   &.MuiButton-outlinedPrimary-alt {
     @include mui-button-outline($primary-alt-action);
   }
-  &.MuiButton-outlinedDestructive, &.MuiButton-outlinedError, &.MuiButton-outlinedRed  {
+  &.MuiButton-outlinedDestructive,
+  &.MuiButton-outlinedError,
+  &.MuiButton-outlinedRed {
     @include mui-button-outline($destructive-action);
   }
   &.MuiButton-outlinedNeutral {

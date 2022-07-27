@@ -1,110 +1,125 @@
 @import "@healthcatalyst/cashmere/scss/cashmere";
 
-.hc-icon-button, .MuiIconButton-root {
+.MuiIconButton-root {
   @include hc-icon-button();
-  &.hc-sm, &.MuiIconButton-sizeSmall {
+
+  &.MuiIconButton-sizeSmall {
     height: 26px;
     width: 26px;
   }
-  &.hc-md, &.MuiIconButton-sizeMedium {
+
+  &.MuiIconButton-sizeMedium {
     height: 35px;
     width: 35px;
   }
-  &.hc-lg, &.MuiIconButton-sizeLarge {
+
+  &.MuiIconButton-sizeLarge {
     height: 40px;
     width: 40px;
   }
+
   &:disabled {
-    opacity: .35;
+    opacity: 0.35;
   }
 
-  &.hc-primary, &.MuiIconButton-colorPrimary {
+  &.MuiIconButton-colorPrimary {
     color: $primary-action;
   }
-  &.hc-primary-alt, &.MuiIconButton-colorPrimary-alt {
+
+  &.MuiIconButton-colorPrimary-alt {
     color: $primary-alt-action;
   }
-  &.hc-destructive, &.hc-error, &.MuiIconButton-colorError {
+
+  &.MuiIconButton-colorError {
     color: $red;
   }
-  &.hc-secondary, &.MuiIconButton-colorSecondary {
+
+  &.MuiIconButton-colorSecondary {
     color: $gray-600;
   }
-  &.MuiIconButton-colorDefault,
-  &.hc-neutral,
-  &.hc-minimal,
-  &.hc-default {
+
+  &.MuiIconButton-colorDefault {
     color: inherit;
   }
-  &.hc-link,
-  &.hc-link-inline,
-  &.MuiIconButton-colorInfo,
-  &.hc-blue {
-      color: $blue;
+
+  &.MuiIconButton-colorInfo {
+    color: $blue;
   }
-  &.hc-link,
-  &.hc-link-inline {
-      @include hc-button-link();
+
+  &.MuiIconButton-colorGreen,
+  &.MuiIconButton-colorSuccess {
+    color: $green;
   }
-  &.hc-link-inline {
-      @include hc-button-link-inline();
+
+  &.MuiIconButton-colorPurple {
+    color: $purple;
   }
-  &.hc-green, &.MuiIconButton-colorGreen, 
-  &.hc-success, &.MuiIconButton-colorSuccess {
-      color: $green;
+
+  &.MuiIconButton-colorRed {
+    color: $red;
   }
-  &.hc-purple, &.MuiIconButton-colorPurple {
-      color: $purple;
+
+  &.MuiIconButton-colorWarning {
+    color: $orange;
   }
-  &.hc-red, &.MuiIconButton-colorRed {
-      color: $red;
+
+  &.MuiIconButton-colorRuby-red {
+    color: $ruby-red;
   }
-  &.hc-orange, &.hc-warning, &.MuiIconButton-colorWarning {
-      color: $orange;
+
+  &.MuiIconButton-colorDeep-red {
+    color: $deep-red;
   }
-  &.hc-ruby-red, &.MuiIconButton-colorRuby-red {
-      color: $ruby-red;
+
+  &.MuiIconButton-colorRed-orange {
+    color: $red-orange;
   }
-  &.hc-deep-red, &.MuiIconButton-colorDeep-red {
-      color: $deep-red;
+
+  &.MuiIconButton-colorMagenta {
+    color: $magenta;
   }
-  &.hc-red-orange, &.MuiIconButton-colorRed-orange {
-      color: $red-orange;
+
+  &.MuiIconButton-colorPink {
+    color: $pink;
   }
-  &.hc-magenta, &.MuiIconButton-colorMagenta {
-      color: $magenta;
+
+  &.MuiIconButton-colorLight-pink {
+    color: $light-pink;
   }
-  &.hc-pink, &.MuiIconButton-colorPink {
-      color: $pink;
+
+  &.MuiIconButton-colorAzure {
+    color: $azure;
   }
-  &.hc-light-pink, &.MuiIconButton-colorLight-pink {
-      color: $light-pink;
+
+  &.MuiIconButton-colorTeal {
+    color: $teal;
   }
-  &.hc-azure, &.MuiIconButton-colorAzure {
-      color: $azure;
+
+  &.MuiIconButton-colorDark-green {
+    color: $dark-green;
   }
-  &.hc-teal, &.MuiIconButton-colorTeal {
-      color: $teal;
+
+  &.MuiIconButton-colorLight-green {
+    color: $light-green;
   }
-  &.hc-dark-green, &.MuiIconButton-colorDark-green {
-      color: $dark-green;
+
+  &.MuiIconButton-colorBrown {
+    color: $brown;
   }
-  &.hc-dark-green, &.MuiIconButton-colorLight-green {
-      color: $light-green;
+
+  &.MuiIconButton-colorPurple-gray {
+    color: $purple-gray;
   }
-  &.hc-brown, &.MuiIconButton-colorBrown {
-      color: $brown;
+
+  &.MuiIconButton-colorYellow {
+    color: $yellow;
   }
-  &.hc-purple-gray, &.MuiIconButton-colorPurple-gray {
-      color: $purple-gray;
+
+  &.MuiIconButton-colorYellowOrange {
+    color: $yellow-orange;
   }
-  &.hc-yellow, &.MuiIconButton-colorYellow {
-      color: $yellow;
-  }
-  &.hc-yellow-orange, &.MuiIconButton-colorYellowOrange {
-      color: $yellow-orange;
-  }
-  &.hc-tan, &.MuiIconButton-colorTan {
-      color: $tan;
+
+  &.MuiIconButton-colorTan {
+    color: $tan;
   }
 }

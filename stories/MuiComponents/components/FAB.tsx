@@ -1,10 +1,10 @@
-import React from "react"
-import { createStyles, makeStyles } from "@mui/styles"
-import Fab from "@mui/material/Fab"
-import AddIcon from "@mui/icons-material/Add"
-import EditIcon from "@mui/icons-material/Edit"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import NavigationIcon from "@mui/icons-material/Navigation"
+import React from "react";
+import { createStyles, makeStyles } from "@mui/styles";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import NavigationIcon from "@mui/icons-material/Navigation";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) =>
       marginRight: theme.spacing(1),
     },
   })
-)
+);
 
 export default function FabExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -38,5 +38,5 @@ export default function FabExample() {
         <FavoriteIcon />
       </Fab>
     </div>
-  )
+  );
 }

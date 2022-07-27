@@ -1,13 +1,13 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 export default function SelectOtherProps() {
   const [multi, setMulti] = React.useState([]);
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
 
   const handleMultiChange = (event) => {
     setMulti(event.target.value);
@@ -110,8 +110,10 @@ export default function SelectOtherProps() {
         </Select>
         <FormHelperText>Required</FormHelperText>
       </FormControl>
-      <br/><br/>
-      Multiselect<br/>
+      <br />
+      <br />
+      Multiselect
+      <br />
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select

@@ -1,23 +1,23 @@
-import React from "react"
-import { makeStyles } from "@mui/styles"
-import Button from "@mui/material/Button"
-import { Typography } from "@mui/material"
-import DeleteIcon from "@mui/icons-material/Delete"
-import CloudUploadIcon from "@mui/icons-material/CloudUpload"
-import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice"
-import SaveIcon from "@mui/icons-material/Save"
+import React from "react";
+import { makeStyles } from "@mui/styles";
+import Button from "@mui/material/Button";
+import { Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import SaveIcon from "@mui/icons-material/Save";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   group: {
     "& > *": {
       margin: theme.spacing(1),
     },
     marginBottom: theme.spacing(2),
   },
-}))
+}));
 
 export default function ButtonsExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div>
@@ -73,11 +73,7 @@ export default function ButtonsExample() {
         Buttons with icons and label
       </Typography>
       <div className={classes.group}>
-        <Button
-          variant="contained"
-          color="error"
-          startIcon={<DeleteIcon />}
-        >
+        <Button variant="contained" color="error" startIcon={<DeleteIcon />}>
           Delete
         </Button>
         <Button
@@ -113,5 +109,5 @@ export default function ButtonsExample() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import React from "react"
-import { createStyles, makeStyles } from "@mui/styles"
-import Avatar from "@mui/material/Avatar"
-import Chip from "@mui/material/Chip"
-import FaceIcon from "@mui/icons-material/Face"
-import WarnIcon from "@mui/icons-material/Warning"
-import ErrorIcon from "@mui/icons-material/Cancel"
-import DoneIcon from "@mui/icons-material/Done"
-import { Typography } from "@mui/material"
+import React from "react";
+import { createStyles, makeStyles } from "@mui/styles";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import FaceIcon from "@mui/icons-material/Face";
+import WarnIcon from "@mui/icons-material/Warning";
+import ErrorIcon from "@mui/icons-material/Cancel";
+import DoneIcon from "@mui/icons-material/Done";
+import { Typography } from "@mui/material";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -19,18 +19,18 @@ const useStyles = makeStyles((theme) =>
       },
     },
   })
-)
+);
 
 export default function ChipExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const handleDelete = () => {
-    console.info("You clicked the delete icon.")
-  }
+    console.info("You clicked the delete icon.");
+  };
 
   const handleClick = () => {
-    console.info("You clicked the Chip.")
-  }
+    console.info("You clicked the Chip.");
+  };
 
   return (
     <>
@@ -38,9 +38,26 @@ export default function ChipExample() {
       <div className={classes.root}>
         <Chip label="Primary" color="primary" onClick={handleClick} />
         <Chip label="Secondary" color="secondary" onClick={handleClick} />
-        <Chip label="Success" color="success" icon={<DoneIcon />} onClick={handleClick} />
-        <Chip label="Warning" color="warning" icon={<WarnIcon />} onDelete={handleDelete} onClick={handleClick} />
-        <Chip label="Error" color="error" icon={<ErrorIcon />} onDelete={handleDelete} onClick={handleClick} />
+        <Chip
+          label="Success"
+          color="success"
+          icon={<DoneIcon />}
+          onClick={handleClick}
+        />
+        <Chip
+          label="Warning"
+          color="warning"
+          icon={<WarnIcon />}
+          onDelete={handleDelete}
+          onClick={handleClick}
+        />
+        <Chip
+          label="Error"
+          color="error"
+          icon={<ErrorIcon />}
+          onDelete={handleDelete}
+          onClick={handleClick}
+        />
         <Chip label="Default" color="default" onClick={handleClick} />
       </div>
       <Typography variant="h6">Default</Typography>
@@ -179,5 +196,5 @@ export default function ChipExample() {
         />
       </div>
     </>
-  )
+  );
 }

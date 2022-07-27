@@ -1,11 +1,11 @@
-import React from "react"
-import { makeStyles } from "@mui/styles"
-import clsx from "clsx"
-import Card from "@mui/material/Card"
-import CardActions from "@mui/material/CardActions"
-import CardContent from "@mui/material/CardContent"
-import Button from "@mui/material/Button"
-import Typography from "@mui/material/Typography"
+import React from "react";
+import { makeStyles } from "@mui/styles";
+import clsx from "clsx";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import {
   Grid,
   CardHeader,
@@ -13,11 +13,11 @@ import {
   IconButton,
   CardMedia,
   Collapse,
-} from "@mui/material"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import ShareIcon from "@mui/icons-material/Share"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import MoreVertIcon from "@mui/icons-material/MoreVert"
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   rootSimple: {
@@ -54,16 +54,16 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: theme.palette.primary.main,
   },
-}))
+}));
 
 export default function CardExample() {
-  const classes = useStyles()
-  const bull = <span className={classes.bullet}>•</span>
-  const [expanded, setExpanded] = React.useState(false)
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
+  const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
-    setExpanded(!expanded)
-  }
+    setExpanded(!expanded);
+  };
 
   return (
     <Grid container spacing={2}>
@@ -91,7 +91,9 @@ export default function CardExample() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">Learn More</Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
             <Button size="small" color="primary-alt">
               Save
             </Button>
@@ -125,7 +127,9 @@ export default function CardExample() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">Learn More</Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
             <Button size="small" color="primary-alt">
               Save
             </Button>
@@ -159,10 +163,11 @@ export default function CardExample() {
           />
           <CardContent>
             <Typography variant="body2" color="textPrimary" component="p">
-            Cashmere is Health Catalyst’s comprehensive design system. As we deliver 
-            digital content across a wide range of platforms and modalities, we strive 
-            to deliver a meaningful, consistent, and delightful experience.
-          </Typography>
+              Cashmere is Health Catalyst’s comprehensive design system. As we
+              deliver digital content across a wide range of platforms and
+              modalities, we strive to deliver a meaningful, consistent, and
+              delightful experience.
+            </Typography>
           </CardContent>
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
@@ -185,24 +190,23 @@ export default function CardExample() {
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>
-                The foundations of the Cashmere Design System are universal brand 
-                guidelines that all our digital content should follow.
+                The foundations of the Cashmere Design System are universal
+                brand guidelines that all our digital content should follow.
               </Typography>
               <Typography paragraph>
-                But Cashmere isn’t only a design system, it’s also an open-source
-                React component library. Everything under the Web Apps tab is 
-                meant for you. Take a look at our developer guides to get started
-                incorporating Cashmere into your project. Although Angular is our
-                preferred framework, you can leverage Cashmere’s stylesheets in
-                any web app - even the most basic HTML site.
-
-                And get involved! All developers are welcome to contribute code or
-                improvement ideas to the library via our GitHub project.
+                But Cashmere isn’t only a design system, it’s also an
+                open-source React component library. Everything under the Web
+                Apps tab is meant for you. Take a look at our developer guides
+                to get started incorporating Cashmere into your project.
+                Although Angular is our preferred framework, you can leverage
+                Cashmere’s stylesheets in any web app - even the most basic HTML
+                site. And get involved! All developers are welcome to contribute
+                code or improvement ideas to the library via our GitHub project.
               </Typography>
             </CardContent>
           </Collapse>
         </Card>
       </Grid>
     </Grid>
-  )
+  );
 }

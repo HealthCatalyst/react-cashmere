@@ -1,5 +1,9 @@
 /* providers */
-export { default as ThemeProvider, themes, useTheme } from "./providers/ThemeProvider";
+export {
+  default as ThemeProvider,
+  themes,
+  useTheme,
+} from "./providers/ThemeProvider";
 
 /* helpers */
 export { default as createCashmereTheme } from "./theme/createCashmereTheme";

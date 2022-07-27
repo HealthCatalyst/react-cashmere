@@ -1,104 +1,91 @@
-.hc-icon, .MuiIcon-root {
-    &.hc-icon-inherit, &.MuiIcon-fontSizeInherit {
+.MuiIcon-root {
+    &.MuiIcon-fontSizeInherit {
         font-size: inherit;
     }
-    &.hc-icon-sm, &.MuiIcon-fontSizeSmall {
+    &.MuiIcon-fontSizeSmall {
         @include hc-icon-height(14px);
     }
-    &.hc-icon-md, &.MuiIcon-fontSizeMedium {
+    &.MuiIcon-fontSizeMedium {
         @include hc-icon-height($default-icon-size);
     }
-    &.hc-icon-lg, &.MuiIcon-fontSizeLarge {
+    &.MuiIcon-fontSizeLarge {
         @include hc-icon-height(36px);
     }
 
-    &.hc-primary, &.MuiIcon-colorPrimary {
+    &.MuiIcon-colorPrimary {
         color: $primary-brand;
-      }
-      &.hc-primary-alt, &.MuiIcon-colorPrimary-alt {
+    }
+    &.MuiIcon-colorPrimary-alt {
         color: $primary-alt-action;
-      }
-      &.hc-destructive, &.hc-error, &.MuiIcon-colorError {
+    }
+    &.MuiIcon-colorError {
         color: $red;
-      }
-      &.hc-secondary, &.MuiIcon-colorSecondary {
+    }
+    &.MuiIcon-colorSecondary {
         color: $gray-600;
-      }
-      &.MuiIcon-colorDefault,
-      &.hc-neutral,
-      &.hc-minimal,
-      &.hc-default {
+    }
+    &.MuiIcon-colorDefault {
         color: inherit;
-      }
-      &.hc-link,
-      &.hc-link-inline,
-      &.MuiIcon-colorInfo,
-      &.hc-blue {
-          color: $blue;
-      }
-      &.hc-link,
-      &.hc-link-inline {
-          @include hc-button-link();
-      }
-      &.hc-link-inline {
-          @include hc-button-link-inline();
-      }
-      &.hc-green, &.MuiIcon-colorGreen, 
-      &.hc-success, &.MuiIcon-colorSuccess {
-          color: $green;
-      }
-      &.hc-purple, &.MuiIcon-colorPurple {
-          color: $purple;
-      }
-      &.hc-red, &.MuiIcon-colorRed {
-          color: $red;
-      }
-      &.hc-orange, &.hc-warning, &.MuiIcon-colorWarning {
-          color: $orange;
-      }
-      &.hc-ruby-red, &.MuiIcon-colorRuby-red {
-          color: $ruby-red;
-      }
-      &.hc-deep-red, &.MuiIcon-colorDeep-red {
-          color: $deep-red;
-      }
-      &.hc-red-orange, &.MuiIcon-colorRed-orange {
-          color: $red-orange;
-      }
-      &.hc-magenta, &.MuiIcon-colorMagenta {
-          color: $magenta;
-      }
-      &.hc-pink, &.MuiIcon-colorPink {
-          color: $pink;
-      }
-      &.hc-light-pink, &.MuiIcon-colorLight-pink {
-          color: $light-pink;
-      }
-      &.hc-azure, &.MuiIcon-colorAzure {
-          color: $azure;
-      }
-      &.hc-teal, &.MuiIcon-colorTeal {
-          color: $teal;
-      }
-      &.hc-dark-green, &.MuiIcon-colorDark-green {
-          color: $dark-green;
-      }
-      &.hc-dark-green, &.MuiIcon-colorLight-green {
-          color: $light-green;
-      }
-      &.hc-brown, &.MuiIcon-colorBrown {
-          color: $brown;
-      }
-      &.hc-purple-gray, &.MuiIcon-colorPurple-gray {
-          color: $purple-gray;
-      }
-      &.hc-yellow, &.MuiIcon-colorYellow {
-          color: $yellow;
-      }
-      &.hc-yellow-orange, &.MuiIcon-colorYellowOrange {
-          color: $yellow-orange;
-      }
-      &.hc-tan, &.MuiIcon-colorTan {
-          color: $tan;
-      }
+    }
+    &.MuiIcon-colorInfo {
+        color: $blue;
+    }
+    &.MuiIcon-colorGreen, 
+    &.MuiIcon-colorSuccess {
+        color: $green;
+    }
+    &.MuiIcon-colorPurple {
+        color: $purple;
+    }
+    &.MuiIcon-colorRed {
+        color: $red;
+    }
+    &.MuiIcon-colorWarning {
+        color: $orange;
+    }
+    &.MuiIcon-colorRuby-red {
+        color: $ruby-red;
+    }
+    &.MuiIcon-colorDeep-red {
+        color: $deep-red;
+    }
+    &.MuiIcon-colorRed-orange {
+        color: $red-orange;
+    }
+    &.MuiIcon-colorMagenta {
+        color: $magenta;
+    }
+    &.MuiIcon-colorPink {
+        color: $pink;
+    }
+    &.MuiIcon-colorLight-pink {
+        color: $light-pink;
+    }
+    &.MuiIcon-colorAzure {
+        color: $azure;
+    }
+    &.MuiIcon-colorTeal {
+        color: $teal;
+    }
+    &.MuiIcon-colorDark-green {
+        color: $dark-green;
+    }
+    &.MuiIcon-colorLight-green {
+        color: $light-green;
+    }
+    &.MuiIcon-colorBrown {
+        color: $brown;
+    }
+    &.MuiIcon-colorPurple-gray {
+        color: $purple-gray;
+    }
+    &.MuiIcon-colorYellow {
+        color: $yellow;
+    }
+    &.MuiIcon-colorYellowOrange {
+        color: $yellow-orange;
+    }
+    &.MuiIcon-colorTan {
+        color: $tan;
+    }
 }

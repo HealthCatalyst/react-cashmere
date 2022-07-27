@@ -1,11 +1,11 @@
-$fa-font-path: '~font-awesome/fonts';
+$fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
 $notosans-fontface-path: "~notosans-fontface/fonts";
 @import "~notosans-fontface/scss/notosans-fontface-allweight";
 
-$hc-icons-font-path: '~@healthcatalyst/cashmere/hcicons';
-@import '~@healthcatalyst/cashmere/hcicons/hcicons';
+$hc-icons-font-path: "~@healthcatalyst/cashmere/hcicons";
+@import "~@healthcatalyst/cashmere/hcicons/hcicons";
 
 @import "~@healthcatalyst/cashmere/scss/cashmere";
 @import "~@healthcatalyst/cashmere/scss/slider";
@@ -23,6 +23,6 @@ $hc-icons-font-path: '~@healthcatalyst/cashmere/hcicons';
 @import "./Tabs.scss";
 
 :export {
-    font-family: $default-font-family;
-    font-size: $default-font-size;
+  font-family: $default-font-family;
+  font-size: $default-font-size;
 }

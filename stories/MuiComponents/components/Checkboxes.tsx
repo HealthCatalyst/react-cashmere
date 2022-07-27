@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 export default function IndeterminateCheckbox() {
   const [checked, setChecked] = React.useState([true, false]);
@@ -19,7 +19,7 @@ export default function IndeterminateCheckbox() {
   };
 
   const children = (
-    <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
       <FormControlLabel
         label="Child 1"
         control={<Checkbox checked={checked[0]} onChange={handleChange2} />}

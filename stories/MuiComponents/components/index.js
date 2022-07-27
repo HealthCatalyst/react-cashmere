@@ -38,13 +38,13 @@ const sortByKey = (it, key = "title") => {
   it.sort((a, b) => {
     return a[key].localeCompare(b[key], undefined, {
       numeric: true,
-      sensitivity: 'base'
+      sensitivity: "base",
     });
   });
   return it;
-}
+};
 
-const components =  [
+const components = [
   {
     id: "Accordion",
     title: "Accordion",
@@ -253,10 +253,12 @@ export default sortByKey(components);
 
 const byType = {};
 components.forEach((c) => {
-  if(!byType[c.type]) {
+  if (!byType[c.type]) {
     byType[c.type] = [];
   }
   byType[c.type].push(c);
 });
 
-export const componentsByType = sortByKey(Object.keys(byType).map((key) => ({title: key, components: byType[key]})));
+export const componentsByType = sortByKey(
+  Object.keys(byType).map((key) => ({ title: key, components: byType[key] }))
+);

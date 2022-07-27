@@ -1,119 +1,124 @@
 @mixin mui-button-toggle($color) {
-    text-align: center;
-    height: 100%;
-    cursor: pointer;
-    background-position: center;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+  background-position: center;
+  color: $white;
+  background-color: $color;
+
+  &.Mui-disabled {
+    cursor: not-allowed;
+    opacity: 0.35;
+  }
+  &.Mui-selected {
     color: $white;
-    background-color: $color;
+    background-color: shade($color, 40%);
+    box-shadow: inset 0 0 4px shade($color, 50%);
 
-    &.Mui-disabled {
-        cursor: not-allowed;
-        opacity: 0.35;
+    &:hover {
+      background-color: shade($color, 50%);
     }
-    &.Mui-selected {
-        color: $white;
-        background-color: shade($color, 40%);
-        box-shadow: inset 0 0 4px shade($color, 50%);
-
-        &:hover {
-            background-color: shade($color, 50%);
-        }
-    }
+  }
 }
 
 .MuiToggleButtonGroup-root {
-    .MuiButton-root {
-        border: none;
-        outline: none;
-        &:focus {
-            box-shadow: none;
-        }
+  .MuiButton-root {
+    border: none;
+    outline: none;
+    &:focus {
+      box-shadow: none;
     }
-    .MuiToggleButton-root {
-        &.MuiToggleButton-primary {
-            @include mui-button-toggle($primary-action);
-        }
-        &.MuiToggleButton-primary-alt {
-            @include mui-button-toggle($primary-alt-action);
-        }
-        &.MuiToggleButton-destructive, &.MuiToggleButton-error, &.Mui-error {
-            @include mui-button-toggle($destructive-action);
-        }
-        &.MuiToggleButton-default, &.MuiToggleButton-neutral {
-            @include mui-button-toggle($neutral-action);
-        }
-        &.MuiToggleButton-secondary {
-            @include mui-button-toggle($gray-100);
-            @include hc-button-toggle-secondary();
-        }
-    
-        &.MuiToggleButton-sizeSmall, &.MuiButton-sizeSmall {
-            @include hc-button-toggle-sm();
-        }
-        &.MuiToggleButton-sizeMedium, &.MuiButton-sizeMedium {
-            @include hc-button-toggle-md();
-        }
-        &.MuiToggleButton-sizeLarge, &.MuiButton-sizeLarge {
-            @include hc-button-toggle-lg();
-        }
-    
-        &.MuiToggleButton-blue {
-            @include mui-button-toggle($blue);
-        }
-        &.MuiToggleButton-green {
-            @include mui-button-toggle($green);
-        }
-        &.MuiToggleButton-purple {
-            @include mui-button-toggle($purple);
-        }
-        &.MuiToggleButton-red {
-            @include mui-button-toggle($red);
-        }
-        &.MuiToggleButton-orange {
-            @include mui-button-toggle($orange);
-        }
-        &.MuiToggleButton-ruby-red {
-            @include mui-button-toggle($ruby-red);
-        }
-        &.MuiToggleButton-deep-red {
-            @include mui-button-toggle($deep-red);
-        }
-        &.MuiToggleButton-red-orange {
-            @include mui-button-toggle($red-orange);
-        }
-        &.MuiToggleButton-magenta {
-            @include mui-button-toggle($magenta);
-        }
-        &.MuiToggleButton-pink {
-            @include mui-button-toggle($pink);
-        }
-        &.MuiToggleButton-light-pink {
-            @include mui-button-toggle($light-pink);
-        }
-        &.MuiToggleButton-azure {
-            @include mui-button-toggle($azure);
-        }
-        &.MuiToggleButton-teal {
-            @include mui-button-toggle($teal);
-        }
-        &.MuiToggleButton-dark-green {
-            @include mui-button-toggle($dark-green);
-        }
-        &.MuiToggleButton-brown {
-            @include mui-button-toggle($brown);
-        }
-        &.MuiToggleButton-purple-gray {
-            @include mui-button-toggle($purple-gray);
-        }
-        &.MuiToggleButton-yellow {
-            @include mui-button-toggle($yellow);
-        }
-        &.MuiToggleButton-yellow-orange {
-            @include mui-button-toggle($yellow-orange);
-        }
-        &.MuiToggleButton-tan {
-            @include mui-button-toggle($tan);
-        }
+  }
+  .MuiToggleButton-root {
+    &.MuiToggleButton-primary {
+      @include mui-button-toggle($primary-action);
     }
-}
+    &.MuiToggleButton-primary-alt {
+      @include mui-button-toggle($primary-alt-action);
+    }
+    &.MuiToggleButton-destructive,
+    &.MuiToggleButton-error,
+    &.Mui-error {
+      @include mui-button-toggle($destructive-action);
+    }
+    &.MuiToggleButton-default,
+    &.MuiToggleButton-neutral {
+      @include mui-button-toggle($neutral-action);
+    }
+    &.MuiToggleButton-secondary {
+      @include mui-button-toggle($gray-100);
+      @include hc-button-toggle-secondary();
+    }
 
+    &.MuiToggleButton-sizeSmall,
+    &.MuiButton-sizeSmall {
+      @include hc-button-toggle-sm();
+    }
+    &.MuiToggleButton-sizeMedium,
+    &.MuiButton-sizeMedium {
+      @include hc-button-toggle-md();
+    }
+    &.MuiToggleButton-sizeLarge,
+    &.MuiButton-sizeLarge {
+      @include hc-button-toggle-lg();
+    }
+
+    &.MuiToggleButton-blue {
+      @include mui-button-toggle($blue);
+    }
+    &.MuiToggleButton-green {
+      @include mui-button-toggle($green);
+    }
+    &.MuiToggleButton-purple {
+      @include mui-button-toggle($purple);
+    }
+    &.MuiToggleButton-red {
+      @include mui-button-toggle($red);
+    }
+    &.MuiToggleButton-orange {
+      @include mui-button-toggle($orange);
+    }
+    &.MuiToggleButton-ruby-red {
+      @include mui-button-toggle($ruby-red);
+    }
+    &.MuiToggleButton-deep-red {
+      @include mui-button-toggle($deep-red);
+    }
+    &.MuiToggleButton-red-orange {
+      @include mui-button-toggle($red-orange);
+    }
+    &.MuiToggleButton-magenta {
+      @include mui-button-toggle($magenta);
+    }
+    &.MuiToggleButton-pink {
+      @include mui-button-toggle($pink);
+    }
+    &.MuiToggleButton-light-pink {
+      @include mui-button-toggle($light-pink);
+    }
+    &.MuiToggleButton-azure {
+      @include mui-button-toggle($azure);
+    }
+    &.MuiToggleButton-teal {
+      @include mui-button-toggle($teal);
+    }
+    &.MuiToggleButton-dark-green {
+      @include mui-button-toggle($dark-green);
+    }
+    &.MuiToggleButton-brown {
+      @include mui-button-toggle($brown);
+    }
+    &.MuiToggleButton-purple-gray {
+      @include mui-button-toggle($purple-gray);
+    }
+    &.MuiToggleButton-yellow {
+      @include mui-button-toggle($yellow);
+    }
+    &.MuiToggleButton-yellow-orange {
+      @include mui-button-toggle($yellow-orange);
+    }
+    &.MuiToggleButton-tan {
+      @include mui-button-toggle($tan);
+    }
+  }
+}

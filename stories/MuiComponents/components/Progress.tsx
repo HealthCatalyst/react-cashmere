@@ -1,7 +1,7 @@
-import React from "react"
-import clsx from "clsx"
-import { makeStyles, Theme, createStyles } from "@mui/styles"
-import CircularProgress from "@mui/material/CircularProgress"
+import React from "react";
+import clsx from "clsx";
+import { makeStyles, Theme, createStyles } from "@mui/styles";
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   Typography,
   Fab,
@@ -9,10 +9,10 @@ import {
   LinearProgress,
   LinearProgressProps,
   Box,
-} from "@mui/material"
-import { green } from "@mui/material/colors"
-import CheckIcon from "@mui/icons-material/Check"
-import SaveIcon from "@mui/icons-material/Save"
+} from "@mui/material";
+import { green } from "@mui/material/colors";
+import CheckIcon from "@mui/icons-material/Check";
+import SaveIcon from "@mui/icons-material/Save";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,35 +55,35 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: -12,
     },
   })
-)
+);
 
 export default function ProgressExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
-  const [loading, setLoading] = React.useState(false)
-  const [success, setSuccess] = React.useState(false)
-  const timer = React.useRef<number>()
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const timer = React.useRef<number>();
 
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
-  })
+  });
 
   React.useEffect(() => {
     return () => {
-      clearTimeout(timer.current)
-    }
-  }, [])
+      clearTimeout(timer.current);
+    };
+  }, []);
 
   const handleButtonClick = () => {
     if (!loading) {
-      setSuccess(false)
-      setLoading(true)
+      setSuccess(false);
+      setLoading(true);
       timer.current = setTimeout(() => {
-        setSuccess(true)
-        setLoading(false)
-      }, 2000)
+        setSuccess(true);
+        setLoading(false);
+      }, 2000);
     }
-  }
+  };
 
   return (
     <>
@@ -128,41 +128,41 @@ export default function ProgressExample() {
         <LinearWithValueLabel />
       </div>
     </>
-  )
+  );
 }
 
 function LinearBuffer() {
-  const [progress, setProgress] = React.useState(0)
-  const [buffer, setBuffer] = React.useState(10)
+  const [progress, setProgress] = React.useState(0);
+  const [buffer, setBuffer] = React.useState(10);
 
-  const progressRef = React.useRef(() => {})
+  const progressRef = React.useRef(() => {});
   React.useEffect(() => {
     progressRef.current = () => {
       if (progress > 100) {
-        setProgress(0)
-        setBuffer(10)
+        setProgress(0);
+        setBuffer(10);
       } else {
-        const diff = Math.random() * 10
-        const diff2 = Math.random() * 10
-        setProgress(progress + diff)
-        setBuffer(progress + diff + diff2)
+        const diff = Math.random() * 10;
+        const diff2 = Math.random() * 10;
+        setProgress(progress + diff);
+        setBuffer(progress + diff + diff2);
       }
-    }
-  })
+    };
+  });
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      progressRef.current()
-    }, 500)
+      progressRef.current();
+    }, 500);
 
     return () => {
-      clearInterval(timer)
-    }
-  }, [])
+      clearInterval(timer);
+    };
+  }, []);
 
   return (
     <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
-  )
+  );
 }
 
 function LinearProgressWithLabel(
@@ -179,22 +179,22 @@ function LinearProgressWithLabel(
         )}%`}</Typography>
       </Box>
     </Box>
-  )
+  );
 }
 
 function LinearWithValueLabel() {
-  const [progress, setProgress] = React.useState(10)
+  const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress(prevProgress =>
+      setProgress((prevProgress) =>
         prevProgress >= 100 ? 10 : prevProgress + 10
-      )
-    }, 800)
+      );
+    }, 800);
     return () => {
-      clearInterval(timer)
-    }
-  }, [])
+      clearInterval(timer);
+    };
+  }, []);
 
-  return <LinearProgressWithLabel value={progress} />
+  return <LinearProgressWithLabel value={progress} />;
 }

@@ -1,10 +1,10 @@
-import React from "react"
-import { makeStyles, Theme, createStyles } from "@mui/styles"
-import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-import Slider from "@mui/material/Slider"
-import VolumeDown from "@mui/icons-material/VolumeDown"
-import VolumeUp from "@mui/icons-material/VolumeUp"
+import React from "react";
+import { makeStyles, Theme, createStyles } from "@mui/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Slider from "@mui/material/Slider";
+import VolumeDown from "@mui/icons-material/VolumeDown";
+import VolumeUp from "@mui/icons-material/VolumeUp";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: theme.spacing(3),
     },
   })
-)
+);
 
 const marks = [
   {
@@ -34,20 +34,20 @@ const marks = [
     value: 100,
     label: "100°C",
   },
-]
+];
 
 function valuetext(value: number) {
-  return `${value}°C`
+  return `${value}°C`;
 }
 
 export default function SliderExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
-  const [value, setValue] = React.useState<number>(30)
+  const [value, setValue] = React.useState<number>(30);
 
   const handleChange = (event: any, newValue: number | number[]) => {
-    setValue(newValue as number)
-  }
+    setValue(newValue as number);
+  };
 
   const [range, setRange] = React.useState<number[]>([20, 37]);
 
@@ -97,12 +97,12 @@ export default function SliderExample() {
         Range
       </Typography>
       <Slider
-        getAriaLabel={() => 'Temperature range'}
+        getAriaLabel={() => "Temperature range"}
         value={range}
         onChange={handleRangeChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
       />
     </div>
-  )
+  );
 }

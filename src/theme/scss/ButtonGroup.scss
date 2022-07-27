@@ -1,37 +1,38 @@
 .MuiButtonGroup-root {
-    .MuiButton-root, .MuiButton-contained {
-        outline: none;
-        &:focus {
-            //box-shadow: none;
-            z-index: 1;
-        }
+  .MuiButton-root,
+  .MuiButton-contained {
+    outline: none;
+    &:focus {
+      //box-shadow: none;
+      z-index: 1;
     }
-    .MuiButton-root {
-        &.MuiButton-sizeSmall {
-            min-width: auto;
-        }
-        &.MuiButton-sizeMedium {
-            min-width: auto;
-        }
-        &.MuiButton-sizeLarge {
-            min-width: auto;
-        }
-        &.MuiButton-containedPrimary {
-            border-right-color: shade($primary-action, 15%);
-        }
-        &.MuiButton-textPrimary {
-            border-right-color: $primary-action;
-            color: $primary-action;
-            &:hover {
-                background-color: transparentize($primary-action, .9);
-            }
-            &[disabled] {
-                color: transparentize($primary-action, .6)
-            }
-        }
-        &.MuiButton-containedSecondary {
-            border-bottom: 1px solid;
-            border-color: $gray-200;
-        }
+  }
+  .MuiButton-root {
+    &.MuiButton-sizeSmall {
+      min-width: auto;
     }
+    &.MuiButton-sizeMedium {
+      min-width: auto;
+    }
+    &.MuiButton-sizeLarge {
+      min-width: auto;
+    }
+    &.MuiButton-containedPrimary {
+      border-right-color: shade($primary-action, 15%);
+    }
+    &.MuiButton-textPrimary {
+      border-right-color: $primary-action;
+      color: $primary-action;
+      &:hover {
+        background-color: transparentize($primary-action, 0.9);
+      }
+      &[disabled] {
+        color: transparentize($primary-action, 0.6);
+      }
+    }
+    &.MuiButton-containedSecondary {
+      border-bottom: 1px solid;
+      border-color: $gray-200;
+    }
+  }
 }

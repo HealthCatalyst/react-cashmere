@@ -1,84 +1,98 @@
-.hc-chip, .MuiChip-root {
-    @include hc-chip();
-    line-height: 18px;
+.MuiChip-root {
+  @include hc-chip();
+  line-height: 18px;
 }
 
-.hc-chip-content-neutral, .MuiChip-filledSecondary {
-    @include hc-chip-content();
+.MuiChip-filledSecondary {
+  @include hc-chip-content();
 }
 
-.hc-chip-content-red, .MuiChip-filledError,
-.hc-chip-content-yellow, .MuiChip-filledWarning,
-.hc-chip-content-green, .MuiChip-filledSuccess,
-.hc-chip-content-blue, .MuiChip-filledPrimary, .MuiChip-filledSecondary {
-    @include hc-chip-content-color();
+.MuiChip-filledError,
+.MuiChip-filledWarning,
+.MuiChip-filledSuccess,
+.MuiChip-filledPrimary,
+.MuiChip-filledSecondary {
+  @include hc-chip-content-color();
 }
 
-.hc-chip-close {
-    @include hc-chip-close();
+.MuiChip-filledDefault,
+.MuiChip-filledSecondary {
+  @include hc-chip-neutral();
+  &:hover,
+  &:focus {
+    background-color: tint($text, 87%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
+  }
+  .MuiChip-deleteIcon,
+  .MuiChip-deleteIcon:hover,
+  .MuiSvgIcon-root {
+    color: $text;
+  }
 }
 
-.hc-chip-neutral, .MuiChip-filledDefault, .MuiChip-filledSecondary {
-    @include hc-chip-neutral();
-    &:hover, &:focus {
-        background-color: tint($text, 87%);
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
-    }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
-        color: $text;
-    }
+.MuiChip-filledError {
+  @include hc-chip-red();
+  &:hover,
+  &:focus {
+    background-color: tint($ruby-red, 85%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
+  }
+  .MuiChip-deleteIcon,
+  .MuiChip-deleteIcon:hover,
+  .MuiSvgIcon-root {
+    color: $ruby-red;
+  }
 }
 
-.hc-chip-red, .MuiChip-filledError {
-    @include hc-chip-red();
-    &:hover, &:focus {
-        background-color: tint($ruby-red, 85%);
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
-    }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
-        color: $ruby-red;
-    }
+.MuiChip-filledWarning {
+  @include hc-chip-yellow();
+  &:hover,
+  &:focus {
+    background-color: tint($yellow-orange, 80%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
+  }
+  .MuiChip-deleteIcon,
+  .MuiChip-deleteIcon:hover,
+  .MuiSvgIcon-root {
+    color: shade($yellow-orange, 25%);
+  }
 }
 
-.hc-chip-yellow, .MuiChip-filledWarning {
-    @include hc-chip-yellow();
-    &:hover, &:focus {
-        background-color: tint($yellow-orange, 80%);
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
-    }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
-        color: shade($yellow-orange, 25%);
-    }
+.MuiChip-filledSuccess {
+  @include hc-chip-green();
+  &:hover,
+  &:focus {
+    background-color: tint($light-green, 60%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
+  }
+  .MuiChip-deleteIcon,
+  .MuiChip-deleteIcon:hover,
+  .MuiSvgIcon-root {
+    color: $green;
+  }
 }
 
-.hc-chip-green, .MuiChip-filledSuccess {
-    @include hc-chip-green();
-    &:hover, &:focus {
-        background-color: tint($light-green, 60%);
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
-    }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
-        color: $green;
-    }
-}
-
-.hc-chip-blue, .MuiChip-filledPrimary, .MuiChip-filledInfo {
-    @include hc-chip-blue();
-    &:hover, &:focus {
-        background-color: desaturate(lighten($blue, 40%), 50%);
-    }
-    &:focus {
-        box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
-    }
-    .MuiChip-deleteIcon, .MuiChip-deleteIcon:hover, .MuiSvgIcon-root {
-        color: $dark-blue;
-    }
+.MuiChip-filledPrimary,
+.MuiChip-filledInfo {
+  @include hc-chip-blue();
+  &:hover,
+  &:focus {
+    background-color: desaturate(lighten($blue, 40%), 50%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px transparentize($primary-brand, 0.7);
+  }
+  .MuiChip-deleteIcon,
+  .MuiChip-deleteIcon:hover,
+  .MuiSvgIcon-root {
+    color: $dark-blue;
+  }
 }

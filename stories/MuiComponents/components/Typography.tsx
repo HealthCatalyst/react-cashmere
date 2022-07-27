@@ -1,6 +1,6 @@
-import React from "react"
-import Typography from "@mui/material/Typography"
-import Link from "@mui/material/Link"
+import React from "react";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 
 export default function TypographyExample() {
   return (
@@ -56,10 +56,16 @@ export default function TypographyExample() {
         http://example.com/
       </Link>
 
-      <Typography variant='h4' marginTop={2}>Colors</Typography>
-      {['primary', 'secondary', 'error', 'default', 'inherit'].map(color => {
-        return <Typography key={color} color={color} >{color}{' '}</Typography>
+      <Typography variant="h4" marginTop={2}>
+        Colors
+      </Typography>
+      {["primary", "secondary", "error", "default", "inherit"].map((color) => {
+        return (
+          <Typography key={color} color={color}>
+            {color}{" "}
+          </Typography>
+        );
       })}
     </>
-  )
+  );
 }

@@ -1,14 +1,14 @@
-import { Meta } from '@storybook/addon-docs';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
-import css from './assets/styles.css';
+import { Meta } from "@storybook/addon-docs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Code from "./assets/code-brackets.svg";
+import Colors from "./assets/colors.svg";
+import Comments from "./assets/comments.svg";
+import Direction from "./assets/direction.svg";
+import Flow from "./assets/flow.svg";
+import Plugin from "./assets/plugin.svg";
+import Repo from "./assets/repo.svg";
+import StackAlt from "./assets/stackalt.svg";
+import css from "./assets/styles.css";
 
 <Meta title="Getting Started" />
 
@@ -17,24 +17,27 @@ import css from './assets/styles.css';
 <div className="subheading">Install</div>
 
 First you will need an existing react app or create a new project using [create react app](https://reactjs.org/docs/create-a-new-react-app.html).
+
 ```
 npx create-react-app my-app
 ```
 
 Install the peer dependencies (You will need React `17.x.x|18.x.x` and Material UI `5.x.x`)
+
 ```shell
 npm install --save @emotion/styled @mui/lab @mui/material sass
 ```
 
 Now you can install React Cashmere
+
 ```
 npm install --save @healthcatalyst/react-cashmere
 ```
 
 <div className="subheading">Hello World</div>
 
-Now you are ready to wrap your app with the ThemeProvider higher order component. 
-The ThemeProvider will take care of all the cashmere styling so you can use most of the Material UI component as usual. 
+Now you are ready to wrap your app with the ThemeProvider higher order component.
+The ThemeProvider will take care of all the cashmere styling so you can use most of the Material UI component as usual.
 
 ```jsx
 /* src/index.js */
@@ -50,14 +53,14 @@ export default (props) => {
       <App />
     </ThemeProvider>
   );
-}
+};
 ```
 
 ```jsx
 /* src/App.js */
 import React from "react";
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import { Navbar } from "@healthcatalyst/react-cashmere";
 
 export default (props) => {
@@ -69,32 +72,44 @@ export default (props) => {
         cobrandIcon="cobrand.png"
         homeUri="http://example.com/"
         linkContent={[
-            <a key="home" class="navbar-link force-active" title="Home">Home</a>,
-            <a key="reports" class="navbar-link" title="Home">Reports</a>
+          <a key="home" class="navbar-link force-active" title="Home">
+            Home
+          </a>,
+          <a key="reports" class="navbar-link" title="Home">
+            Reports
+          </a>,
         ]}
         rightContent={[
-            <span key="seperator" class="hc-navbar-vertical-separator" />,
-            <div key="user" class="hc-navbar-username ng-star-inserted" tabIndex="0">
-              <span>
-                <span>Christine K.</span>
-                <br />
-                <span class="hc-navbar-username-subtext">HealthCatalyst</span>
-              </span>
-              &nbsp;<Icon aria-hidden="true" icon="fa-angle-down"/>
-            </div>
-
+          <span key="seperator" class="hc-navbar-vertical-separator" />,
+          <div
+            key="user"
+            class="hc-navbar-username ng-star-inserted"
+            tabIndex="0"
+          >
+            <span>
+              <span>Christine K.</span>
+              <br />
+              <span class="hc-navbar-username-subtext">HealthCatalyst</span>
+            </span>
+            &nbsp;
+            <Icon aria-hidden="true" icon="fa-angle-down" />
+          </div>,
         ]}
       />
       <Typography variant="h1">Hello World</Typography>
-      <Typography variant="subheading1">This is a beautiful app using Material UI and Cashmere</Typography>
+      <Typography variant="subheading1">
+        This is a beautiful app using Material UI and Cashmere
+      </Typography>
       <Button color="primary">Button</Button>
       <Button color="primary-alt">Button</Button>
       <Button color="secondary">Button</Button>
     </>
   );
-}
+};
 ```
 
 export const Component = () => {
-  return <SyntaxHighlighter/>;
+  return <SyntaxHighlighter />;
 };
+
+;

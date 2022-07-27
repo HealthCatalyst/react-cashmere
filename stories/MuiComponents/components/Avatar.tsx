@@ -1,11 +1,11 @@
-import React from "react"
-import { makeStyles, createStyles } from "@mui/styles"
-import Avatar from "@mui/material/Avatar"
-import { deepOrange, deepPurple, pink, green } from "@mui/material/colors"
-import FolderIcon from "@mui/icons-material/Folder"
-import PageviewIcon from "@mui/icons-material/Pageview"
-import AssignmentIcon from "@mui/icons-material/Assignment"
-import AvatarGroup from "@mui/material/AvatarGroup"
+import React from "react";
+import { makeStyles, createStyles } from "@mui/styles";
+import Avatar from "@mui/material/Avatar";
+import { deepOrange, deepPurple, pink, green } from "@mui/material/colors";
+import FolderIcon from "@mui/icons-material/Folder";
+import PageviewIcon from "@mui/icons-material/Pageview";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import AvatarGroup from "@mui/material/AvatarGroup";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme) =>
       height: theme.spacing(7),
     },
   })
-)
+);
 
 export default function AvatarExample() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -128,5 +128,5 @@ export default function AvatarExample() {
         </AvatarGroup>
       </div>
     </div>
-  )
+  );
 }

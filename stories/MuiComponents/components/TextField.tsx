@@ -1,18 +1,18 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 export default function FormPropsTextFields() {
-  const [state, setState] = React.useState({showPassword: false});
+  const [state, setState] = React.useState({ showPassword: false });
   return (
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
       noValidate
       autoComplete="off"
@@ -34,18 +34,21 @@ export default function FormPropsTextFields() {
           id="outlined-passwordText"
           label="Password"
           defaultValue="Default Value"
-          type={state.showPassword ? 'text' : 'password'}
+          type={state.showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
-              <InputAdornment position='end'>
+              <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={() => setState({...state, showPassword: !state.showPassword})}
+                  onClick={() =>
+                    setState({ ...state, showPassword: !state.showPassword })
+                  }
                   edge="end"
                 >
                   {state.showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
-              </InputAdornment>)
+              </InputAdornment>
+            ),
           }}
         />
         <TextField
@@ -61,7 +64,9 @@ export default function FormPropsTextFields() {
           label="Number"
           type="number"
           InputProps={{
-            startAdornment: <InputAdornment position='start'>lb</InputAdornment>,
+            startAdornment: (
+              <InputAdornment position="start">lb</InputAdornment>
+            ),
           }}
           InputLabelProps={{
             shrink: true,
