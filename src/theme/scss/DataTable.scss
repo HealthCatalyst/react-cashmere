@@ -1,0 +1,45 @@
+.MuiDataTable-root {
+  border-top: 1px solid rgba(127, 127, 127, 0.25);
+  .MuiTableCell-head {
+    background-color: transparentize(shade($primary-brand, 40%), 0.9);
+    color: shade($primary-brand, 40%);
+    font-weight: bold;
+    .MuiTableSortLabel-root {
+      color: shade($primary-brand, 40%);
+    }
+    .Mui-active {
+      color: $green;
+    }
+    &:hover {
+      background-color: transparentize(shade($primary-brand, 25%), 0.75);
+    }
+  }
+  .MuiTableCell-sizeSmall {
+    padding-left: 16px;
+    &.MuiTableCell-paddingCheckbox {
+      padding-left: 16px;
+    }
+  }
+  .MuiTableCell-sizeMedium {
+    padding-left: 16px;
+    &.MuiTableCell-paddingCheckbox {
+      padding-left: 4px;
+    }
+  }
+  .MuiTableCell-root {
+    border-right: 1px solid rgba(127, 127, 127, 0.25);
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .MuiTableBody-root {
+    .MuiTableRow-root {
+      &:nth-child(odd) {
+        background-color: rgba(127, 127, 127, 0.05);
+      }
+      &.Mui-selected {
+        background-color: transparentize($primary-brand, 0.9);
+      }
+    }
+  }
+}

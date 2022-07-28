@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { createStyles, makeStyles, Theme } from "@mui/styles";
+import { createStyles, makeStyles } from "@mui/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -151,7 +151,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}
-            padding={headCell.disablePadding ? "none" : "default"}
+            padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -173,7 +173,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-const useToolbarStyles = makeStyles((theme: Theme) =>
+const useToolbarStyles = makeStyles((theme) =>
   createStyles({
     root: {
       paddingLeft: theme.spacing(2),
@@ -246,7 +246,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
   );
 };
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       width: "100%",
@@ -279,6 +279,7 @@ export default function TableExample() {
   const [selected, setSelected] = React.useState<string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(true);
+  const [dataTable, setDataTable] = React.useState(true);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleRequestSort = (
@@ -333,6 +334,11 @@ export default function TableExample() {
   const handleChangeDense = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDense(event.target.checked);
   };
+  const handleChangeDataTable = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setDataTable(event.target.checked);
+  };
 
   const isSelected = (name: string) => selected.indexOf(name) !== -1;
 
@@ -345,7 +351,7 @@ export default function TableExample() {
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
-            className={classes.table}
+            className={classes.table + (dataTable ? " MuiDataTable-root" : "")}
             aria-labelledby="tableTitle"
             size={dense ? "small" : "medium"}
             aria-label="enhanced table"
@@ -411,13 +417,19 @@ export default function TableExample() {
           count={rows.length}
           rowsPerPage={rowsPerPage}
           page={page}
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
+      />
+      <FormControlLabel
+        control={
+          <Switch checked={dataTable} onChange={handleChangeDataTable} />
+        }
+        label="Data table"
       />
     </div>
   );

@@ -6,6 +6,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 import PageviewIcon from "@mui/icons-material/Pageview";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import AvatarGroup from "@mui/material/AvatarGroup";
+import { Typography } from "@mui/material";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -52,7 +53,7 @@ export default function AvatarExample() {
 
   return (
     <div className={classes.root}>
-      <h4>Pictures</h4>
+      <Typography variant="h4">Pictures</Typography>
       <div className={classes.avatarSet}>
         <Avatar
           alt="Remy Sharp"
@@ -67,13 +68,13 @@ export default function AvatarExample() {
           src="https://material-ui.com/static/images/avatar/3.jpg"
         />
       </div>
-      <h4>Text</h4>
+      <Typography variant="h4">Text</Typography>
       <div className={classes.avatarSet}>
         <Avatar>H</Avatar>
         <Avatar className={classes.orange}>N</Avatar>
         <Avatar className={classes.purple}>OP</Avatar>
       </div>
-      <h4>Size</h4>
+      <Typography variant="h4">Size</Typography>
       <div className={classes.avatarSet}>
         <Avatar
           alt="Remy Sharp"
@@ -90,7 +91,7 @@ export default function AvatarExample() {
           className={classes.large}
         />
       </div>
-      <h4>Icons</h4>
+      <Typography variant="h4">Icons</Typography>
       <div className={classes.avatarSet}>
         <Avatar>
           <FolderIcon />
@@ -102,7 +103,7 @@ export default function AvatarExample() {
           <AssignmentIcon />
         </Avatar>
       </div>
-      <h4>Group</h4>
+      <Typography variant="h4">Group</Typography>
       <div className={classes.avatarSet}>
         <AvatarGroup max={4}>
           <Avatar
