@@ -28,6 +28,7 @@
   }
   .MuiTableCell-root {
     border-right: 1px solid rgba(127, 127, 127, 0.25);
+    border-bottom: 1px solid rgba(127, 127, 127, 0.25);
     &:last-child {
       border-right: none;
     }
@@ -37,8 +38,17 @@
       &:nth-child(odd) {
         background-color: rgba(127, 127, 127, 0.05);
       }
+      &:hover {
+        background-color: rgba(127, 127, 127, 0.15);
+      }
       &.Mui-selected {
         background-color: transparentize($primary-brand, 0.9);
+        // &:nth-child(odd) {
+        //   background-color: transparentize($primary-brand, 0.9);
+        // }
+        &:hover {
+          background-color: transparentize($primary-brand, 0.8);
+        }
       }
     }
   }

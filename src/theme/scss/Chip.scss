@@ -1,6 +1,9 @@
 .MuiChip-root {
   @include hc-chip();
   line-height: 18px;
+  .MuiChip-deleteIcon {
+    opacity: 0.5;
+  }
 }
 
 .MuiChip-filledSecondary {
