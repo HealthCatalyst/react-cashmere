@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-export default function FormPropsTextFields() {
+export default function TextFieldsExample() {
   const [state, setState] = React.useState({ showPassword: false });
   return (
     <Box

@@ -1,5 +1,5 @@
 import React from "react";
-import { themes, useTheme, Icon } from "react-cashmere";
+import { themes, useTheme, Icon, ThemeProvider } from "react-cashmere";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -8,7 +8,7 @@ import { Button, Paper } from "@mui/material";
 
 export default {
   title: "Providers/ThemeProvider",
-  component: Typography,
+  component: ThemeProvider,
   argTypes: {},
   parameters: {
     layout: "padded",
@@ -21,6 +21,22 @@ export default {
 };
 
 const defaultArgs = {};
+
+export const ThemeProviderExample = (args) => {
+  return (
+    <ThemeProvider>
+      <Stack direction="row" spacing={1}>
+        <Button color="primary">"primary" Themed Button</Button>
+        <Button color="primary-alt">"primary" Themed Button</Button>
+      </Stack>
+    </ThemeProvider>
+  );
+};
+ThemeProviderExample.component = ThemeProvider;
+ThemeProviderExample.storyName = "ThemeProvider";
+ThemeProviderExample.args = {
+  ...defaultArgs,
+};
 
 export const Advanced = (args) => {
   const [theme, setTheme] = useTheme();
@@ -42,6 +58,7 @@ export const Advanced = (args) => {
     </>
   );
 };
+Advanced.storyName = "useTheme() Hook";
 Advanced.args = {
   ...defaultArgs,
 };
