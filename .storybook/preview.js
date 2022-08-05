@@ -2,6 +2,14 @@ import React from "react";
 import { addDecorator } from "@storybook/react";
 import { ThemeProvider, themes } from "react-cashmere";
 
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
+import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+
+// Registers and enables code hilighting language support
+SyntaxHighlighter.registerLanguage("scss", scss);
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+
 addDecorator((Story, context, ...extra) => {
   const [theme, setTheme] = React.useState(
     themes.find((t) => t.name === context.globals.theme)
@@ -30,6 +38,7 @@ addDecorator((Story, context, ...extra) => {
 });
 
 export const parameters = {
+  viewMode: "docs",
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -39,6 +48,17 @@ export const parameters = {
   },
   backgrounds: { disable: true },
   docs: {},
+  options: {
+    storySort: {
+      order: [
+        "Introduction",
+        "Getting Started",
+        "Providers",
+        "Cashmere Components",
+        "MUI Components",
+      ],
+    },
+  },
 };
 
 export const globalTypes = {

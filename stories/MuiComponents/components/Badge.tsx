@@ -9,7 +9,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-export default function BadgeVisibility() {
+export default function BadgeVisibilityExample() {
   const [count, setCount] = React.useState(1);
   const [invisible, setInvisible] = React.useState(false);
 

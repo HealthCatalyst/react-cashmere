@@ -54,6 +54,9 @@ module.exports = {
     builder: "@storybook/builder-webpack5",
     disableTelemetry: true,
   },
+  features: {
+    previewMdx2: true,
+  },
   webpackFinal: async (config) => {
     addStoriesPathToCRA(config, stories.directory);
     return {
