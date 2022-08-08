@@ -24,7 +24,7 @@
     "build:clean": "rm -rf ./dist",
     "build:dev": "export NODE_ENV=development && webpack --mode=development",
     "build:prod": "export NODE_ENV=production && webpack --mode=production --node-env=production",
-    "build:storybook": "build-storybook",
+    "build:storybook": "build-storybook -o docs",
     "postbuild": "npx tsc",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "npm run test:lint && npm run test:unit",
