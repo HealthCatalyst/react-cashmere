@@ -27,7 +27,7 @@ export const ThemeProviderExample = (args) => {
     <ThemeProvider>
       <Stack direction="row" spacing={1}>
         <Button color="primary">"primary" Themed Button</Button>
-        <Button color="primary-alt">"primary" Themed Button</Button>
+        <Button color="primary-alt">"primary-alt" Themed Button</Button>
       </Stack>
     </ThemeProvider>
   );

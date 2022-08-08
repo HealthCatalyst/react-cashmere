@@ -51,36 +51,6 @@ import { Navbar } from "@healthcatalyst/react-cashmere";
 export default (props) => {
   return (
     <>
-      <Navbar
-        appIcon="logo.svg"
-        brandIcon="brand.svg"
-        cobrandIcon="cobrand.png"
-        homeUri="http://example.com/"
-        linkContent={[
-          <a key="home" class="navbar-link force-active" title="Home">
-            Home
-          </a>,
-          <a key="reports" class="navbar-link" title="Home">
-            Reports
-          </a>,
-        ]}
-        rightContent={[
-          <span key="seperator" class="hc-navbar-vertical-separator" />,
-          <div
-            key="user"
-            class="hc-navbar-username ng-star-inserted"
-            tabIndex="0"
-          >
-            <span>
-              <span>Christine K.</span>
-              <br />
-              <span class="hc-navbar-username-subtext">HealthCatalyst</span>
-            </span>
-            &nbsp;
-            <Icon aria-hidden="true" icon="fa-angle-down" />
-          </div>,
-        ]}
-      />
       <Typography variant="h1">Hello World</Typography>
       <Typography variant="subheading1">
         This is a beautiful app using Material UI and Cashmere
@@ -95,10 +65,12 @@ export default (props) => {
 
 # Library Development & Contributing
 
-## Available Scripts
+## Checking out the source
+
+First you will need to creat your own fork of react-cashmere repo. https://github.com/HealthCatalyst/react-cashmere
 
 ```
-git clone <react-cashmere repo>
+git clone <react-cashmere fork>
 ```
 
 ## Runing storybook locally
@@ -108,7 +80,7 @@ You can navigate to the component you want to modify and the page will reload wh
 
 ```
 cd react-cashmere
-npm install --legacy-peer-deps
+npm install
 npm start
 ```
 
