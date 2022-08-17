@@ -28,14 +28,6 @@ steps:
   displayName: npm run test
 
 - script: |
-    npm run test:lint
-  displayName: npm run test:lint
-
-- script: |
-    npm run test:unit
-  displayName: run unit test:unit
-
-- script: |
     npm run build
   displayName: build the react-cashmere library
 
