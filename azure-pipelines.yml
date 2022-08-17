@@ -24,8 +24,12 @@ steps:
   displayName: npm install
 
 - script: |
-    npm run test
-  displayName: npm run test
+    npm run test:lint
+  displayName: npm run test:lint
+
+- script: |
+    npm run test:unit
+  displayName: npm run test:unit
 
 - script: |
     npm run build
@@ -33,6 +37,7 @@ steps:
 
 - script: |
     npm run build:storybook
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
   displayName: npm run build:storybook
 
 - script: |

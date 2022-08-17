@@ -1,3 +1,5 @@
+![Master Build Status](https://dev.azure.com/healthcatalyst/CAP/_apis/build/status/HealthCatalyst.react-cashmere?branchName=master)
+![Develop Build Status](https://dev.azure.com/healthcatalyst/CAP/_apis/build/status/HealthCatalyst.react-cashmere?branchName=dev)
 # Getting Started with React Cashmere
 
 ## Install
