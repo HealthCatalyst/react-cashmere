@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { createStyles, makeStyles } from "@mui/styles";
+import Box from "@mui/material/Box";
 import SnackbarContent from "@mui/material/SnackbarContent";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -11,22 +11,18 @@ const action = (
   </Button>
 );
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const classes = {
     root: {
       maxWidth: 600,
       "& > * + *": {
-        marginTop: theme.spacing(2),
+        marginTop: 2,
       },
     },
-  })
-);
+  };
 
 export default function SnackbarExample() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <SnackbarContent
         severity={"primary"}
         message="I love snacks."
@@ -57,6 +53,6 @@ export default function SnackbarExample() {
         }
         action={action}
       />
-    </div>
+    </Box>
   );
 }

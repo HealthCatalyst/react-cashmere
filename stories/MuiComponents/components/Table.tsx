@@ -1,6 +1,4 @@
 import React from "react";
-import clsx from "clsx";
-import { createStyles, makeStyles } from "@mui/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -161,7 +159,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             >
               {headCell.label}
               {orderBy === headCell.id ? (
-                <span className={classes.visuallyHidden}>
+                <span sx={classes.visuallyHidden}>
                   {order === "desc" ? "sorted descending" : "sorted ascending"}
                 </span>
               ) : null}
@@ -173,46 +171,36 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-const useToolbarStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(1),
-      backgroundColor: "rgba(127,127,127,.1)",
-    },
-    highlight:
-      theme.palette.mode === "light"
-        ? {
-            color: theme.palette.primary.contrastText,
-            backgroundColor: theme.palette.primary.main,
-          }
-        : {
-            color: theme.palette.primary.contrastText,
-            backgroundColor: theme.palette.primary.dark,
-          },
-    title: {
-      flex: "1 1 100%",
-    },
-  })
-);
+const toolbarStyles = {
+  root: {
+    paddingLeft: 2,
+    paddingRight: 1,
+    backgroundColor: "rgba(127,127,127,.1)",
+  },
+  highlight: {
+    color: 'primary.contrastText',
+    backgroundColor: 'primary.main',
+  },
+  title: {
+    flex: "1 1 100%",
+  },
+};
 
 interface EnhancedTableToolbarProps {
   numSelected: number;
 }
 
 const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
-  const classes = useToolbarStyles();
+  const classes = toolbarStyles;
   const { numSelected } = props;
 
   return (
     <Toolbar
-      className={clsx(classes.root, {
-        [classes.highlight]: numSelected > 0,
-      })}
+      sx={numSelected > 0 ? Object.assign({}, classes.root, classes.highlight) :  classes.root}
     >
       {numSelected > 0 ? (
         <Typography
-          className={classes.title}
+          sx={classes.title}
           color="inherit"
           variant="subtitle1"
           component="div"
@@ -221,7 +209,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
         </Typography>
       ) : (
         <Typography
-          className={classes.title}
+          sx={classes.title}
           variant="h6"
           id="tableTitle"
           component="div"
@@ -246,34 +234,32 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
   );
 };
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-    },
-    paper: {
-      width: "100%",
-      marginBottom: theme.spacing(2),
-    },
-    table: {
-      minWidth: 750,
-    },
-    visuallyHidden: {
-      border: 0,
-      clip: "rect(0 0 0 0)",
-      height: 1,
-      margin: -1,
-      overflow: "hidden",
-      padding: 0,
-      position: "absolute",
-      top: 20,
-      width: 1,
-    },
-  })
-);
+const tableStyles = {
+  root: {
+    width: "100%",
+  },
+  paper: {
+    width: "100%",
+    marginBottom: 2,
+  },
+  table: {
+    minWidth: 750,
+  },
+  visuallyHidden: {
+    border: 0,
+    clip: "rect(0 0 0 0)",
+    height: 1,
+    margin: -1,
+    overflow: "hidden",
+    padding: 0,
+    position: "absolute",
+    top: 20,
+    width: 1,
+  },
+};
 
 export default function TableExample() {
-  const classes = useStyles();
+  const classes = tableStyles;
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("calories");
   const [selected, setSelected] = React.useState<string[]>([]);
@@ -346,12 +332,13 @@ export default function TableExample() {
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
+    <div sx={classes.root}>
+      <Paper sx={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
-            className={classes.table + (dataTable ? " MuiDataTable-root" : "")}
+            className={(dataTable ? " MuiDataTable-root" : "")}
+            sx={classes.table}
             aria-labelledby="tableTitle"
             size={dense ? "small" : "medium"}
             aria-label="enhanced table"

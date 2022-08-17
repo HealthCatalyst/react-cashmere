@@ -1,17 +1,15 @@
 import React from "react";
-import { makeStyles, createStyles } from "@mui/styles";
 import { green } from "@mui/material/colors";
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
+import Box from "@mui/material/Box";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      "& > svg": {
-        margin: theme.spacing(2),
-      },
+const classes = {
+  root: {
+    "& > svg": {
+      margin: 2,
     },
-  })
-);
+  },
+};
 
 function HomeIcon(props: SvgIconProps) {
   return (
@@ -22,16 +20,14 @@ function HomeIcon(props: SvgIconProps) {
 }
 
 export default function IconExample() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <HomeIcon />
       <HomeIcon color="primary" />
       <HomeIcon color="secondary" />
       <HomeIcon color="action" />
       <HomeIcon color="disabled" />
       <HomeIcon style={{ color: green[500] }} />
-    </div>
+    </Box>
   );
 }

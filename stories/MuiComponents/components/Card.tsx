@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
 import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -19,7 +19,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-const useStyles = makeStyles((theme) => ({
+const classes = {
   rootSimple: {
     minWidth: 275,
   },
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 1.5,
   },
   rootComplex: {
     maxWidth: 345,
@@ -44,21 +44,20 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+    transition: {
+      duration: ".05s",
+    },
   },
   expandOpen: {
     transform: "rotate(180deg)",
   },
   avatar: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: "primary.main",
   },
-}));
+};
 
 export default function CardExample() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const bull = <Box componen="span" sx={classes.bullet}>•</Box>;
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -69,19 +68,15 @@ export default function CardExample() {
     <Grid container spacing={2}>
       <Grid item>
         <Typography variant="h6">Simple</Typography>
-        <Card className={classes.rootSimple}>
+        <Card sx={classes.rootSimple}>
           <CardContent>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
+            <Typography sx={classes.title} color="textSecondary" gutterBottom>
               Word of the Day
             </Typography>
             <Typography variant="h5" component="h2">
               be{bull}nev{bull}o{bull}lent
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+            <Typography sx={classes.pos} color="textSecondary">
               adjective
             </Typography>
             <Typography variant="body2" component="p">
@@ -105,19 +100,15 @@ export default function CardExample() {
       </Grid>
       <Grid item>
         <Typography variant="h6">Outlined</Typography>
-        <Card variant="outlined" className={classes.rootSimple}>
+        <Card variant="outlined" sx={classes.rootSimple}>
           <CardContent>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
+            <Typography sx={classes.title} color="textSecondary" gutterBottom>
               Word of the Day
             </Typography>
             <Typography variant="h5" component="h2">
               be{bull}nev{bull}o{bull}lent
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+            <Typography sx={classes.pos} color="textSecondary">
               adjective
             </Typography>
             <Typography variant="body2" component="p">
@@ -141,10 +132,10 @@ export default function CardExample() {
       </Grid>
       <Grid item>
         <Typography variant="h6">Complex</Typography>
-        <Card className={classes.rootComplex}>
+        <Card sx={classes.rootComplex}>
           <CardHeader
             avatar={
-              <Avatar aria-label="recipe" className={classes.avatar}>
+              <Avatar aria-label="recipe" sx={classes.avatar}>
                 R
               </Avatar>
             }
@@ -157,7 +148,7 @@ export default function CardExample() {
             subheader="July 18, 2022"
           />
           <CardMedia
-            className={classes.media}
+            sx={classes.media}
             image="https://cashmere.healthcatalyst.net/assets/logos/StackedLogo(white).svg"
             title="Health Catalyst"
           />
@@ -177,7 +168,7 @@ export default function CardExample() {
               <ShareIcon />
             </IconButton>
             <IconButton
-              className={clsx(classes.expand, {
+              sx={clsx(classes.expand, {
                 [classes.expandOpen]: expanded,
               })}
               onClick={handleExpandClick}

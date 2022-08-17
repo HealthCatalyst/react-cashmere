@@ -1,30 +1,27 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import SaveIcon from "@mui/icons-material/Save";
 
-const useStyles = makeStyles((theme) => ({
+const classes = {
   group: {
-    "& > *": {
-      margin: theme.spacing(1),
+    "& > button": {
+      margin: 1,
     },
-    marginBottom: theme.spacing(2),
-  },
-}));
+    marginBottom: 2,
+  }
+};
 
 export default function ButtonsExample() {
-  const classes = useStyles();
-
   return (
-    <div>
+    <>
       <Typography variant="h6" id="text-buttons">
         Default Contained Buttons
       </Typography>
-      <div className={classes.group}>
+      <Box sx={classes.group}>
         <Button>Default</Button>
         <Button color="primary">Primary</Button>
         <Button color="primary-alt">Primary Alt</Button>
@@ -36,12 +33,12 @@ export default function ButtonsExample() {
         <Button color="primary" href="#text-buttons">
           Link
         </Button>
-      </div>
+      </Box>
 
       <Typography variant="h6" id="outlined-buttons">
         Outlined Buttons
       </Typography>
-      <div className={classes.group}>
+      <Box sx={classes.group}>
         <Button variant="outlined">Default</Button>
         <Button variant="outlined" color="primary">
           Primary
@@ -67,12 +64,12 @@ export default function ButtonsExample() {
         <Button variant="outlined" color="primary" href="#outlined-buttons">
           Link
         </Button>
-      </div>
+      </Box>
 
       <Typography variant="h6" id="buttons-with-icons">
         Buttons with icons and label
       </Typography>
-      <div className={classes.group}>
+      <Box sx={classes.group}>
         <Button variant="contained" color="error" startIcon={<DeleteIcon />}>
           Delete
         </Button>
@@ -107,7 +104,7 @@ export default function ButtonsExample() {
         >
           Save
         </Button>
-      </div>
-    </div>
+      </Box>
+    </>
   );
 }

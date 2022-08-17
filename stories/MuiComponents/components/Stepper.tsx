@@ -1,25 +1,23 @@
 import React from "react";
-import { makeStyles, Theme, createStyles } from "@mui/styles";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: "100%",
-    },
-    button: {
-      marginRight: theme.spacing(1),
-    },
-    instructions: {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(1),
-    },
-  })
-);
+const classes = {
+  root: {
+    width: "100%",
+  },
+  button: {
+    marginRight: 1,
+  },
+  instructions: {
+    marginTop: 1,
+    marginBottom: 1,
+  },
+};
 
 function getSteps() {
   return ["Select campaign settings", "Create an ad group", "Create an ad"];
@@ -39,7 +37,6 @@ function getStepContent(step: number) {
 }
 
 export default function StepperExample() {
-  const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set<number>());
   const steps = getSteps();
@@ -87,7 +84,7 @@ export default function StepperExample() {
   };
 
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};
@@ -107,31 +104,31 @@ export default function StepperExample() {
           );
         })}
       </Stepper>
-      <div>
+      <Box>
         {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
+          <Box>
+            <Typography sx={classes.instructions}>
               All steps completed - you&apos;re finished
             </Typography>
             <Button
               color="secondary"
               onClick={handleReset}
-              className={classes.button}
+              sx={classes.button}
             >
               Reset
             </Button>
-          </div>
+          </Box>
         ) : (
-          <div>
-            <Typography className={classes.instructions}>
+          <Box>
+            <Typography sx={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
-            <div>
+            <Box>
               <Button
                 color="secondary"
                 disabled={activeStep === 0}
                 onClick={handleBack}
-                className={classes.button}
+                sx={classes.button}
               >
                 Back
               </Button>
@@ -139,7 +136,7 @@ export default function StepperExample() {
                 variant="contained"
                 color="primary"
                 onClick={handleNext}
-                className={classes.button}
+                sx={classes.button}
               >
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </Button>
@@ -148,15 +145,15 @@ export default function StepperExample() {
                   variant="contained"
                   color="primary-alt"
                   onClick={handleSkip}
-                  className={classes.button}
+                  sx={classes.button}
                 >
                   Skip
                 </Button>
               )}
-            </div>
-          </div>
+            </Box>
+          </Box>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
