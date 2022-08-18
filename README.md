@@ -25,7 +25,7 @@ npm install --save @healthcatalyst/react-cashmere
 ## ThemeProvider
 
 Now you are ready to wrap your app with the ThemeProvider higher order component.
-The ThemeProvider will take care of all the cashmere styling and apply it so most Material UI child components are properly themed. There are also custom HC components such as `Icon`, `Button`, `Navbar`, etc available.
+The ThemeProvider will take care of all the cashmere styling and apply it so most Material UI child components are properly themed. There are also custom HC components such as `Icon`, `Navbar`, etc available.
 
 ```jsx
 /* src/index.js */
@@ -69,7 +69,7 @@ export default (props) => {
 
 ## Checking out the source
 
-First you will need to creat your own fork of react-cashmere repo. https://github.com/HealthCatalyst/react-cashmere
+First you will need to create your own fork of react-cashmere repo. https://github.com/HealthCatalyst/react-cashmere
 
 ```
 git clone <react-cashmere fork>
