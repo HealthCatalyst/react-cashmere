@@ -15,6 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 
@@ -159,9 +160,9 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             >
               {headCell.label}
               {orderBy === headCell.id ? (
-                <span sx={classes.visuallyHidden}>
+                <Box sx={classes.visuallyHidden}>
                   {order === "desc" ? "sorted descending" : "sorted ascending"}
-                </span>
+                </Box>
               ) : null}
             </TableSortLabel>
           </TableCell>

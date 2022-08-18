@@ -13,7 +13,7 @@ const classes = {
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
-    "& > *": {
+    "& > .MuiChip-root": {
       margin: .5,
     },
   },

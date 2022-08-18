@@ -28,6 +28,9 @@ const classes = {
     margin: 2,
     fontWeight: "bold"
   },
+  controls: {
+    marginLeft: 2
+  }
 };
 
 function generate(element) {
@@ -44,7 +47,7 @@ export default function ListExample() {
 
   return (
     <Box sx={classes.root}>
-      <FormGroup row>
+      <FormGroup row sx={classes.controls}>
         <FormControlLabel
           control={
             <Checkbox

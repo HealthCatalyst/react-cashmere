@@ -8,12 +8,12 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 
 const classes = {
   root: {
-    "& > *": {
-      margin: "8px!important",
+    "& > .MuiButtonBase-root": {
+      margin: 1,
     },
   },
   extendedIcon: {
-    marginRight: "8px!important",
+    marginRight: 1,
   },
 };
 
