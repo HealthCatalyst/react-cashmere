@@ -8,6 +8,7 @@ trigger:
       - main 
 
 variables:
+- group: CashmerePublishCredentials
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 pool:
@@ -16,7 +17,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: 16.x
+    versionSpec: $(NODE_VERSION)
   displayName: install Node.js
 
 - script: |
