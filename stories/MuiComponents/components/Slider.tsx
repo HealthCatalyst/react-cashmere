@@ -1,21 +1,19 @@
 import React from "react";
-import { makeStyles, Theme, createStyles } from "@mui/styles";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeUp from "@mui/icons-material/VolumeUp";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: 300,
-    },
-    margin: {
-      height: theme.spacing(3),
-    },
-  })
-);
+const classes = {
+  root: {
+    width: 300,
+  },
+  margin: {
+    height: 3,
+  },
+};
 
 const marks = [
   {
@@ -41,8 +39,6 @@ function valuetext(value: number) {
 }
 
 export default function SliderExample() {
-  const classes = useStyles();
-
   const [value, setValue] = React.useState<number>(30);
 
   const handleChange = (event: any, newValue: number | number[]) => {
@@ -56,7 +52,7 @@ export default function SliderExample() {
   };
 
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <Typography id="continuous-slider" gutterBottom>
         Volume
       </Typography>
@@ -103,6 +99,6 @@ export default function SliderExample() {
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
       />
-    </div>
+    </Box>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { createStyles, makeStyles } from "@mui/styles";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 import FaceIcon from "@mui/icons-material/Face";
@@ -8,22 +8,18 @@ import ErrorIcon from "@mui/icons-material/Cancel";
 import DoneIcon from "@mui/icons-material/Done";
 import { Typography } from "@mui/material";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      display: "flex",
-      justifyContent: "center",
-      flexWrap: "wrap",
-      "& > *": {
-        margin: theme.spacing(0.5),
-      },
+const classes = {
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    "& > .MuiChip-root": {
+      margin: .5,
     },
-  })
-);
+  },
+};
 
 export default function ChipExample() {
-  const classes = useStyles();
-
   const handleDelete = () => {
     console.info("You clicked the delete icon.");
   };
@@ -35,7 +31,7 @@ export default function ChipExample() {
   return (
     <>
       <Typography variant="h6">Color</Typography>
-      <div className={classes.root}>
+      <Box sx={classes.root}>
         <Chip label="Primary" color="primary" onClick={handleClick} />
         <Chip label="Secondary" color="secondary" onClick={handleClick} />
         <Chip
@@ -59,9 +55,9 @@ export default function ChipExample() {
           onClick={handleClick}
         />
         <Chip label="Default" color="default" onClick={handleClick} />
-      </div>
+      </Box>
       <Typography variant="h6">Default</Typography>
-      <div className={classes.root}>
+      <Box sx={classes.root}>
         <Chip label="Basic" />
         <Chip label="Disabled" disabled />
         <Chip
@@ -119,10 +115,10 @@ export default function ChipExample() {
           onDelete={handleDelete}
           color="secondary"
         />
-      </div>
+      </Box>
 
       <Typography variant="h6">Outlined</Typography>
-      <div className={classes.root}>
+      <Box sx={classes.root}>
         <Chip variant="outlined" label="Basic" />
         <Chip variant="outlined" label="Disabled" disabled />
         <Chip
@@ -194,7 +190,7 @@ export default function ChipExample() {
           onDelete={handleDelete}
           color="secondary"
         />
-      </div>
+      </Box>
     </>
   );
 }

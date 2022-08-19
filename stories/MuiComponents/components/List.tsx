@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles, createStyles } from "@mui/styles";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -12,24 +11,27 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import FolderIcon from "@mui/icons-material/Folder";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-      maxWidth: 752,
-    },
-    demo: {
-      backgroundColor: theme.palette.background.paper,
-    },
-    title: {
-      margin: theme.spacing(4, 0, 2),
-    },
-  })
-);
+const classes = {
+  root: {
+    flexGrow: 1,
+    maxWidth: 752,
+  },
+  demo: {
+    backgroundColor: 'background.paper',
+  },
+  title: {
+    margin: 2,
+    fontWeight: "bold"
+  },
+  controls: {
+    marginLeft: 2
+  }
+};
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -40,13 +42,12 @@ function generate(element) {
 }
 
 export default function ListExample() {
-  const classes = useStyles();
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
 
   return (
-    <div className={classes.root}>
-      <FormGroup row>
+    <Box sx={classes.root}>
+      <FormGroup row sx={classes.controls}>
         <FormControlLabel
           control={
             <Checkbox
@@ -68,10 +69,10 @@ export default function ListExample() {
       </FormGroup>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={classes.title}>
             Text only
           </Typography>
-          <div className={classes.demo}>
+          <Box sx={classes.demo}>
             <List dense={dense}>
               {generate(
                 <ListItem>
@@ -82,13 +83,13 @@ export default function ListExample() {
                 </ListItem>
               )}
             </List>
-          </div>
+          </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={classes.title}>
             Icon with text
           </Typography>
-          <div className={classes.demo}>
+          <Box sx={classes.demo}>
             <List dense={dense}>
               {generate(
                 <ListItem>
@@ -102,15 +103,15 @@ export default function ListExample() {
                 </ListItem>
               )}
             </List>
-          </div>
+          </Box>
         </Grid>
       </Grid>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={classes.title}>
             Avatar with text
           </Typography>
-          <div className={classes.demo}>
+          <Box sx={classes.demo}>
             <List dense={dense}>
               {generate(
                 <ListItem>
@@ -126,13 +127,13 @@ export default function ListExample() {
                 </ListItem>
               )}
             </List>
-          </div>
+          </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={classes.title}>
             Avatar with text and icon
           </Typography>
-          <div className={classes.demo}>
+          <Box sx={classes.demo}>
             <List dense={dense}>
               {generate(
                 <ListItem>
@@ -153,9 +154,9 @@ export default function ListExample() {
                 </ListItem>
               )}
             </List>
-          </div>
+          </Box>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 }

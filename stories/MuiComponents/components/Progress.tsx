@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles, Theme, createStyles } from "@mui/styles";
 import CircularProgress from "@mui/material/CircularProgress";
 import {
   Typography,
@@ -14,52 +13,48 @@ import { green } from "@mui/material/colors";
 import CheckIcon from "@mui/icons-material/Check";
 import SaveIcon from "@mui/icons-material/Save";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: "flex",
-      alignItems: "center",
-      "& > * + *": {
-        marginLeft: theme.spacing(2),
-      },
+const classes = {
+  root: {
+    display: "flex",
+    alignItems: "center",
+    "& > * + *": {
+      marginLeft: 2,
     },
-    linearRoot: {
-      width: "100%",
-      "& > * + *": {
-        marginTop: theme.spacing(2),
-      },
+  },
+  linearRoot: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: 2,
     },
-    wrapper: {
-      margin: theme.spacing(1),
-      position: "relative",
+  },
+  wrapper: {
+    margin: 1,
+    position: "relative",
+  },
+  buttonSuccess: {
+    backgroundColor: green[500],
+    "&:hover": {
+      backgroundColor: green[700],
     },
-    buttonSuccess: {
-      backgroundColor: green[500],
-      "&:hover": {
-        backgroundColor: green[700],
-      },
-    },
-    fabProgress: {
-      color: green[500],
-      position: "absolute",
-      top: -6,
-      left: -6,
-      zIndex: 1,
-    },
-    buttonProgress: {
-      color: green[500],
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      marginTop: -12,
-      marginLeft: -12,
-    },
-  })
-);
+  },
+  fabProgress: {
+    color: green[500],
+    position: "absolute",
+    top: -6,
+    left: -6,
+    zIndex: 1,
+  },
+  buttonProgress: {
+    color: green[500],
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    marginTop: -12,
+    marginLeft: -12,
+  },
+};
 
 export default function ProgressExample() {
-  const classes = useStyles();
-
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const timer = React.useRef<number>();
@@ -88,45 +83,45 @@ export default function ProgressExample() {
   return (
     <>
       <Typography variant="h6">Circular</Typography>
-      <div className={classes.root}>
+      <Box sx={classes.root}>
         <CircularProgress />
         <CircularProgress color="secondary" />
-        <div className={classes.wrapper}>
+        <Box sx={classes.wrapper}>
           <Fab
             aria-label="save"
             color="primary"
-            className={buttonClassname}
+            sx={buttonClassname}
             onClick={handleButtonClick}
           >
             {success ? <CheckIcon /> : <SaveIcon />}
           </Fab>
           {loading && (
-            <CircularProgress size={52} className={classes.fabProgress} />
+            <CircularProgress size={52} sx={classes.fabProgress} />
           )}
-        </div>
-        <div className={classes.wrapper}>
+        </Box>
+        <Box sx={classes.wrapper}>
           <Button
             variant="contained"
             color="primary"
-            className={buttonClassname}
+            sx={buttonClassname}
             disabled={loading}
             onClick={handleButtonClick}
           >
             Accept terms
           </Button>
           {loading && (
-            <CircularProgress size={24} className={classes.buttonProgress} />
+            <CircularProgress size={24} sx={classes.buttonProgress} />
           )}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       <Typography variant="h6">Linear</Typography>
-      <div className={classes.linearRoot}>
+      <Box sx={classes.linearRoot}>
         <LinearProgress />
         <LinearProgress color="secondary" />
         <LinearBuffer />
         <LinearWithValueLabel />
-      </div>
+      </Box>
     </>
   );
 }

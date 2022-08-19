@@ -1,29 +1,25 @@
 import React from "react";
-import { createStyles, makeStyles } from "@mui/styles";
+import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavigationIcon from "@mui/icons-material/Navigation";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-      },
+const classes = {
+  root: {
+    "& > .MuiButtonBase-root": {
+      margin: 1,
     },
-    extendedIcon: {
-      marginRight: theme.spacing(1),
-    },
-  })
-);
+  },
+  extendedIcon: {
+    marginRight: 1,
+  },
+};
 
 export default function FabExample() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <Fab color="primary" aria-label="add">
         <AddIcon />
       </Fab>
@@ -31,12 +27,12 @@ export default function FabExample() {
         <EditIcon />
       </Fab>
       <Fab variant="extended">
-        <NavigationIcon className={classes.extendedIcon} />
+        <NavigationIcon sx={classes.extendedIcon} />
         Navigate
       </Fab>
       <Fab disabled aria-label="like">
         <FavoriteIcon />
       </Fab>
-    </div>
+    </Box>
   );
 }

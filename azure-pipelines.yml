@@ -1,0 +1,73 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+      - dev
+      # TODO: make `main` the main branch
+      - main 
+
+variables:
+- group: CashmerePublishCredentials
+- name: isMain
+  value: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: $(NODE_VERSION)
+  displayName: install Node.js
+
+- script: |
+    npm ci
+  displayName: npm install
+
+- script: |
+    npm run test:lint
+  displayName: npm run test:lint
+
+- script: |
+    npm run test:unit
+  displayName: npm run test:unit
+
+- script: |
+    npm run build
+  displayName: build the react-cashmere library
+
+- script: |
+    npm run build:storybook
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
+  displayName: npm run build:storybook
+
+- script: |
+    # fail the script if any errors occur
+    set -e
+
+    cd docs/
+
+    # Copy redirection error page for Github Pages
+    cp index.html 404.html
+
+    # Redirect Cashmere Url to CNAME file
+    # echo $CASHMERE_URL > "CNAME"
+
+    git config --global user.email "$(GIT_EMAIL)"
+    git config --global user.name "$(GIT_USER_NAME)"
+    git init
+    git add .
+    git commit -m "Committing built docs for GitHub Pages"
+    git checkout -b gh-pages
+    git remote add origin https://$(GITHUB_TOKEN)@github.com/HealthCatalyst/react-cashmere.git
+    git push origin gh-pages --force
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
+  displayName: 'publish GitHub pages (Docs site)'
+  
+- script: |
+    npx semantic-release
+  displayName: 'publish NPM package'
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+    NPM_TOKEN: $(NPM_TOKEN)

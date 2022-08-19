@@ -1,60 +1,47 @@
 import React from "react";
-import { makeStyles, createStyles } from "@mui/styles";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import { deepOrange, deepPurple, pink, green } from "@mui/material/colors";
 import FolderIcon from "@mui/icons-material/Folder";
 import PageviewIcon from "@mui/icons-material/Pageview";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import { Typography } from "@mui/material";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      display: "block",
-      justifyContent: "space-between",
+const classes = {
+  root: {
+    display: "block",
+    justifyContent: "space-between",
+  },
+  avatarSet: {
+    display: "flex",
+    margin: 2,
+    "& > *": {
+      margin: 1,
     },
-    avatarSet: {
-      display: "flex",
-      margin: theme.spacing(2),
-      "& > *": {
-        margin: theme.spacing(1),
-      },
-    },
-    orange: {
-      color: theme.palette.getContrastText(deepOrange[500]),
-      backgroundColor: deepOrange[500],
-    },
-    purple: {
-      color: theme.palette.getContrastText(deepPurple[500]),
-      backgroundColor: deepPurple[500],
-    },
-    pink: {
-      color: theme.palette.getContrastText(pink[500]),
-      backgroundColor: pink[500],
-    },
-    green: {
-      color: "#fff",
-      backgroundColor: green[500],
-    },
-    small: {
-      width: theme.spacing(3),
-      height: theme.spacing(3),
-    },
-    large: {
-      width: theme.spacing(7),
-      height: theme.spacing(7),
-    },
-  })
-);
+  },
+  primary: {
+    color: "primary.contrastText",
+    backgroundColor: "primary.main",
+  },
+  primaryAlt: {
+    color: "primary-alt.contrastText",
+    backgroundColor: "primary-alt.main",
+  },
+  small: {
+    width: 3*8,
+    height: 3*8,
+  },
+  large: {
+    width: 7*8,
+    height: 7*8,
+  },
+};
 
 export default function AvatarExample() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <Box sx={classes.root}>
       <Typography variant="h4">Pictures</Typography>
-      <div className={classes.avatarSet}>
+      <Box sx={classes.avatarSet}>
         <Avatar
           alt="Remy Sharp"
           src="https://material-ui.com/static/images/avatar/1.jpg"
@@ -67,19 +54,19 @@ export default function AvatarExample() {
           alt="Cindy Baker"
           src="https://material-ui.com/static/images/avatar/3.jpg"
         />
-      </div>
+      </Box>
       <Typography variant="h4">Text</Typography>
-      <div className={classes.avatarSet}>
+      <Box sx={classes.avatarSet}>
         <Avatar>H</Avatar>
-        <Avatar className={classes.orange}>N</Avatar>
-        <Avatar className={classes.purple}>OP</Avatar>
-      </div>
+        <Avatar sx={classes.primary}>N</Avatar>
+        <Avatar sx={classes.primaryAlt}>OP</Avatar>
+      </Box>
       <Typography variant="h4">Size</Typography>
-      <div className={classes.avatarSet}>
+      <Box sx={classes.avatarSet}>
         <Avatar
           alt="Remy Sharp"
           src="https://material-ui.com/static/images/avatar/1.jpg"
-          className={classes.small}
+          sx={classes.small}
         />
         <Avatar
           alt="Remy Sharp"
@@ -88,23 +75,23 @@ export default function AvatarExample() {
         <Avatar
           alt="Remy Sharp"
           src="https://material-ui.com/static/images/avatar/1.jpg"
-          className={classes.large}
+          sx={classes.large}
         />
-      </div>
+      </Box>
       <Typography variant="h4">Icons</Typography>
-      <div className={classes.avatarSet}>
+      <Box sx={classes.avatarSet}>
         <Avatar>
           <FolderIcon />
         </Avatar>
-        <Avatar className={classes.pink}>
+        <Avatar sx={classes.primary}>
           <PageviewIcon />
         </Avatar>
-        <Avatar className={classes.green}>
+        <Avatar sx={classes.primaryAlt}>
           <AssignmentIcon />
         </Avatar>
-      </div>
+      </Box>
       <Typography variant="h4">Group</Typography>
-      <div className={classes.avatarSet}>
+      <Box sx={classes.avatarSet}>
         <AvatarGroup max={4}>
           <Avatar
             alt="Remy Sharp"
@@ -127,7 +114,7 @@ export default function AvatarExample() {
             src="https://material-ui.com/static/images/avatar/5.jpg"
           />
         </AvatarGroup>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

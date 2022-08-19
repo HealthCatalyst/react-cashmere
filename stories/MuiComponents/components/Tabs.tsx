@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles, Theme } from "@mui/styles";
-import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
