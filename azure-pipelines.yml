@@ -9,7 +9,8 @@ trigger:
 
 variables:
 - group: CashmerePublishCredentials
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+- name: isMain
+  value: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 pool:
   vmImage: ubuntu-latest
