@@ -82,21 +82,19 @@ The rest of the commit message is then used for this.
 ### Examples
 
 ```commit
-fix(pencil): stop graphite breaking when too much pressure applied
+fix(navbar): stop overflow of navigation items
 ```
 
 ```commit
-feat(pencil): add 'graphiteWidth' option
+feat(navbar): roll up navigation items into "more" when there is not enough room
 
 Fix #42
 ```
 
 ```commit
-perf(pencil): remove graphiteWidth option
+perf(navbar): Always use "more" when more then 3 navigation items are present
 
-BREAKING CHANGE: The graphiteWidth option has been removed.
-
-The default graphite width of 10mm is always used for performance reasons.
+BREAKING CHANGE: limit the navigation items to two visible used for performance reasons.
 ```
 ## Working with the code
 
@@ -125,10 +123,10 @@ The theme, providers and components live under `./src/*` directroy.
 ### Example Stories
 The storybook documentation examples live under `./stories/*` directory.
 
-If you are creating a new component you will need to add a new story in \
+To create a new custom component you can add it here: \
 `./src/components/<Component Name>`\
 You will also need to create a new story to document your your component in \
-`./src/stories/<Component Name>.story.js`
+`./stories/Components/<Component Name>.story.js`
 
 ### Run Tests
 
