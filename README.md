@@ -67,43 +67,7 @@ export default (props) => {
 
 # Library Development & Contributing
 
-## Checking out the source
-
-First you will need to create your own fork of react-cashmere repo. https://github.com/HealthCatalyst/react-cashmere
-
-```
-git clone <react-cashmere fork>
-```
-
-## Runing storybook locally
-
-The following commands will run storybook locally at [http://localhost:6006/](http://localhost:6006/)
-You can navigate to the component you want to modify and the page will reload when you make changes.
-
-```
-cd react-cashmere
-npm install
-npm start
-```
-
-If you are creating a new component you will need to add a new story in \
-`./src/components/<Component Name>`\
-You will also need to create a new story to document your your component in \
-`./src/stories/<Component Name>.story.js`
-
-## Run Tests
-
-```
-npm test
-```
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## Build
-
-```
-npm run build
-```
-
-Builds the app for production to the `dist` folder.
+More information about contributing to the repo can be found here:
+- [How can I contribute?](CONTRIBUTING.md#how-can-i-contribute)
+- [Commit Message Guidelines](CONTRIBUTING.md#commit-message-guidelines)
+- [Working with the code](CONTRIBUTING.md#working-with-the-code)
