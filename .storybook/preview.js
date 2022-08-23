@@ -1,6 +1,7 @@
 import React from "react";
 import { addDecorator } from "@storybook/react";
 import { ThemeProvider, themes } from "react-cashmere";
+import "../stories/assets/fonts.scss";
 
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
