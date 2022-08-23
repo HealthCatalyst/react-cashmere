@@ -19,7 +19,7 @@ const config = {
   },
   plugins: [],
   externals: [
-    /^@mui\/*/, // mui
+    /^@mui\/*/, // Don't bundle any mui libraries
     {
       // Don't bundle react or react-dom
       react: {
@@ -72,9 +72,9 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
-        // generator: {
-        //   filename: "./fonts/[name][ext]",
-        // },
+        generator: {
+          filename: "./fonts/[name][ext]",
+        },
       },
     ],
   },
