@@ -17,11 +17,11 @@ const config = {
     filename: outFilename,
     path: path.resolve(__dirname, "dist"),
   },
-  target: "web",
   plugins: [],
   externals: [
+    /^@mui\/*/, // Don't bundle any mui libraries
     {
-      // Don't bundle react or react-dom, emotion, mui
+      // Don't bundle react or react-dom
       react: {
         commonjs: "react",
         commonjs2: "react",
@@ -33,22 +33,7 @@ const config = {
         commonjs2: "react-dom",
         amd: "ReactDOM",
         root: "ReactDOM",
-      },
-      "@emotion": {
-        root: "@emotion",
-      },
-      "@mui": {
-        root: "@mui",
-      },
-      "font-awesome": {
-        root: "font-awesome",
-      },
-      "notosans-fontface": {
-        root: "notosans-fontface",
-      },
-      "@healthcatalyst": {
-        root: "@healthcatalyst",
-      },
+      }
     },
   ],
   module: {
@@ -71,7 +56,8 @@ const config = {
             options: {
               importLoaders: 1,
               modules: {
-                mode: "local",
+                localIdentName: '[name]',
+                mode: "global",
               },
             },
           },
