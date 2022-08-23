@@ -22,7 +22,7 @@ const Navbar = ({
           <div className="navbar-brand">
             {brandIcon && (
               <a href={homeUri} className="brand" tabIndex="-1">
-                {typeof brandIcon === "string" ? (
+                {typeof brandIcon === "string" && appIcon.indexOf("/") !== -1 ? (
                   <img src={brandIcon} alt="Brand Icon" />
                 ) : (
                   brandIcon
@@ -33,7 +33,7 @@ const Navbar = ({
           <div className="navbar-app">
             {appIcon && (
               <a href={homeUri} className="app">
-                {typeof appIcon === "string" ? (
+                {typeof appIcon === "string" && appIcon.indexOf("/") !== -1 ? (
                   <img src={appIcon} alt="App Icon" />
                 ) : (
                   appIcon
