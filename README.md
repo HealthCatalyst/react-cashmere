@@ -22,6 +22,8 @@ Now you can install React Cashmere and fonts
 
 ```
 npm install --save @healthcatalyst/react-cashmere
+
+# optional install fonts and icons sets
 npm install --save sass font-awesome notosans-fontface @healthcatalyst/cashmere
 ```
 
@@ -52,7 +54,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider, themes } from "@healthcatalyst/react-cashmere";
-import "./fonts.scss";
+import "./fonts.scss"; /* optional scss fonts import */
 const [lightTheme, darkTheme] = themes;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
