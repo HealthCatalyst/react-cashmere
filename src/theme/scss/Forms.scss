@@ -339,7 +339,7 @@
     height: 24px;
     padding-top: 8px;
   }
-  div > div:last-child > div:last-child {
+  .MuiCalendarPicker-viewTransitionContainer > div:last-child > div:last-child {
     min-height: 245px;
   }
   div[role="presentation"] {

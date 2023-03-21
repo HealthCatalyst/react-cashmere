@@ -5,8 +5,9 @@ import MuiIcon from "@mui/material/Icon";
 const Icon = ({ icon, className, children, size, fontSize, ...props }) => {
   if (!icon && children) {
     icon = children;
+    children = undefined;
   }
-  let baseClass = "";
+  let baseClass = "material-icons";
   let extra = "";
   if (icon.indexOf("fa") !== -1) {
     baseClass = "fa";
@@ -35,7 +36,7 @@ const Icon = ({ icon, className, children, size, fontSize, ...props }) => {
 Icon.propTypes = {
   ...MuiIcon.propTypes,
   /**
-   * What icon to use `fa-trash`, `hci-catalyst-logo`
+   * What icon to use `fa-trash`, `hci-catalyst-logo`, `keyboard_arrow_down_icon`
    */
   icon: PropTypes.string.isRequired,
   /**
