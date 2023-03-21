@@ -1,7 +1,7 @@
 {
   "branches": ["master"],
   "pkgRoot": "./",
-  "tarballDir": false,
+  "tarballDir": "./",
   "assets": "healthcatalyst-react-cashmere-*.tgz",
   "verifyConditions": ["@semantic-release/changelog", "@semantic-release/git"],
   "prepare": [
